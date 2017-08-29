@@ -1,6 +1,6 @@
 ACCollector Server
 ==================
-ACCollector is a web application designed to help you keep track of your various collections across all the games in the Animal Crossing franchise. This repository houses the ASP.NET Core 1.1 backend server software. The front-end client software is hosted in [a separate repository](https://github.com/Drakmyth/ACCollector-Client).
+ACCollector is a web application designed to help you keep track of your various collections across all the games in the Animal Crossing franchise. This repository houses the ASP.NET Core 2.0 backend server software. The front-end client software is hosted in [a separate repository](https://github.com/Drakmyth/ACCollector-Client).
 
 * Latest Release Version: **Unreleased**
 
