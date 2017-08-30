@@ -1,6 +1,8 @@
-﻿using JetBrains.Annotations;
+﻿using ACCollector_Server.Repositories;
+using JetBrains.Annotations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -26,6 +28,9 @@ namespace ACCollector_Server
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+			var connection = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ACCollector;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+			services.AddDbContext<GameRepository>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
