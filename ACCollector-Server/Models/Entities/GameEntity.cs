@@ -1,11 +1,35 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ACCollector_Server.Models.Entities
 {
+	[Table("Game", Schema = "dbo")]
 	public class GameEntity
 	{
-		public string Id { get; set; }
+		[Key]
+		[Required]
+		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+		public Guid Id { get; set; }
 
-		public List<string> Releases { get; set; }
+		[Required]
+		public string Name { get; set; }
+
+		[NotMapped]
+		public List<string> Releases { get; set; } = new List<string>();
+
+		public Game ToModel()
+		{
+			var builder = new Game.Builder(Id, new Uri("http://www.stuff.com"), Name);
+
+			foreach (string strRelease in Releases)
+			{
+				var release = new Release(Region.NA, "title", Platform.N64, "releaseDate");
+				builder.WithRelease(release);
+			}
+
+			return builder.Build();
+		}
 	}
 }

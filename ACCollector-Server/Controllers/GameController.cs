@@ -1,13 +1,21 @@
 ﻿using ACCollector_Server.Models;
+using ACCollector_Server.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 
 namespace ACCollector_Server.Controllers
 {
-	[Route("api/[controller]")]
+	[Route("api/games")]
 	public class GameController : Controller
 	{
+		private readonly GameService _gameService;
+
+		public GameController(GameService gameService)
+		{
+			_gameService = gameService;
+		}
+
 		// GET api/games
 		[HttpGet]
 		public IEnumerable<GameSummary> GetGameSummaries()
@@ -24,9 +32,9 @@ namespace ACCollector_Server.Controllers
 
 		// POST api/games
 		[HttpPost]
-		public Game CreateGame([FromBody] CreateGameRequest request)
+		public IActionResult CreateGame([FromBody] CreateGameRequest request)
 		{
-			throw new NotImplementedException();
+			return Created("stuff", _gameService.CreateGame(request));
 		}
 
 		// PUT api/games/5

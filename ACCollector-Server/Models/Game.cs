@@ -7,14 +7,14 @@ namespace ACCollector_Server.Models
 {
 	public class Game
 	{
-		public string Id { get; }
+		public Guid Id { get; }
 		public Uri Href { get; }
 		public string Name { get; }
 
 		private readonly List<Release> _releases;
 		public IReadOnlyList<Release> Releases => _releases.AsReadOnly();
 
-		private Game(string id, Uri href, string name)
+		private Game(Guid id, Uri href, string name)
 		{
 			Id = id;
 			Href = href;
@@ -44,7 +44,7 @@ namespace ACCollector_Server.Models
 
 		public class Builder : Game
 		{
-			public Builder(string id, Uri href, string name) : base(id, href, name)
+			public Builder(Guid id, Uri href, string name) : base(id, href, name)
 			{
 			}
 
