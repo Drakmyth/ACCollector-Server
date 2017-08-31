@@ -1,15 +1,19 @@
-﻿using ACCollector_Server.Models;
-using ACCollector_Server.Repositories;
+﻿using ACCollector_Server.DataAccess.Repositories;
+using ACCollector_Server.Models;
+using ACCollector_Server.Models.Entities;
+using EntityFramework.DbContextScope.Interfaces;
 using System.Collections.Generic;
 
 namespace ACCollector_Server.Services
 {
 	public class GameService
 	{
+		private readonly IDbContextScopeFactory _dbContextScopeFactory;
 		private readonly GameRepository _gameRepository;
 
-		public GameService(GameRepository gameRepository)
+		public GameService(IDbContextScopeFactory dbContextScopeFactory, GameRepository gameRepository)
 		{
+			_dbContextScopeFactory = dbContextScopeFactory;
 			_gameRepository = gameRepository;
 		}
 
@@ -20,7 +24,12 @@ namespace ACCollector_Server.Services
 
 		public Game CreateGame(CreateGameRequest request)
 		{
-			return _gameRepository.CreateGame(request).ToModel();
+			using (IDbContextScope dbContextScope = _dbContextScopeFactory.Create())
+			{
+				GameEntity gameEntity = _gameRepository.CreateGame(request);
+				dbContextScope.SaveChanges();
+				return gameEntity.ToModel();
+			}
 		}
 	}
 }

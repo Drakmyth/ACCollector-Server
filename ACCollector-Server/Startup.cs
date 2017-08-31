@@ -1,5 +1,8 @@
-﻿using ACCollector_Server.Repositories;
+﻿using ACCollector_Server.DataAccess;
+using ACCollector_Server.DataAccess.Repositories;
 using ACCollector_Server.Services;
+using EntityFramework.DbContextScope;
+using EntityFramework.DbContextScope.Interfaces;
 using JetBrains.Annotations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System;
 
 namespace ACCollector_Server
 {
@@ -28,10 +32,21 @@ namespace ACCollector_Server
 		[UsedImplicitly]
 		public void ConfigureServices(IServiceCollection services)
 		{
-			var connection = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ACCollector;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-			services.AddDbContext<GameRepository>(options => options.UseSqlServer(connection));
 			services.AddMvc();
+			services.AddTransient<GameRepository>();
 			services.AddTransient<GameService>();
+			services.AddTransient<IDbContextScopeFactory, DbContextScopeFactory>(BuildContextScopeFactory);
+			services.AddTransient<IAmbientDbContextLocator, AmbientDbContextLocator>();
+		}
+
+		private DbContextScopeFactory BuildContextScopeFactory(IServiceProvider services)
+		{
+			const string CONNECTION = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ACCollector;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+			var optionsBuilder = new DbContextOptionsBuilder<ACCollectorDbContext>();
+			optionsBuilder.UseSqlServer(CONNECTION);
+
+			var contextFactory = new ACCollectorDbContextFactory(optionsBuilder.Options);
+			return new DbContextScopeFactory(contextFactory);
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
