@@ -11,7 +11,7 @@ namespace ACCollector_Server.Models.Entities
 		[Key]
 		[Required]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-		public Guid Id { get; set; }
+		public Guid GameId { get; set; }
 
 		[Required]
 		public string Name { get; set; }
@@ -21,7 +21,7 @@ namespace ACCollector_Server.Models.Entities
 
 		public Game ToModel()
 		{
-			var builder = new Game.Builder(Id, new Uri("http://www.stuff.com"), Name);
+			var builder = new Game.Builder(GameId, new Uri("http://www.stuff.com"), Name);
 
 			foreach (string strRelease in Releases)
 			{
