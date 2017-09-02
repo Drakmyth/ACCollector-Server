@@ -6,22 +6,20 @@ namespace ACCollector_Server.Models.ViewModels
 	{
 		public Guid GameId { get; }
 		public Uri Href { get; }
-		public string Name { get; }
 		public string Title { get; }
 
-		public GameSummaryViewModel(Guid gameId, Uri href, string name, string title)
+		public GameSummaryViewModel(Guid gameId, Uri href, string title)
 		{
 			GameId = gameId;
 			Href = href;
-			Name = name;
 			Title = title;
 		}
 
-		public GameSummaryViewModel(GameSummaryViewModel copy) : this(copy.GameId, copy.Href, copy.Name, copy.Title)
+		public GameSummaryViewModel(GameSummaryViewModel copy) : this(copy.GameId, copy.Href, copy.Title)
 		{
 		}
 
-		public GameSummaryViewModel(GameSummary summary, Uri href) : this(summary.GameId, href, summary.Name, summary.Title)
+		public GameSummaryViewModel(GameSummary summary, Uri href) : this(summary.GameId, href, summary.Title)
 		{
 		}
 	}

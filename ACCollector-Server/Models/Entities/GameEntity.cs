@@ -44,7 +44,7 @@ namespace ACCollector_Server.Models.Entities
 									?? Releases.Where(r => r.Region == Region.JP).SingleOrDefault() // NA region not found, fallback to JP
 									?? Releases.First(); // JP region not found, fallback to anything
 
-			return new GameSummary(GameId, Name, release.Title);
+			return new GameSummary(GameId, release.Title);
 		}
 	}
 }
