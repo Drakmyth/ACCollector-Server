@@ -51,19 +51,5 @@ namespace ACCollector_Server.Controllers
 			Uri location = Url.ActionUri(nameof(GetGame), new {gameId = game.GameId});
 			return Created(location, new GameViewModel(game, location));
 		}
-
-		// PUT api/games/5
-		[HttpPut("{gameId}")]
-		public IActionResult UpdateGame(Guid gameId, [FromBody] GameViewModel game)
-		{
-			throw new NotImplementedException();
-		}
-
-		// DELETE api/games/5
-		[HttpDelete("{gameId}")]
-		public void DeleteGame(Guid gameId)
-		{
-			throw new NotImplementedException();
-		}
 	}
 }
