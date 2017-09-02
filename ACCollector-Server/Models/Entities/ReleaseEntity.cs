@@ -1,4 +1,4 @@
-﻿using ACCollector_Server.Exceptions;
+using ACCollector_Server.Exceptions;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;

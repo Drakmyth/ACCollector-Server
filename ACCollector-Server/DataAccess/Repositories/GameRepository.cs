@@ -1,4 +1,4 @@
-﻿using ACCollector_Server.Models.Entities;
+using ACCollector_Server.Models.Entities;
 using ACCollector_Server.Models.Requests;
 using EntityFramework.DbContextScope.Interfaces;
 using JetBrains.Annotations;
