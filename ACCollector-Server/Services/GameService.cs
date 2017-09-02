@@ -1,12 +1,13 @@
 ﻿using ACCollector_Server.DataAccess.Repositories;
 using ACCollector_Server.Models;
-using ACCollector_Server.Models.Entities;
 using ACCollector_Server.Models.Requests;
 using EntityFramework.DbContextScope.Interfaces;
+using JetBrains.Annotations;
 using System.Collections.Generic;
 
 namespace ACCollector_Server.Services
 {
+	[UsedImplicitly]
 	public class GameService
 	{
 		private readonly IDbContextScopeFactory _dbContextScopeFactory;
@@ -18,18 +19,21 @@ namespace ACCollector_Server.Services
 			_gameRepository = gameRepository;
 		}
 
-		public IReadOnlyList<GameSummary> GetGameSummaries()
+		public IReadOnlyList<GameSummary> GetGameSummaries(Region preferredRegion)
 		{
-			return null;
+			using (_dbContextScopeFactory.CreateReadOnly())
+			{
+				return _gameRepository.GetGameSummaries(preferredRegion);
+			}
 		}
 
 		public Game CreateGame(CreateGameRequest request)
 		{
-			using (IDbContextScope dbContextScope = _dbContextScopeFactory.Create())
+			using (IDbContextScope scope = _dbContextScopeFactory.Create())
 			{
-				GameEntity gameEntity = _gameRepository.CreateGame(request);
-				dbContextScope.SaveChanges();
-				return gameEntity.ToModel();
+				Game game = _gameRepository.CreateGame(request);
+				scope.SaveChanges();
+				return game;
 			}
 		}
 	}

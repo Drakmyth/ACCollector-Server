@@ -44,7 +44,7 @@ namespace ACCollector_Server.Models.ViewModels
 												?? _releases.Where(r => r.Region == Region.JP).SingleOrDefault() // NA region not found, fallback to JP
 												?? _releases.First(); // JP region not found, fallback to anything
 
-			return new GameSummaryViewModel(GameId, Href, releaseViewModel.Title);
+			return new GameSummaryViewModel(GameId, Href, Name, releaseViewModel.Title);
 		}
 
 		public class Builder : GameViewModel

@@ -25,21 +25,6 @@ namespace ACCollector_Server.Models
 			_releases.AddRange(copy.Releases.Select(release => new Release(release)));
 		}
 
-		public GameSummary AsSummary(Region preferredRegion = Region.NA)
-		{
-			if (!_releases.Any())
-			{
-				throw new RegionNotFoundException($"Game '{GameId}' has no releases.");
-			}
-
-			Release release = _releases.Where(r => r.Region == preferredRegion).SingleOrDefault() // Try preferred region first
-							  ?? _releases.Where(r => r.Region == Region.NA).SingleOrDefault() // preferred region not found, fallback to NA
-							  ?? _releases.Where(r => r.Region == Region.JP).SingleOrDefault() // NA region not found, fallback to JP
-							  ?? _releases.First(); // JP region not found, fallback to anything
-
-			return new GameSummary(GameId, release.Title);
-		}
-
 		public class Builder : Game
 		{
 			public Builder(Guid gameId, string name) : base(gameId, name)

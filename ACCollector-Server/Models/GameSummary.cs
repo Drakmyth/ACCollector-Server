@@ -4,16 +4,18 @@ namespace ACCollector_Server.Models
 {
 	public class GameSummary
 	{
-		public Guid Id { get; }
+		public Guid GameId { get; }
+		public string Name { get; }
 		public string Title { get; }
 
-		public GameSummary(Guid id, string title)
+		public GameSummary(Guid gameId, string name, string title)
 		{
-			Id = id;
+			GameId = gameId;
+			Name = name;
 			Title = title;
 		}
 
-		public GameSummary(GameSummary copy) : this(copy.Id, copy.Title)
+		public GameSummary(GameSummary copy) : this(copy.GameId, copy.Name, copy.Title)
 		{
 		}
 	}

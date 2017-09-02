@@ -1,3 +1,4 @@
+using ACCollector_Server.Models;
 using ACCollector_Server.Models.Entities;
 using ACCollector_Server.Models.Requests;
 using EntityFramework.DbContextScope.Interfaces;
@@ -5,6 +6,8 @@ using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ACCollector_Server.DataAccess.Repositories
 {
@@ -18,7 +21,7 @@ namespace ACCollector_Server.DataAccess.Repositories
 			_contextLocator = contextLocator;
 		}
 
-		public GameEntity CreateGame(CreateGameRequest request)
+		public Game CreateGame(CreateGameRequest request)
 		{
 			var entity = new GameEntity
 			{
@@ -39,10 +42,21 @@ namespace ACCollector_Server.DataAccess.Repositories
 				});
 			}
 
-			ACCollectorDbContext context = _contextLocator.Get<ACCollectorDbContext>();
+			var context = _contextLocator.Get<ACCollectorDbContext>();
 			DbSet<GameEntity> dbSet = context.Set<GameEntity>();
 			EntityEntry<GameEntity> entry = dbSet.Add(entity);
-			return entry.Entity;
+			return entry.Entity.ToModel();
+		}
+
+		public IReadOnlyList<GameSummary> GetGameSummaries(Region preferredRegion)
+		{
+			var context = _contextLocator.Get<ACCollectorDbContext>();
+			DbSet<GameEntity> dbSet = context.Set<GameEntity>();
+			return dbSet
+				.Include(ge => ge.Releases)
+				.Select(ge => ge.ToSummary(preferredRegion))
+				.ToList()
+				.AsReadOnly();
 		}
 	}
 }

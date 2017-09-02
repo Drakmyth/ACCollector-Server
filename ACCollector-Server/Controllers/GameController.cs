@@ -4,6 +4,7 @@ using ACCollector_Server.Models.ViewModels;
 using ACCollector_Server.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 
 namespace ACCollector_Server.Controllers
 {
@@ -19,9 +20,18 @@ namespace ACCollector_Server.Controllers
 
 		// GET api/games
 		[HttpGet]
-		public IActionResult GetGameSummaries()
+		public IActionResult GetGameSummaries(Region preferredRegion = Region.NA)
 		{
-			throw new NotImplementedException();
+			IReadOnlyList<GameSummary> summaries = _gameService.GetGameSummaries(preferredRegion);
+			var views = new List<GameSummaryViewModel>();
+
+			foreach (GameSummary summary in summaries)
+			{
+				Uri location = Url.ActionUri(nameof(GetGame), new {gameId = summary.GameId});
+				views.Add(new GameSummaryViewModel(summary, location));
+			}
+
+			return Ok(views);
 		}
 
 		// GET api/games/5
@@ -36,10 +46,8 @@ namespace ACCollector_Server.Controllers
 		public IActionResult CreateGame([FromBody] CreateGameRequest request)
 		{
 			Game game = _gameService.CreateGame(request);
-			string location = Url.Action(nameof(GetGame), new {gameId = game.GameId});
-			var temp = Url.ActionContext.HttpContext.Request;
-			var locationUri = new Uri($"{temp.Scheme}://{temp.Host}{location}");
-			return Created(locationUri, new GameViewModel(game, locationUri));
+			Uri location = Url.ActionUri(nameof(GetGame), new {gameId = game.GameId});
+			return Created(location, new GameViewModel(game, location));
 		}
 
 		// PUT api/games/5
