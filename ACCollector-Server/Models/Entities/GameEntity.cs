@@ -16,17 +16,15 @@ namespace ACCollector_Server.Models.Entities
 		[Required]
 		public string Name { get; set; }
 
-		[NotMapped]
-		public List<string> Releases { get; set; } = new List<string>();
+		public virtual ICollection<ReleaseEntity> Releases { get; } = new List<ReleaseEntity>();
 
 		public Game ToModel()
 		{
-			var builder = new Game.Builder(GameId, new Uri("http://www.stuff.com"), Name);
+			var builder = new Game.Builder(GameId, Name);
 
-			foreach (string strRelease in Releases)
+			foreach (ReleaseEntity release in Releases)
 			{
-				var release = new Release(Region.NA, "title", Platform.N64, "releaseDate");
-				builder.WithRelease(release);
+				builder.WithRelease(release.ToModel());
 			}
 
 			return builder.Build();

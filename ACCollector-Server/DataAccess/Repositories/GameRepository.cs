@@ -1,12 +1,14 @@
-﻿using ACCollector_Server.Models;
-using ACCollector_Server.Models.Entities;
+﻿using ACCollector_Server.Models.Entities;
+using ACCollector_Server.Models.Requests;
 using EntityFramework.DbContextScope.Interfaces;
-using System;
+using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System;
 
 namespace ACCollector_Server.DataAccess.Repositories
 {
+	[UsedImplicitly]
 	public sealed class GameRepository
 	{
 		private readonly IAmbientDbContextLocator _contextLocator;
@@ -20,10 +22,22 @@ namespace ACCollector_Server.DataAccess.Repositories
 		{
 			var entity = new GameEntity
 			{
-				Id = Guid.Empty,
-				Name = request.Name,
-//				Releases = Enumerable.Empty<string>().ToList()
+				GameId = Guid.Empty,
+				Name = request.Name
 			};
+
+			foreach (CreateReleaseRequest release in request.Releases)
+			{
+				entity.Releases.Add(new ReleaseEntity
+				{
+					GameId = Guid.Empty,
+					Platform = release.Platform,
+					Region = release.Region,
+					Title = release.Title,
+					ReleaseId = Guid.Empty,
+					ReleaseDate = release.ReleaseDate
+				});
+			}
 
 			ACCollectorDbContext context = _contextLocator.Get<ACCollectorDbContext>();
 			DbSet<GameEntity> dbSet = context.Set<GameEntity>();

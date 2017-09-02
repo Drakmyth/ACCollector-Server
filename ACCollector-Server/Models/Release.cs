@@ -1,16 +1,18 @@
-﻿using Newtonsoft.Json;
+﻿using System;
 
 namespace ACCollector_Server.Models
 {
 	public class Release
 	{
 		public Region Region { get; }
-		public string Title { get; }
-		public Platform Platform { get; }
-		public string ReleaseDate { get; }
 
-		[JsonConstructor]
-		public Release(Region region, string title, Platform platform, string releaseDate)
+		public string Title { get; }
+
+		public Platform Platform { get; }
+
+		public DateTime ReleaseDate { get; }
+
+		public Release(Region region, string title, Platform platform, DateTime releaseDate)
 		{
 			Region = region;
 			Title = title;

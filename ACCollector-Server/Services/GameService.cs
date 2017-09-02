@@ -1,6 +1,7 @@
 ﻿using ACCollector_Server.DataAccess.Repositories;
 using ACCollector_Server.Models;
 using ACCollector_Server.Models.Entities;
+using ACCollector_Server.Models.Requests;
 using EntityFramework.DbContextScope.Interfaces;
 using System.Collections.Generic;
 

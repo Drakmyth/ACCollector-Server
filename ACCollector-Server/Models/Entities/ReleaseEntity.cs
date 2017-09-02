@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using ACCollector_Server.Exceptions;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -17,19 +17,52 @@ namespace ACCollector_Server.Models.Entities
 		public Guid GameId { get; set; }
 
 		[Required]
-		public Region Region { get; set; }
+		public string RegionCode { get; set; }
 
-//		public Game ToModel()
-//		{
-//			var builder = new Release.Builder(ReleaseId, new Uri("http://www.stuff.com"), Name);
-//
-//			foreach (string strRelease in Releases)
-//			{
-//				var release = new Release(Region.NA, "title", Platform.N64, "releaseDate");
-//				builder.WithRelease(release);
-//			}
-//
-//			return builder.Build();
-//		}
+		[NotMapped]
+		public Region Region
+		{
+			get
+			{
+				bool success = Enum.TryParse(RegionCode, out Region region);
+				if (!success)
+				{
+					throw new EnumMappingException($"Unknown '{nameof(Region)}' enum value: {RegionCode}");
+				}
+				return region;
+			}
+
+			set => RegionCode = value.ToString();
+		}
+
+		[Required]
+		public string Title { get; set; }
+
+		[Required]
+		public string PlatformCode { get; set; }
+
+		[NotMapped]
+		public Platform Platform
+		{
+			get
+			{
+				bool success = Enum.TryParse(PlatformCode, out Platform platform);
+				if (!success)
+				{
+					throw new EnumMappingException($"Unknown '{nameof(Platform)}' enum value: {PlatformCode}");
+				}
+				return platform;
+			}
+
+			set => PlatformCode = value.ToString();
+		}
+
+		[Required]
+		public DateTime ReleaseDate { get; set; }
+
+		public Release ToModel()
+		{
+			return new Release(Region, Title, Platform, ReleaseDate);
+		}
 	}
 }

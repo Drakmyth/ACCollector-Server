@@ -1,8 +1,9 @@
 ﻿using ACCollector_Server.Models;
+using ACCollector_Server.Models.Requests;
+using ACCollector_Server.Models.ViewModels;
 using ACCollector_Server.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 
 namespace ACCollector_Server.Controllers
 {
@@ -18,14 +19,14 @@ namespace ACCollector_Server.Controllers
 
 		// GET api/games
 		[HttpGet]
-		public IEnumerable<GameSummary> GetGameSummaries()
+		public IActionResult GetGameSummaries()
 		{
 			throw new NotImplementedException();
 		}
 
 		// GET api/games/5
-		[HttpGet("{id}")]
-		public Game GetGame(string id)
+		[HttpGet("{gameId}")]
+		public IActionResult GetGame(string gameId)
 		{
 			throw new NotImplementedException();
 		}
@@ -34,19 +35,23 @@ namespace ACCollector_Server.Controllers
 		[HttpPost]
 		public IActionResult CreateGame([FromBody] CreateGameRequest request)
 		{
-			return Created("stuff", _gameService.CreateGame(request));
+			Game game = _gameService.CreateGame(request);
+			string location = Url.Action(nameof(GetGame), new {gameId = game.GameId});
+			var temp = Url.ActionContext.HttpContext.Request;
+			var locationUri = new Uri($"{temp.Scheme}://{temp.Host}{location}");
+			return Created(locationUri, new GameViewModel(game, locationUri));
 		}
 
 		// PUT api/games/5
-		[HttpPut("{id}")]
-		public Game UpdateGame(int id, [FromBody] Game game)
+		[HttpPut("{gameId}")]
+		public IActionResult UpdateGame(int gameId, [FromBody] GameViewModel game)
 		{
 			throw new NotImplementedException();
 		}
 
 		// DELETE api/games/5
-		[HttpDelete("{id}")]
-		public void DeleteGame(int id)
+		[HttpDelete("{gameId}")]
+		public void DeleteGame(int gameId)
 		{
 			throw new NotImplementedException();
 		}

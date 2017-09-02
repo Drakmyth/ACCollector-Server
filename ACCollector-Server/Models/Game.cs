@@ -7,22 +7,20 @@ namespace ACCollector_Server.Models
 {
 	public class Game
 	{
-		public Guid Id { get; }
-		public Uri Href { get; }
+		public Guid GameId { get; }
 		public string Name { get; }
 
 		private readonly List<Release> _releases;
 		public IReadOnlyList<Release> Releases => _releases.AsReadOnly();
 
-		private Game(Guid id, Uri href, string name)
+		private Game(Guid gameId, string name)
 		{
-			Id = id;
-			Href = href;
+			GameId = gameId;
 			Name = name;
 			_releases = new List<Release>();
 		}
 
-		public Game(Game copy) : this(copy.Id, copy.Href, copy.Name)
+		public Game(Game copy) : this(copy.GameId, copy.Name)
 		{
 			_releases.AddRange(copy.Releases.Select(release => new Release(release)));
 		}
@@ -31,7 +29,7 @@ namespace ACCollector_Server.Models
 		{
 			if (!_releases.Any())
 			{
-				throw new RegionNotFoundException($"Game '{Id}' has no releases.");
+				throw new RegionNotFoundException($"Game '{GameId}' has no releases.");
 			}
 
 			Release release = _releases.Where(r => r.Region == preferredRegion).SingleOrDefault() // Try preferred region first
@@ -39,12 +37,12 @@ namespace ACCollector_Server.Models
 							  ?? _releases.Where(r => r.Region == Region.JP).SingleOrDefault() // NA region not found, fallback to JP
 							  ?? _releases.First(); // JP region not found, fallback to anything
 
-			return new GameSummary(Id, Href, release.Title);
+			return new GameSummary(GameId, release.Title);
 		}
 
 		public class Builder : Game
 		{
-			public Builder(Guid id, Uri href, string name) : base(id, href, name)
+			public Builder(Guid gameId, string name) : base(gameId, name)
 			{
 			}
 
