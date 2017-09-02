@@ -54,9 +54,21 @@ namespace ACCollector_Server.DataAccess.Repositories
 			DbSet<GameEntity> dbSet = context.Set<GameEntity>();
 			return dbSet
 				.Include(ge => ge.Releases)
+				.ToList()
 				.Select(ge => ge.ToSummary(preferredRegion))
 				.ToList()
 				.AsReadOnly();
+		}
+
+		public Game GetGame(Guid gameId)
+		{
+			var context = _contextLocator.Get<ACCollectorDbContext>();
+			DbSet<GameEntity> dbSet = context.Set<GameEntity>();
+			return dbSet
+				.Include(g => g.Releases)
+				.Where(g => g.GameId == gameId)
+				.Single()
+				.ToModel();
 		}
 	}
 }

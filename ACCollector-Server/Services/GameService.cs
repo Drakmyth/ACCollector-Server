@@ -3,6 +3,7 @@ using ACCollector_Server.Models;
 using ACCollector_Server.Models.Requests;
 using EntityFramework.DbContextScope.Interfaces;
 using JetBrains.Annotations;
+using System;
 using System.Collections.Generic;
 
 namespace ACCollector_Server.Services
@@ -34,6 +35,14 @@ namespace ACCollector_Server.Services
 				Game game = _gameRepository.CreateGame(request);
 				scope.SaveChanges();
 				return game;
+			}
+		}
+
+		public Game GetGame(Guid gameId)
+		{
+			using (_dbContextScopeFactory.CreateReadOnly())
+			{
+				return _gameRepository.GetGame(gameId);
 			}
 		}
 	}

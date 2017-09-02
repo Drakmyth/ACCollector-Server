@@ -36,9 +36,11 @@ namespace ACCollector_Server.Controllers
 
 		// GET api/games/5
 		[HttpGet("{gameId}")]
-		public IActionResult GetGame(string gameId)
+		public IActionResult GetGame(Guid gameId)
 		{
-			throw new NotImplementedException();
+			Game game = _gameService.GetGame(gameId);
+			Uri location = Url.ActionUri(nameof(GetGame), new {gameId = game.GameId});
+			return Ok(new GameViewModel(game, location));
 		}
 
 		// POST api/games
@@ -52,14 +54,14 @@ namespace ACCollector_Server.Controllers
 
 		// PUT api/games/5
 		[HttpPut("{gameId}")]
-		public IActionResult UpdateGame(int gameId, [FromBody] GameViewModel game)
+		public IActionResult UpdateGame(Guid gameId, [FromBody] GameViewModel game)
 		{
 			throw new NotImplementedException();
 		}
 
 		// DELETE api/games/5
 		[HttpDelete("{gameId}")]
-		public void DeleteGame(int gameId)
+		public void DeleteGame(Guid gameId)
 		{
 			throw new NotImplementedException();
 		}
