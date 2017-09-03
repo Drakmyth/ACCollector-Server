@@ -60,7 +60,7 @@ CREATE TABLE [dbo].[Release] (
 	[PlatformCode] VARCHAR(4) NOT NULL,
 	[ReleaseDate] DATETIME2 NOT NULL
 	CONSTRAINT PK_Release PRIMARY KEY CLUSTERED (ReleaseId),
-	CONSTRAINT FK_Release_Game_GameId FOREIGN KEY (GameId) REFERENCES [dbo].[Game](GameId),
+	CONSTRAINT FK_Release_Game_GameId FOREIGN KEY (GameId) REFERENCES [dbo].[Game](GameId) ON DELETE CASCADE,
 	CONSTRAINT FK_Release_Region_RegionCode FOREIGN KEY (RegionCode) REFERENCES [dbo].[Region](RegionCode),
 	CONSTRAINT FK_Release_Platform_PlatformCode FOREIGN KEY (PlatformCode) REFERENCES [dbo].[Platform](PlatformCode)
 );
