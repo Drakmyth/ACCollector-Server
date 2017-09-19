@@ -31,11 +31,11 @@ namespace ACCollector_Server.Models.Entities
 				}
 				return region;
 			}
-
 			set => RegionCode = value.ToString();
 		}
 
 		[Required]
+		[StringLength(60)]
 		public string Title { get; set; }
 
 		[Required]
@@ -53,7 +53,6 @@ namespace ACCollector_Server.Models.Entities
 				}
 				return platform;
 			}
-
 			set => PlatformCode = value.ToString();
 		}
 
@@ -62,7 +61,7 @@ namespace ACCollector_Server.Models.Entities
 
 		public Release ToModel()
 		{
-			return new Release(Region, Title, Platform, ReleaseDate);
+			return new Release(ReleaseId, GameId, Region, Title, Platform, ReleaseDate);
 		}
 	}
 }

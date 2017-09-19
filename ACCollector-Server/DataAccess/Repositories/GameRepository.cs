@@ -29,15 +29,15 @@ namespace ACCollector_Server.DataAccess.Repositories
 				Name = request.Name
 			};
 
-			foreach (CreateReleaseRequest release in request.Releases)
+			foreach (CreateGameRequest.CreateReleaseRequest release in request.Releases)
 			{
 				entity.Releases.Add(new ReleaseEntity
 				{
+					ReleaseId = Guid.Empty,
 					GameId = Guid.Empty,
 					Platform = release.Platform,
 					Region = release.Region,
 					Title = release.Title,
-					ReleaseId = Guid.Empty,
 					ReleaseDate = release.ReleaseDate
 				});
 			}

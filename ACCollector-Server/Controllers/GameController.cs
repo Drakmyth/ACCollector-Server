@@ -47,6 +47,11 @@ namespace ACCollector_Server.Controllers
 		[HttpPost]
 		public IActionResult CreateGame([FromBody] CreateGameRequest request)
 		{
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
+
 			Game game = _gameService.CreateGame(request);
 			Uri location = Url.ActionUri(nameof(GetGame), new {gameId = game.GameId});
 			return Created(location, new GameViewModel(game, location));

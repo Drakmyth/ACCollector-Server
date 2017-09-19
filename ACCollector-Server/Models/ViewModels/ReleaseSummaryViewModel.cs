@@ -5,13 +5,11 @@ using System;
 
 namespace ACCollector_Server.Models.ViewModels
 {
-	public class ReleaseViewModel
+	public class ReleaseSummaryViewModel
 	{
 		public Guid ReleaseId { get; }
 
 		public Uri Href { get; }
-
-		public Guid GameId { get; }
 
 		[JsonConverter(typeof(StringEnumConverter))]
 		public Region Region { get; }
@@ -25,24 +23,23 @@ namespace ACCollector_Server.Models.ViewModels
 		public DateTime ReleaseDate { get; }
 
 		[JsonConstructor]
-		public ReleaseViewModel(Guid releaseId, Uri href, Guid gameId, Region region, string title, Platform platform, DateTime releaseDate)
+		public ReleaseSummaryViewModel(Guid releaseId, Uri href, Region region, string title, Platform platform, DateTime releaseDate)
 		{
 			ReleaseId = releaseId;
 			Href = href;
-			GameId = gameId;
 			Region = region;
 			Title = title;
 			Platform = platform;
 			ReleaseDate = releaseDate;
 		}
 
-		public ReleaseViewModel(ReleaseViewModel copy)
-			: this(copy.ReleaseId, copy.Href, copy.GameId, copy.Region, copy.Title, copy.Platform, copy.ReleaseDate)
+		public ReleaseSummaryViewModel(ReleaseSummaryViewModel copy)
+			: this(copy.ReleaseId, copy.Href, copy.Region, copy.Title, copy.Platform, copy.ReleaseDate)
 		{
 		}
 
-		public ReleaseViewModel(Release release, Uri href)
-			: this(release.ReleaseId, href, release.GameId, release.Region, release.Title, release.Platform, release.ReleaseDate)
+		public ReleaseSummaryViewModel(ReleaseSummary summary, Uri href)
+			: this(summary.ReleaseId, href, summary.Region, summary.Title, summary.Platform, summary.ReleaseDate)
 		{
 		}
 	}

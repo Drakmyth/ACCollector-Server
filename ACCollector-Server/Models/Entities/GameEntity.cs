@@ -16,6 +16,7 @@ namespace ACCollector_Server.Models.Entities
 		public Guid GameId { get; set; }
 
 		[Required]
+		[StringLength(60)]
 		public string Name { get; set; }
 
 		public virtual ICollection<ReleaseEntity> Releases { get; } = new List<ReleaseEntity>();

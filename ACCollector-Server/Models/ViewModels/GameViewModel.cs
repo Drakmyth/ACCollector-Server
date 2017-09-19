@@ -28,7 +28,7 @@ namespace ACCollector_Server.Models.ViewModels
 
 		public GameViewModel(Game game, Uri href) : this(game.GameId, href, game.Name)
 		{
-			_releases.AddRange(game.Releases.Select(release => new ReleaseViewModel(release)));
+			_releases.AddRange(game.Releases.Select(release => new ReleaseViewModel(release, href)));
 		}
 
 		public class Builder : GameViewModel
