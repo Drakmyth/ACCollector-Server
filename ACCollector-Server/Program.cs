@@ -4,20 +4,21 @@ using System.IO;
 
 namespace ACCollector_Server
 {
-    [UsedImplicitly]
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            IWebHost host = new WebHostBuilder()
-                .UseKestrel()
-                .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
-                .UseStartup<Startup>()
-                .UseApplicationInsights()
-                .Build();
+	[UsedImplicitly]
+	public class Program
+	{
+		public static void Main(string[] args)
+		{
+			IWebHost host = new WebHostBuilder()
+				.UseKestrel()
+				.UseContentRoot(Directory.GetCurrentDirectory())
+				.UseIISIntegration()
+				.UseStartup<Startup>()
+				.UseSetting(WebHostDefaults.PreventHostingStartupKey, "true")
+				.UseApplicationInsights()
+				.Build();
 
-            host.Run();
-        }
-    }
+			host.Run();
+		}
+	}
 }

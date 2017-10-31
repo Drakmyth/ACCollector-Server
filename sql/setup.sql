@@ -49,7 +49,7 @@ INSERT INTO [dbo].[Platform](PlatformCode, Description) VALUES
 ('iQue', 'iQue Player'),
 ('NDS', 'Nintendo DS'),
 ('Wii', 'Nintendo Wii'),
-('3DS', 'Nintendo 3DS');
+('N3DS', 'Nintendo 3DS');
 GO
 
 CREATE TABLE [dbo].[Release] (

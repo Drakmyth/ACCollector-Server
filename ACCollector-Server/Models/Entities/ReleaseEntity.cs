@@ -64,5 +64,10 @@ namespace ACCollector_Server.Models.Entities
 		{
 			return new Release(Region, Title, Platform, ReleaseDate);
 		}
+
+		public ReleaseSummary ToSummary()
+		{
+			return new ReleaseSummary(ReleaseId, GameId, RegionCode);
+		}
 	}
 }

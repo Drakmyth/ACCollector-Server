@@ -1,16 +1,23 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace ACCollector_Server.Models.Requests
 {
 	public class CreateGameRequest
 	{
-		public string Name { get; set; }
+		public string Name { get; }
 
-		public List<CreateReleaseRequest> Releases { get; set; }
+		public List<CreateReleaseRequest> Releases { get; }
 
-		public CreateGameRequest()
+		[JsonConstructor]
+		public CreateGameRequest(string name, IEnumerable<CreateReleaseRequest> releases)
 		{
-			Releases = new List<CreateReleaseRequest>();
+			Name = name;
+			Releases = new List<CreateReleaseRequest>(releases);
+		}
+
+		public CreateGameRequest(CreateGameRequest copy) : this(copy.Name, copy.Releases.AsReadOnly())
+		{
 		}
 	}
 }

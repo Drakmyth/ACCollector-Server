@@ -11,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
+using Microsoft.AspNetCore.Mvc.Formatters.Json.Internal;
+using Newtonsoft.Json;
 
 namespace ACCollector_Server
 {
@@ -18,6 +20,7 @@ namespace ACCollector_Server
 	{
 		public Startup(IHostingEnvironment env)
 		{
+			Console.WriteLine("env.ContentRootPath");
 			IConfigurationBuilder builder = new ConfigurationBuilder()
 				.SetBasePath(env.ContentRootPath)
 				.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
@@ -33,8 +36,9 @@ namespace ACCollector_Server
 		public void ConfigureServices(IServiceCollection services)
 		{
 			services.AddMvc();
-			services.AddTransient<GameRepository>();
 			services.AddTransient<GameService>();
+			services.AddTransient<GameRepository>();
+			services.AddTransient<ReleaseRepository>();
 			services.AddTransient<IDbContextScopeFactory, DbContextScopeFactory>(BuildContextScopeFactory);
 			services.AddTransient<IAmbientDbContextLocator, AmbientDbContextLocator>();
 		}
