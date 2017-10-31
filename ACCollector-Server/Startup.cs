@@ -11,8 +11,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
-using Microsoft.AspNetCore.Mvc.Formatters.Json.Internal;
-using Newtonsoft.Json;
 
 namespace ACCollector_Server
 {
