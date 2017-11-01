@@ -15,10 +15,10 @@ namespace ACCollector_Server.Controllers
 				gameId
 			});
 
-			return BuildUri(url, location);
+			return url.ToAbsoluteUri(location);
 		}
 
-		private static Uri BuildUri(IUrlHelper url, string location)
+		private static Uri ToAbsoluteUri(this IUrlHelper url, string location)
 		{
 			HttpRequest request = url.ActionContext.HttpContext.Request;
 			return new Uri($"{request.Scheme}://{request.Host}{location}");
