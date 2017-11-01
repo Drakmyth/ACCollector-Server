@@ -5,6 +5,7 @@ using ACCollector_Server.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ACCollector_Server.Controllers
 {
@@ -27,7 +28,7 @@ namespace ACCollector_Server.Controllers
 
 			foreach (GameSummary summary in summaries)
 			{
-				Uri location = Url.ActionUri(nameof(GetGame), new {gameId = summary.GameId});
+				Uri location = Url.GameUri(summary.GameId);
 				views.Add(new GameSummaryViewModel(summary, location));
 			}
 
@@ -39,7 +40,7 @@ namespace ACCollector_Server.Controllers
 		public IActionResult GetGame(Guid gameId)
 		{
 			Game game = _gameService.GetGame(gameId);
-			Uri location = Url.ActionUri(nameof(GetGame), new {gameId = game.GameId});
+			Uri location = Url.GameUri(game.GameId);
 			return Ok(new GameViewModel(game, location));
 		}
 
@@ -53,7 +54,7 @@ namespace ACCollector_Server.Controllers
 			}
 
 			Game game = _gameService.CreateGame(request);
-			Uri location = Url.ActionUri(nameof(GetGame), new {gameId = game.GameId});
+			Uri location = Url.GameUri(game.GameId);
 			return Created(location, new GameViewModel(game, location));
 		}
 	}

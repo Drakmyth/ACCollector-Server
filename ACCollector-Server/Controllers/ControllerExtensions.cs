@@ -6,9 +6,20 @@ namespace ACCollector_Server.Controllers
 {
 	public static class ControllerExtensions
 	{
-		public static Uri ActionUri(this IUrlHelper url, string action, object values)
+		public static Uri GameUri(this IUrlHelper url, Guid gameId)
 		{
-			string location = url.Action(action, values);
+			string location = url.RouteUrl(new
+			{
+				controller = "Game",
+				action = "GetGame",
+				gameId
+			});
+
+			return BuildUri(url, location);
+		}
+
+		private static Uri BuildUri(IUrlHelper url, string location)
+		{
 			HttpRequest request = url.ActionContext.HttpContext.Request;
 			return new Uri($"{request.Scheme}://{request.Host}{location}");
 		}
