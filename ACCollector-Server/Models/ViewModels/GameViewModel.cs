@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
 
 namespace ACCollector_Server.Models.ViewModels
 {
@@ -29,9 +29,9 @@ namespace ACCollector_Server.Models.ViewModels
 			_releases = new List<ReleaseViewModel>();
 		}
 
-		public GameViewModel(Game game, Uri href) : this(game.GameId, href, game.Name)
+		public GameViewModel(Game game, Uri href, Func<Guid, Uri> releaseUriGenerator) : this(game.GameId, href, game.Name)
 		{
-			_releases.AddRange(game.Releases.Select(release => new ReleaseViewModel(release, href))); // TODO: Use release hrefs instead of game href
+			_releases.AddRange(game.Releases.Select(release => new ReleaseViewModel(release, releaseUriGenerator(release.ReleaseId))));
 		}
 	}
 }

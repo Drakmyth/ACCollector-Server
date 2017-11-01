@@ -6,15 +6,7 @@ namespace ACCollector_Server.Exceptions
 	[Serializable]
 	public class EnumMappingException : Exception
 	{
-		public EnumMappingException()
-		{
-		}
-
 		public EnumMappingException(string message) : base(message)
-		{
-		}
-
-		public EnumMappingException(string message, Exception innerException) : base(message, innerException)
 		{
 		}
 

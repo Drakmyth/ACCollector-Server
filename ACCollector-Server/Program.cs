@@ -7,7 +7,7 @@ namespace ACCollector_Server
 	[UsedImplicitly]
 	public class Program
 	{
-		public static void Main(string[] args)
+		public static void Main()
 		{
 			IWebHost host = new WebHostBuilder()
 				.UseKestrel()

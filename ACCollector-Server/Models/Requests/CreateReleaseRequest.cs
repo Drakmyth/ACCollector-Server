@@ -2,19 +2,24 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace ACCollector_Server.Models.Requests
 {
 	public class CreateReleaseRequest
 	{
+		[Required]
 		[JsonConverter(typeof(StringEnumConverter))]
 		public Region Region { get; }
 
+		[Required]
 		public string Title { get; }
 
+		[Required]
 		[JsonConverter(typeof(StringEnumConverter))]
 		public Platform Platform { get; }
 
+		[Required]
 		[JsonConverter(typeof(DateConverter))]
 		public DateTime ReleaseDate { get; }
 
@@ -25,11 +30,6 @@ namespace ACCollector_Server.Models.Requests
 			Title = title;
 			Platform = platform;
 			ReleaseDate = releaseDate;
-		}
-
-		public CreateReleaseRequest(CreateReleaseRequest copy)
-			: this(copy.Region, copy.Title, copy.Platform, copy.ReleaseDate)
-		{
 		}
 	}
 }

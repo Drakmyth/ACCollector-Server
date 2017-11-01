@@ -37,7 +37,7 @@ namespace ACCollector_Server.Controllers
 		{
 			Game game = _gameService.GetGame(gameId);
 			Uri location = Url.GameUri(game.GameId);
-			return Ok(new GameViewModel(game, location));
+			return Ok(new GameViewModel(game, location, Url.ReleaseUri));
 		}
 
 		[HttpPost("api/games")]
@@ -50,7 +50,7 @@ namespace ACCollector_Server.Controllers
 
 			Game game = _gameService.CreateGame(request);
 			Uri location = Url.GameUri(game.GameId);
-			return Created(location, new GameViewModel(game, location));
+			return Created(location, new GameViewModel(game, location, Url.ReleaseUri));
 		}
 	}
 }
