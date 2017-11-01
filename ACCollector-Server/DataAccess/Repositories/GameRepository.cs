@@ -43,16 +43,14 @@ namespace ACCollector_Server.DataAccess.Repositories
 			}
 
 			var context = _contextLocator.Get<ACCollectorDbContext>();
-			DbSet<GameEntity> dbSet = context.Set<GameEntity>();
-			EntityEntry<GameEntity> entry = dbSet.Add(entity);
+			EntityEntry<GameEntity> entry = context.Games.Add(entity);
 			return entry.Entity.ToModel();
 		}
 
 		public IReadOnlyList<GameSummary> GetGameSummaries(Region preferredRegion)
 		{
 			var context = _contextLocator.Get<ACCollectorDbContext>();
-			DbSet<GameEntity> dbSet = context.Set<GameEntity>();
-			return dbSet
+			return context.Games
 				.Include(ge => ge.Releases)
 				.ToList()
 				.Select(ge => ge.ToSummary(preferredRegion))
@@ -63,8 +61,7 @@ namespace ACCollector_Server.DataAccess.Repositories
 		public Game GetGame(Guid gameId)
 		{
 			var context = _contextLocator.Get<ACCollectorDbContext>();
-			DbSet<GameEntity> dbSet = context.Set<GameEntity>();
-			return dbSet
+			return context.Games
 				.Include(g => g.Releases)
 				.Where(g => g.GameId == gameId)
 				.Single()

@@ -5,18 +5,14 @@ namespace ACCollector_Server.Models
 	public class ReleaseSummary
 	{
 		public Guid ReleaseId { get; }
-		public Guid GameId { get; }
-		public string RegionCode { get; }
+		public Region Region { get; }
+		public string Title { get; }
 
-		public ReleaseSummary(Guid releaseId, Guid gameId, string regionCode)
+		public ReleaseSummary(Guid releaseId, Region region, string title)
 		{
 			ReleaseId = releaseId;
-			GameId = gameId;
-			RegionCode = regionCode;
-		}
-
-		public ReleaseSummary(ReleaseSummary copy) : this(copy.ReleaseId, copy.GameId, copy.RegionCode)
-		{
+			Region = region;
+			Title = title;
 		}
 	}
 }

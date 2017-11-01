@@ -3,7 +3,6 @@ using ACCollector_Server.Models.Entities;
 using ACCollector_Server.Models.Requests;
 using EntityFramework.DbContextScope.Interfaces;
 using JetBrains.Annotations;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
@@ -21,12 +20,12 @@ namespace ACCollector_Server.DataAccess.Repositories
 			_contextLocator = contextLocator;
 		}
 
-		public Release CreateRelease(CreateReleaseRequest request)
+		public Release CreateReleaseForGame(Guid gameId, CreateReleaseRequest request)
 		{
 			var entity = new ReleaseEntity
 			{
 				ReleaseId = Guid.Empty,
-				GameId = Guid.Empty,
+				GameId = gameId,
 				Platform = request.Platform,
 				Region = request.Region,
 				Title = request.Title,
@@ -34,16 +33,14 @@ namespace ACCollector_Server.DataAccess.Repositories
 			};
 
 			var context = _contextLocator.Get<ACCollectorDbContext>();
-			DbSet<ReleaseEntity> dbSet = context.Set<ReleaseEntity>();
-			EntityEntry<ReleaseEntity> entry = dbSet.Add(entity);
+			EntityEntry<ReleaseEntity> entry = context.Releases.Add(entity);
 			return entry.Entity.ToModel();
 		}
 
 		public IReadOnlyList<ReleaseSummary> GetReleaseSummaries()
 		{
 			var context = _contextLocator.Get<ACCollectorDbContext>();
-			DbSet<ReleaseEntity> dbSet = context.Set<ReleaseEntity>();
-			return dbSet
+			return context.Releases
 				.ToList()
 				.Select(re => re.ToSummary())
 				.ToList()
@@ -53,11 +50,21 @@ namespace ACCollector_Server.DataAccess.Repositories
 		public Release GetRelease(Guid releaseId)
 		{
 			var context = _contextLocator.Get<ACCollectorDbContext>();
-			DbSet<ReleaseEntity> dbSet = context.Set<ReleaseEntity>();
-			return dbSet
+			return context.Releases
 				.Where(r => r.ReleaseId == releaseId)
 				.Single()
 				.ToModel();
+		}
+
+		public IReadOnlyList<Release> GetReleasesForGame(Guid gameId)
+		{
+			var context = _contextLocator.Get<ACCollectorDbContext>();
+			return context.Releases
+				.Where(re => re.GameId == gameId)
+				.ToList()
+				.Select(re => re.ToModel())
+				.ToList()
+				.AsReadOnly();
 		}
 	}
 }

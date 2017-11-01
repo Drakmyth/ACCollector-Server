@@ -7,17 +7,14 @@ namespace ACCollector_Server.Models.Requests
 	{
 		public string Name { get; }
 
-		public List<CreateReleaseRequest> Releases { get; }
+		private readonly List<CreateReleaseRequest> _releases;
+		public IReadOnlyList<CreateReleaseRequest> Releases => _releases.AsReadOnly();
 
 		[JsonConstructor]
 		public CreateGameRequest(string name, IEnumerable<CreateReleaseRequest> releases)
 		{
 			Name = name;
-			Releases = new List<CreateReleaseRequest>(releases);
-		}
-
-		public CreateGameRequest(CreateGameRequest copy) : this(copy.Name, copy.Releases.AsReadOnly())
-		{
+			_releases = new List<CreateReleaseRequest>(releases);
 		}
 	}
 }

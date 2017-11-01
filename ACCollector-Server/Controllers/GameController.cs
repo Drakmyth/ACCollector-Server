@@ -5,11 +5,9 @@ using ACCollector_Server.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace ACCollector_Server.Controllers
 {
-	[Route("api/games")]
 	public class GameController : Controller
 	{
 		private readonly GameService _gameService;
@@ -19,9 +17,8 @@ namespace ACCollector_Server.Controllers
 			_gameService = gameService;
 		}
 
-		// GET api/games
-		[HttpGet]
-		public IActionResult GetGameSummaries(Region preferredRegion = Region.NA)
+		[HttpGet("api/games")]
+		public IActionResult GetGameSummaries([FromQuery] Region preferredRegion = Region.NA)
 		{
 			IReadOnlyList<GameSummary> summaries = _gameService.GetGameSummaries(preferredRegion);
 			var views = new List<GameSummaryViewModel>();
@@ -35,17 +32,15 @@ namespace ACCollector_Server.Controllers
 			return Ok(views);
 		}
 
-		// GET api/games/5
-		[HttpGet("{gameId}")]
-		public IActionResult GetGame(Guid gameId)
+		[HttpGet("api/games/{gameId}")]
+		public IActionResult GetGame([FromRoute] Guid gameId)
 		{
 			Game game = _gameService.GetGame(gameId);
 			Uri location = Url.GameUri(game.GameId);
 			return Ok(new GameViewModel(game, location));
 		}
 
-		// POST api/games
-		[HttpPost]
+		[HttpPost("api/games")]
 		public IActionResult CreateGame([FromBody] CreateGameRequest request)
 		{
 			if (!ModelState.IsValid)

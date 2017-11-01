@@ -18,6 +18,18 @@ namespace ACCollector_Server.Controllers
 			return url.ToAbsoluteUri(location);
 		}
 
+		public static Uri ReleaseUri(this IUrlHelper url, Guid releaseId)
+		{
+			string location = url.RouteUrl(new
+			{
+				controller = "Release",
+				action = "GetRelease",
+				releaseId
+			});
+
+			return url.ToAbsoluteUri(location);
+		}
+
 		private static Uri ToAbsoluteUri(this IUrlHelper url, string location)
 		{
 			HttpRequest request = url.ActionContext.HttpContext.Request;

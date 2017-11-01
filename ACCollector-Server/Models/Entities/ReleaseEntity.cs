@@ -62,12 +62,12 @@ namespace ACCollector_Server.Models.Entities
 
 		public Release ToModel()
 		{
-			return new Release(Region, Title, Platform, ReleaseDate);
+			return new Release(ReleaseId, GameId, Region, Title, Platform, ReleaseDate);
 		}
 
 		public ReleaseSummary ToSummary()
 		{
-			return new ReleaseSummary(ReleaseId, GameId, RegionCode);
+			return new ReleaseSummary(ReleaseId, Region, Title);
 		}
 	}
 }

@@ -18,7 +18,6 @@ namespace ACCollector_Server
 	{
 		public Startup(IHostingEnvironment env)
 		{
-			Console.WriteLine("env.ContentRootPath");
 			IConfigurationBuilder builder = new ConfigurationBuilder()
 				.SetBasePath(env.ContentRootPath)
 				.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
@@ -35,6 +34,7 @@ namespace ACCollector_Server
 		{
 			services.AddMvc();
 			services.AddTransient<GameService>();
+			services.AddTransient<ReleaseService>();
 			services.AddTransient<GameRepository>();
 			services.AddTransient<ReleaseRepository>();
 			services.AddTransient<IDbContextScopeFactory, DbContextScopeFactory>(BuildContextScopeFactory);
