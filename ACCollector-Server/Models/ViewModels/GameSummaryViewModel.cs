@@ -1,22 +1,24 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace ACCollector_Server.Models.ViewModels
 {
 	public class GameSummaryViewModel
 	{
+		[JsonProperty]
 		public Guid GameId { get; }
+
+		[JsonProperty]
 		public Uri Href { get; }
+
+		[JsonProperty]
 		public string Title { get; }
 
-		public GameSummaryViewModel(Guid gameId, Uri href, string title)
+		private GameSummaryViewModel(Guid gameId, Uri href, string title)
 		{
 			GameId = gameId;
 			Href = href;
 			Title = title;
-		}
-
-		public GameSummaryViewModel(GameSummaryViewModel copy) : this(copy.GameId, copy.Href, copy.Title)
-		{
 		}
 
 		public GameSummaryViewModel(GameSummary summary, Uri href) : this(summary.GameId, href, summary.Title)

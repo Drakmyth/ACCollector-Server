@@ -1,5 +1,4 @@
-﻿using ACCollector_Server.Exceptions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -20,7 +19,7 @@ namespace ACCollector_Server.Models
 			_releases = new List<Release>();
 		}
 
-		public Game(Game copy) : this(copy.GameId, copy.Name)
+		private Game(Game copy) : this(copy.GameId, copy.Name)
 		{
 			_releases.AddRange(copy.Releases.Select(release => new Release(release)));
 		}
@@ -39,6 +38,11 @@ namespace ACCollector_Server.Models
 
 			public Game Build()
 			{
+				if (!Releases.Any())
+				{
+					throw new InvalidOperationException("Game must have at least one Release.");
+				}
+
 				return new Game(this);
 			}
 		}

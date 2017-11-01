@@ -18,7 +18,7 @@ namespace ACCollector_Server.Models.Entities
 		[Required]
 		public string Name { get; set; }
 
-		public virtual ICollection<ReleaseEntity> Releases { get; } = new List<ReleaseEntity>();
+		public ICollection<ReleaseEntity> Releases { get; } = new List<ReleaseEntity>();
 
 		public Game ToModel()
 		{
