@@ -13,7 +13,6 @@ namespace ACCollector_Server.Models
 		public Uri Href { get; }
 
 		[JsonProperty]
-		[JsonConverter(typeof(StringEnumConverter))]
 		public Region Region { get; }
 
 		[JsonProperty]

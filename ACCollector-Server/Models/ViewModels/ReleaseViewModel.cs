@@ -17,7 +17,6 @@ namespace ACCollector_Server.Models.ViewModels
 		public Guid GameId { get; }
 
 		[JsonProperty]
-		[JsonConverter(typeof(StringEnumConverter))]
 		public Region Region { get; }
 
 		[JsonProperty]

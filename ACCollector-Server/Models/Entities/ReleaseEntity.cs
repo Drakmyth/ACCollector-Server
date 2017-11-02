@@ -22,17 +22,8 @@ namespace ACCollector_Server.Models.Entities
 		[NotMapped]
 		public Region Region
 		{
-			get
-			{
-				bool success = Enum.TryParse(RegionCode, out Region region);
-				if (!success)
-				{
-					throw new EnumMappingException($"Unknown '{nameof(Region)}' enum value: {RegionCode}");
-				}
-				return region;
-			}
-
-			set => RegionCode = value.ToString();
+			get => RegionExtensions.Lookup(RegionCode);
+			set => RegionCode = value.GetCode();
 		}
 
 		[Required]

@@ -9,7 +9,6 @@ namespace ACCollector_Server.Models.Requests
 	public class CreateReleaseRequest
 	{
 		[Required]
-		[JsonConverter(typeof(StringEnumConverter))]
 		public Region Region { get; }
 
 		[Required]
