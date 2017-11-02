@@ -44,17 +44,8 @@ namespace ACCollector_Server.Models.Entities
 		[NotMapped]
 		public Platform Platform
 		{
-			get
-			{
-				bool success = Enum.TryParse(PlatformCode, out Platform platform);
-				if (!success)
-				{
-					throw new EnumMappingException($"Unknown '{nameof(Platform)}' enum value: {PlatformCode}");
-				}
-				return platform;
-			}
-
-			set => PlatformCode = value.ToString();
+			get => PlatformExtensions.Lookup(PlatformCode);
+			set => PlatformCode = value.GetCode();
 		}
 
 		[Required]

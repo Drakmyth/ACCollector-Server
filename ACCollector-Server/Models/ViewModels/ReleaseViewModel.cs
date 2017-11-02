@@ -24,7 +24,6 @@ namespace ACCollector_Server.Models.ViewModels
 		public string Title { get; }
 
 		[JsonProperty]
-		[JsonConverter(typeof(StringEnumConverter))]
 		public Platform Platform { get; }
 
 		[JsonProperty]

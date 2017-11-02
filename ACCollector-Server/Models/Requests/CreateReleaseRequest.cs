@@ -16,7 +16,6 @@ namespace ACCollector_Server.Models.Requests
 		public string Title { get; }
 
 		[Required]
-		[JsonConverter(typeof(StringEnumConverter))]
 		public Platform Platform { get; }
 
 		[Required]
