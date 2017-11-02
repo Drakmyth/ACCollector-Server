@@ -1,6 +1,4 @@
-﻿using ACCollector_Server.Models;
-using System;
-using System.Runtime.Serialization;
+﻿using System;
 
 namespace ACCollector_Server.Exceptions
 {
@@ -8,10 +6,6 @@ namespace ACCollector_Server.Exceptions
 	public class RegionNotFoundException : Exception
 	{
 		public RegionNotFoundException(string message) : base(message)
-		{
-		}
-
-		protected RegionNotFoundException(SerializationInfo info, StreamingContext context) : base(info, context)
 		{
 		}
 	}

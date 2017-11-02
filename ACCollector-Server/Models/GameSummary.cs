@@ -12,9 +12,5 @@ namespace ACCollector_Server.Models
 			GameId = gameId;
 			Title = title;
 		}
-
-		public GameSummary(GameSummary copy) : this(copy.GameId, copy.Title)
-		{
-		}
 	}
 }
