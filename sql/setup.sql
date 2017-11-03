@@ -52,7 +52,7 @@ INSERT INTO [ACCollector].[dbo].[Platform](PlatformCode, Description) VALUES
 GO
 
 CREATE TABLE [ACCollector].[dbo].[IslandStatus] (
-	IslandStatus VARCHAR(10) NOT NULL
+	[IslandStatus] VARCHAR(10) NOT NULL
 	CONSTRAINT PK_IslandStatus PRIMARY KEY CLUSTERED (IslandStatus)
 );
 GO
@@ -64,7 +64,7 @@ INSERT INTO [ACCollector].[dbo].[IslandStatus](IslandStatus) VALUES
 GO
 
 CREATE TABLE [ACCollector].[dbo].[Size] (
-	Size VARCHAR(10) NOT NULL
+	[Size] VARCHAR(10) NOT NULL
 	CONSTRAINT PK_Size PRIMARY KEY CLUSTERED (Size)
 );
 GO
@@ -94,33 +94,54 @@ CREATE TABLE [ACCollector].[dbo].[Release] (
 );
 GO
 
-CREATE TABLE [ACCollector].[dbo].[Bug] (
-	[BugId] UNIQUEIDENTIFIER NOT NULL CONSTRAINT DF_Bug_BugId DEFAULT NEWSEQUENTIALID(),
-	[GameId] UNIQUEIDENTIFIER NOT NULL,
-	[SalePrice] INT NOT NULL,
-	[Location] VARCHAR(10) NOT NULL,
-	[IslandStatus] VARCHAR(10) NOT NULL,
-	CONSTRAINT PK_Bug PRIMARY KEY CLUSTERED (BugId),
-	CONSTRAINT FK_Bug_Game_GameId FOREIGN KEY (GameId) REFERENCES [ACCollector].[dbo].[Game](GameId) ON DELETE CASCADE,
-	CONSTRAINT FK_Bug_IslandStatus_IslandStatus FOREIGN KEY (IslandStatus) REFERENCES [ACCollector].[dbo].[IslandStatus](IslandStatus),
-	CONSTRAINT CHK_Bug_SalePrice CHECK (SalePrice >= 0)
+CREATE TABLE [ACCollector].[dbo].[BugLocation] (
+	[Location] VARCHAR(15) NOT NULL
+	CONSTRAINT PK_BugLocation PRIMARY KEY CLUSTERED (Location)
 );
 GO
 
-CREATE TABLE [ACCollector].[dbo].[BugAvailability] (
-	[BugId] UNIQUEIDENTIFIER NOT NULL,
-	[StartMonth] INT NOT NULL,
-	[StartHour] INT NOT NULL,
-	[EndMonth] INT NOT NULL,
-	[EndHour] INT NOT NULL,
-	[StartsMidMonth] BIT NOT NULL CONSTRAINT DF_BugAvailability_StartsMidMonth DEFAULT 0,
-	[EndsMidMonth] BIT NOT NULL CONSTRAINT DF_BugAvailability_EndsMidMonth DEFAULT 0
-	CONSTRAINT PK_BugAvailability PRIMARY KEY CLUSTERED (BugId)
-	CONSTRAINT FK_BugAvailability_Bug_BugId FOREIGN KEY (BugId) REFERENCES [ACCollector].[dbo].[Bug](BugId) ON DELETE CASCADE,
-	CONSTRAINT CHK_BugAvailability_StartMonth CHECK (StartMonth >= 1 AND StartMonth <= 12),
-	CONSTRAINT CHK_BugAvailability_StartHour CHECK (StartHour >= 0 AND StartHour <= 23),
-	CONSTRAINT CHK_BugAvailability_EndMonth CHECK (EndMonth >= 1 AND EndMonth <= 12),
-	CONSTRAINT CHK_BugAvailability_EndHour CHECK (EndHour >= 0 AND EndHour <= 23)
+INSERT INTO [ACCollector].[dbo].[BugLocation](Location) VALUES
+('Air'),
+('Trees'),
+('Ground'),
+('Flowers'),
+('Grass'),
+('Water'),
+('Rocks'),
+('Trash'),
+('Candy'),
+('Villagers'),
+('Snowballs'),
+('Outdoor Lights');
+GO
+
+CREATE TABLE [ACCollector].[dbo].[FishLocation] (
+	[Location] VARCHAR(15) NOT NULL
+	CONSTRAINT PK_FishLocation PRIMARY KEY CLUSTERED (Location)
+);
+GO
+
+INSERT INTO [ACCollector].[dbo].[FishLocation](Location) VALUES
+('River'),
+('River Pool'),
+('River Mouth'),
+('Waterfall'),
+('Holding Pond'),
+('Ocean');
+GO
+
+CREATE TABLE [ACCollector].[dbo].[Bug] (
+	[BugId] UNIQUEIDENTIFIER NOT NULL CONSTRAINT DF_Bug_BugId DEFAULT NEWSEQUENTIALID(),
+	[GameId] UNIQUEIDENTIFIER NOT NULL,
+	[Name] VARCHAR(40) NOT NULL,
+	[SalePrice] INT NOT NULL,
+	[Location] VARCHAR(15) NOT NULL,
+	[IslandStatus] VARCHAR(10) NOT NULL,
+	CONSTRAINT PK_Bug PRIMARY KEY CLUSTERED (BugId),
+	CONSTRAINT FK_Bug_Game_GameId FOREIGN KEY (GameId) REFERENCES [ACCollector].[dbo].[Game](GameId) ON DELETE CASCADE,
+	CONSTRAINT FK_Bug_BugLocation_Location FOREIGN KEY (Location) REFERENCES [ACCollector].[dbo].[BugLocation](Location),
+	CONSTRAINT FK_Bug_IslandStatus_IslandStatus FOREIGN KEY (IslandStatus) REFERENCES [ACCollector].[dbo].[IslandStatus](IslandStatus),
+	CONSTRAINT CHK_Bug_SalePrice CHECK (SalePrice >= 0)
 );
 GO
 
@@ -129,29 +150,72 @@ CREATE TABLE [ACCollector].[dbo].[Fish] (
 	[GameId] UNIQUEIDENTIFIER NOT NULL,
 	[SalePrice] INT NOT NULL,
 	[Size] VARCHAR(10) NOT NULL,
-	[Location] VARCHAR(10) NOT NULL,
+	[Location] VARCHAR(15) NOT NULL,
 	[IslandStatus] VARCHAR(10) NOT NULL,
 	CONSTRAINT PK_Fish PRIMARY KEY CLUSTERED (FishId),
 	CONSTRAINT FK_Fish_Game_GameId FOREIGN KEY (GameId) REFERENCES [ACCollector].[dbo].[Game](GameId) ON DELETE CASCADE,
 	CONSTRAINT FK_Fish_Size_Size FOREIGN KEY (Size) REFERENCES [ACCollector].[dbo].[Size](Size),
+	CONSTRAINT FK_Fish_FishLocation_Location FOREIGN KEY (Location) REFERENCES [ACCollector].[dbo].[FishLocation](Location),
 	CONSTRAINT FK_Fish_IslandStatus_IslandStatus FOREIGN KEY (IslandStatus) REFERENCES [ACCollector].[dbo].[IslandStatus](IslandStatus),
 	CONSTRAINT CHK_Fish_SalePrice CHECK (SalePrice >= 0)
 );
 GO
 
-CREATE TABLE [ACCollector].[dbo].[FishAvailability] (
-	[FishId] UNIQUEIDENTIFIER NOT NULL,
+CREATE TABLE [ACCollector].[dbo].[Availability] (
+	[AvailabilityId] UNIQUEIDENTIFIER NOT NULL CONSTRAINT DF_Availability_AvailabilityId DEFAULT NEWSEQUENTIALID(),
 	[StartMonth] INT NOT NULL,
 	[StartHour] INT NOT NULL,
 	[EndMonth] INT NOT NULL,
 	[EndHour] INT NOT NULL,
-	[StartsMidMonth] BIT NOT NULL CONSTRAINT DF_FishAvailability_StartsMidMonth DEFAULT 0,
-	[EndsMidMonth] BIT NOT NULL CONSTRAINT DF_FishAvailability_EndsMidMonth DEFAULT 0
-	CONSTRAINT PK_FishAvailability PRIMARY KEY CLUSTERED (FishId)
+	[StartsMidMonth] BIT NOT NULL CONSTRAINT DF_Availability_StartsMidMonth DEFAULT 0,
+	[EndsMidMonth] BIT NOT NULL CONSTRAINT DF_Availability_EndsMidMonth DEFAULT 0
+	CONSTRAINT PK_Availability PRIMARY KEY CLUSTERED (AvailabilityId),
+	CONSTRAINT CHK_Availability_StartMonth CHECK (StartMonth >= 1 AND StartMonth <= 12),
+	CONSTRAINT CHK_Availability_StartHour CHECK (StartHour >= 0 AND StartHour <= 23),
+	CONSTRAINT CHK_Availability_EndMonth CHECK (EndMonth >= 1 AND EndMonth <= 12),
+	CONSTRAINT CHK_Availability_EndHour CHECK (EndHour >= 0 AND EndHour <= 23)
+);
+GO
+
+CREATE TABLE [ACCollector].[dbo].[BugAvailability] (
+	[BugId] UNIQUEIDENTIFIER NOT NULL,
+	[AvailabilityId] UNIQUEIDENTIFIER NOT NULL,
+	CONSTRAINT PK_BugAvailability PRIMARY KEY CLUSTERED (BugId, AvailabilityId),
+	CONSTRAINT FK_BugAvailability_Bug_BugId FOREIGN KEY (BugId) REFERENCES [ACCollector].[dbo].[Bug](BugId) ON DELETE CASCADE,
+	CONSTRAINT FK_BugAvailability_Availability_AvailabilityId FOREIGN KEY (AvailabilityId) REFERENCES [ACCollector].[dbo].[Availability](AvailabilityId) -- TODO: Delete Trigger to clean up Availability
+);
+GO
+
+CREATE TABLE [ACCollector].[dbo].[FishAvailability] (
+	[FishId] UNIQUEIDENTIFIER NOT NULL,
+	[AvailabilityId] UNIQUEIDENTIFIER NOT NULL
+	CONSTRAINT PK_FishAvailability PRIMARY KEY CLUSTERED (FishId, AvailabilityId)
 	CONSTRAINT FK_FishAvailability_Fish_FishId FOREIGN KEY (FishId) REFERENCES [ACCollector].[dbo].[Fish](FishId) ON DELETE CASCADE,
-	CONSTRAINT CHK_FishAvailability_StartMonth CHECK (StartMonth >= 1 AND StartMonth <= 12),
-	CONSTRAINT CHK_FishAvailability_StartHour CHECK (StartHour >= 0 AND StartHour <= 23),
-	CONSTRAINT CHK_FishAvailability_EndMonth CHECK (EndMonth >= 1 AND EndMonth <= 12),
-	CONSTRAINT CHK_FishAvailability_EndHour CHECK (EndHour >= 0 AND EndHour <= 23)
+	CONSTRAINT FK_FishAvailability_Availability_AvailabilityId FOREIGN KEY (AvailabilityId) REFERENCES [ACCollector].[dbo].[Availability](AvailabilityId) -- TODO: Delete Trigger to clean up Availability
+);
+GO
+
+CREATE TABLE [ACCollector].[dbo].[Note] (
+	[NoteId] UNIQUEIDENTIFIER NOT NULL CONSTRAINT DF_Note_NoteId DEFAULT NEWSEQUENTIALID(),
+	[Message] VARCHAR(255) NOT NULL,
+	CONSTRAINT PK_Note PRIMARY KEY CLUSTERED (NoteId)
+);
+GO
+
+CREATE TABLE [ACCollector].[dbo].[BugNote] (
+	[BugId] UNIQUEIDENTIFIER NOT NULL,
+	[NoteId] UNIQUEIDENTIFIER NOT NULL
+	CONSTRAINT PK_BugNote PRIMARY KEY CLUSTERED (BugId, NoteId),
+	CONSTRAINT FK_BugNote_Bug_BugId FOREIGN KEY (BugId) REFERENCES [ACCollector].[dbo].[Bug](BugId) ON DELETE CASCADE,
+	CONSTRAINT FK_BugNote_Note_NoteId FOREIGN KEY (NoteId) REFERENCES [ACCollector].[dbo].[Note](NoteId) -- TODO: Delete Trigger to clean up Note
+);
+GO
+
+CREATE TABLE [ACCollector].[dbo].[FishNote] (
+	[FishId] UNIQUEIDENTIFIER NOT NULL,
+	[NoteId] UNIQUEIDENTIFIER NOT NULL
+	CONSTRAINT PK_FishNote PRIMARY KEY CLUSTERED (FishId, NoteId),
+	CONSTRAINT FK_FishNote_Fish_FishId FOREIGN KEY (FishId) REFERENCES [ACCollector].[dbo].[Fish](FishId) ON DELETE CASCADE,
+	CONSTRAINT FK_FishNote_Note_NoteId FOREIGN KEY (NoteId) REFERENCES [ACCollector].[dbo].[Note](NoteId) -- TODO: Delete Trigger to clean up Note
 );
 GO
