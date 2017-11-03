@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace ACCollector_Server.Models
 {
+	[JsonConverter(typeof(IslandStatusStringEnumConverter))]
 	public enum IslandStatus
 	{
 		None,
