@@ -69,7 +69,7 @@ CREATE TABLE [ACCollector].[dbo].[Size] (
 );
 GO
 
-INSERT INTO [ACCollector].[dbo].[Size](Size) VALUES
+INSERT INTO [ACCollector].[dbo].[FishSize](Size) VALUES
 ('Tiny'),
 ('Small'),
 ('Medium'),
@@ -155,7 +155,7 @@ CREATE TABLE [ACCollector].[dbo].[Fish] (
 	[IslandStatus] VARCHAR(10) NOT NULL,
 	CONSTRAINT PK_Fish PRIMARY KEY CLUSTERED (FishId),
 	CONSTRAINT FK_Fish_Game_GameId FOREIGN KEY (GameId) REFERENCES [ACCollector].[dbo].[Game](GameId) ON DELETE CASCADE,
-	CONSTRAINT FK_Fish_Size_Size FOREIGN KEY (Size) REFERENCES [ACCollector].[dbo].[Size](Size),
+	CONSTRAINT FK_Fish_FishSize_Size FOREIGN KEY (Size) REFERENCES [ACCollector].[dbo].[FishSize](Size),
 	CONSTRAINT FK_Fish_FishLocation_Location FOREIGN KEY (Location) REFERENCES [ACCollector].[dbo].[FishLocation](Location),
 	CONSTRAINT FK_Fish_IslandStatus_IslandStatus FOREIGN KEY (IslandStatus) REFERENCES [ACCollector].[dbo].[IslandStatus](IslandStatus),
 	CONSTRAINT CHK_Fish_SalePrice CHECK (SalePrice >= 0)
