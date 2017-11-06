@@ -1,51 +1,48 @@
 using ACCollector_Server.Models;
 using ACCollector_Server.Models.Entities;
-using ACCollector_Server.Models.Requests;
 using EntityFramework.DbContextScope.Interfaces;
 using JetBrains.Annotations;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ACCollector_Server.Models.Requests;
 
 namespace ACCollector_Server.DataAccess.Repositories
 {
 	[UsedImplicitly]
-	public sealed class GameRepository
+	public sealed class BugRepository
 	{
 		private readonly IAmbientDbContextLocator _contextLocator;
 
-		public GameRepository(IAmbientDbContextLocator contextLocator)
+		public BugRepository(IAmbientDbContextLocator contextLocator)
 		{
 			_contextLocator = contextLocator;
 		}
 
-		public Game CreateGame(CreateGameRequest request)
+		public Bug CreateBugForGame(Guid gameId, CreateBugRequest request)
 		{
-			var entity = new GameEntity(request);
+			var entity = new BugEntity(gameId, request);
 			var context = _contextLocator.Get<ACCollectorDbContext>();
-			EntityEntry<GameEntity> entry = context.Games.Add(entity);
+			EntityEntry<BugEntity> entry = context.Bugs.Add(entity);
 			return entry.Entity.ToModel();
 		}
 
-		public IReadOnlyList<GameSummary> GetGameSummaries(Region preferredRegion)
+		public IReadOnlyList<BugSummary> GetBugSummaries()
 		{
 			var context = _contextLocator.Get<ACCollectorDbContext>();
-			return context.Games // TODO: Consider making Summaries a DB view
-				.Include(ge => ge.Releases)
+			return context.Bugs // TODO: Consider making Summaries a DB view
 				.ToList()
-				.Select(ge => ge.ToSummary(preferredRegion))
+				.Select(be => be.ToSummary())
 				.ToList()
 				.AsReadOnly();
 		}
 
-		public Game GetGame(Guid gameId)
+		public Bug GetBug(Guid bugId)
 		{
 			var context = _contextLocator.Get<ACCollectorDbContext>();
-			return context.Games
-				.Include(g => g.Releases)
-				.Where(g => g.GameId == gameId)
+			return context.Bugs
+				.Where(g => g.BugId == bugId)
 				.Single()
 				.ToModel();
 		}

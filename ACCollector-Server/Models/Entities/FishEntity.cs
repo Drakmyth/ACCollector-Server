@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ACCollector_Server.Models.Entities.Mapping;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;

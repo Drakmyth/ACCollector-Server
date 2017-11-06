@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -15,5 +14,21 @@ namespace ACCollector_Server.Models.Entities
 
 		[Required]
 		public string Message { get; set; }
+
+		private NoteEntity()
+		{
+			// EF Constructor
+		}
+
+		public NoteEntity(string message)
+		{
+			NoteId = Guid.Empty;
+			Message = message;
+		}
+
+		public Note ToModel()
+		{
+			return new Note(NoteId, Message);
+		}
 	}
 }

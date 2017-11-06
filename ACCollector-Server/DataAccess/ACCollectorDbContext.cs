@@ -1,4 +1,5 @@
 ﻿using ACCollector_Server.Models.Entities;
+using ACCollector_Server.Models.Entities.Mapping;
 using EntityFramework.DbContextScope.Interfaces;
 using Microsoft.EntityFrameworkCore;
 

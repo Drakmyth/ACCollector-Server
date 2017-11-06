@@ -1,8 +1,7 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 using System;
 
-namespace ACCollector_Server.Models
+namespace ACCollector_Server.Models.ViewModels
 {
 	public class ReleaseSummaryViewModel
 	{

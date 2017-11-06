@@ -1,7 +1,7 @@
-using ACCollector_Server.Exceptions;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using ACCollector_Server.Models.Requests;
 
 namespace ACCollector_Server.Models.Entities
 {
@@ -41,6 +41,21 @@ namespace ACCollector_Server.Models.Entities
 
 		[Required]
 		public DateTime ReleaseDate { get; set; }
+
+		private ReleaseEntity()
+		{
+			// EF Constructor
+		}
+
+		public ReleaseEntity(Guid gameId, CreateReleaseRequest request)
+		{
+			ReleaseId = Guid.Empty;
+			GameId = gameId;
+			Platform = request.Platform;
+			Region = request.Region;
+			Title = request.Title;
+			ReleaseDate = request.ReleaseDate;
+		}
 
 		public Release ToModel()
 		{

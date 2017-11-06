@@ -22,16 +22,7 @@ namespace ACCollector_Server.DataAccess.Repositories
 
 		public Release CreateReleaseForGame(Guid gameId, CreateReleaseRequest request)
 		{
-			var entity = new ReleaseEntity
-			{
-				ReleaseId = Guid.Empty,
-				GameId = gameId,
-				Platform = request.Platform,
-				Region = request.Region,
-				Title = request.Title,
-				ReleaseDate = request.ReleaseDate
-			};
-
+			var entity = new ReleaseEntity(gameId, request);
 			var context = _contextLocator.Get<ACCollectorDbContext>();
 			EntityEntry<ReleaseEntity> entry = context.Releases.Add(entity);
 			return entry.Entity.ToModel();
@@ -40,7 +31,7 @@ namespace ACCollector_Server.DataAccess.Repositories
 		public IReadOnlyList<ReleaseSummary> GetReleaseSummaries()
 		{
 			var context = _contextLocator.Get<ACCollectorDbContext>();
-			return context.Releases
+			return context.Releases // TODO: Consider making Summaries a DB view
 				.ToList()
 				.Select(re => re.ToSummary())
 				.ToList()

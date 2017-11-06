@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using ACCollector_Server.Models.Requests;
 
 namespace ACCollector_Server.Models.Entities
 {
@@ -19,6 +20,22 @@ namespace ACCollector_Server.Models.Entities
 		public string Name { get; set; }
 
 		public ICollection<ReleaseEntity> Releases { get; } = new List<ReleaseEntity>();
+
+		private GameEntity()
+		{
+			// EF Constructor
+		}
+
+		public GameEntity(CreateGameRequest request)
+		{
+			GameId = Guid.Empty;
+			Name = request.Name;
+
+			foreach (CreateReleaseRequest release in request.Releases)
+			{
+				Releases.Add(new ReleaseEntity(GameId, release));
+			}
+		}
 
 		public Game ToModel()
 		{

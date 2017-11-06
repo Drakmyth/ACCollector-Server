@@ -2,7 +2,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ACCollector_Server.Models.Entities
+namespace ACCollector_Server.Models.Entities.Mapping
 {
 	[Table("FishNote", Schema = "dbo")]
 	public class FishNoteEntity
