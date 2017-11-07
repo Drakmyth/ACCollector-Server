@@ -66,6 +66,18 @@ namespace ACCollector_Server.Controllers
 			return url.ToAbsoluteUri(location);
 		}
 
+		public static Uri ArtUri(this IUrlHelper url, Guid artId)
+		{
+			string location = url.RouteUrl(new
+			{
+				controller = "Art",
+				action = "GetArt",
+				artId
+			});
+
+			return url.ToAbsoluteUri(location);
+		}
+
 		private static Uri ToAbsoluteUri(this IUrlHelper url, string location)
 		{
 			HttpRequest request = url.ActionContext.HttpContext.Request;

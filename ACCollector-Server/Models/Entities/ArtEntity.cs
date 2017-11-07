@@ -60,7 +60,7 @@ namespace ACCollector_Server.Models.Entities
 			SalePrice = request.SalePrice;
 			PurchasePrice = request.PurchasePrice;
 			Type = request.Type;
-			Source = request.Source;
+			Source = request.AvailableFrom;
 		}
 
 		public Art ToModel()

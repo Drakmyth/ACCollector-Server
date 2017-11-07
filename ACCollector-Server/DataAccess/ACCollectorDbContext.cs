@@ -12,6 +12,7 @@ namespace ACCollector_Server.DataAccess
 		public DbSet<BugEntity> Bugs => Set<BugEntity>();
 		public DbSet<FishEntity> Fish => Set<FishEntity>();
 		public DbSet<DeepSeaCreatureEntity> DeepSeaCreatures => Set<DeepSeaCreatureEntity>();
+		public DbSet<ArtEntity> Art => Set<ArtEntity>();
 		public DbSet<AvailabilityEntity> Availabilities => Set<AvailabilityEntity>();
 		public DbSet<NoteEntity> Notes => Set<NoteEntity>();
 

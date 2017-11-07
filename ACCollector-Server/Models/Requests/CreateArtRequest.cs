@@ -18,16 +18,16 @@ namespace ACCollector_Server.Models.Requests
 		public ArtType Type { get; }
 
 		[Required]
-		public ArtSource Source { get; }
+		public ArtSource AvailableFrom { get; }
 
 		[JsonConstructor]
-		public CreateArtRequest(string name, int salePrice, int purchasePrice, ArtType type, ArtSource source)
+		public CreateArtRequest(string name, int salePrice, int purchasePrice, ArtType type, ArtSource availableFrom)
 		{
 			Name = name;
 			SalePrice = salePrice;
 			PurchasePrice = purchasePrice;
 			Type = type;
-			Source = source;
+			AvailableFrom = availableFrom;
 		}
 	}
 }
