@@ -63,7 +63,7 @@ INSERT INTO [ACCollector].[dbo].[IslandStatus](IslandStatus) VALUES
 ('Exclusive');
 GO
 
-CREATE TABLE [ACCollector].[dbo].[Size] (
+CREATE TABLE [ACCollector].[dbo].[FishSize] (
 	[Size] VARCHAR(10) NOT NULL
 	CONSTRAINT PK_Size PRIMARY KEY CLUSTERED (Size)
 );
@@ -162,6 +162,21 @@ CREATE TABLE [ACCollector].[dbo].[Fish] (
 );
 GO
 
+CREATE TABLE [ACCollector].[dbo].[DeepSeaCreature] (
+	[DeepSeaCreatureId] UNIQUEIDENTIFIER NOT NULL CONSTRAINT DF_DeepSeaCreature_DeepSeaCreatureId DEFAULT NEWSEQUENTIALID(),
+	[GameId] UNIQUEIDENTIFIER NOT NULL,
+	[Name] VARCHAR(40) NOT NULL,
+	[SalePrice] INT NOT NULL,
+	[Size] VARCHAR(10) NOT NULL,
+	[IslandStatus] VARCHAR(10) NOT NULL,
+	CONSTRAINT PK_DeepSeaCreature PRIMARY KEY CLUSTERED (DeepSeaCreatureId),
+	CONSTRAINT FK_DeepSeaCreature_Game_GameId FOREIGN KEY (GameId) REFERENCES [ACCollector].[dbo].[Game](GameId) ON DELETE CASCADE,
+	CONSTRAINT FK_DeepSeaCreature_FishSize_Size FOREIGN KEY (Size) REFERENCES [ACCollector].[dbo].[FishSize](Size),
+	CONSTRAINT FK_DeepSeaCreature_IslandStatus_IslandStatus FOREIGN KEY (IslandStatus) REFERENCES [ACCollector].[dbo].[IslandStatus](IslandStatus),
+	CONSTRAINT CHK_DeepSeaCreature_SalePrice CHECK (SalePrice >= 0)
+);
+GO
+
 CREATE TABLE [ACCollector].[dbo].[Availability] (
 	[AvailabilityId] UNIQUEIDENTIFIER NOT NULL CONSTRAINT DF_Availability_AvailabilityId DEFAULT NEWSEQUENTIALID(),
 	[StartMonth] INT NOT NULL,
@@ -196,6 +211,15 @@ CREATE TABLE [ACCollector].[dbo].[FishAvailability] (
 );
 GO
 
+CREATE TABLE [ACCollector].[dbo].[DeepSeaCreatureAvailability] (
+	[DeepSeaCreatureId] UNIQUEIDENTIFIER NOT NULL,
+	[AvailabilityId] UNIQUEIDENTIFIER NOT NULL
+	CONSTRAINT PK_DeepSeaCreatureAvailability PRIMARY KEY CLUSTERED (DeepSeaCreatureId, AvailabilityId)
+	CONSTRAINT FK_DeepSeaCreatureAvailability_DeepSeaCreature_DeepSeaCreatureId FOREIGN KEY (DeepSeaCreatureId) REFERENCES [ACCollector].[dbo].[DeepSeaCreature](DeepSeaCreatureId) ON DELETE CASCADE,
+	CONSTRAINT FK_DeepSeaCreatureAvailability_Availability_AvailabilityId FOREIGN KEY (AvailabilityId) REFERENCES [ACCollector].[dbo].[Availability](AvailabilityId) -- TODO: Delete Trigger to clean up Availability
+);
+GO
+
 CREATE TABLE [ACCollector].[dbo].[Note] (
 	[NoteId] UNIQUEIDENTIFIER NOT NULL CONSTRAINT DF_Note_NoteId DEFAULT NEWSEQUENTIALID(),
 	[Message] VARCHAR(255) NOT NULL,
@@ -218,5 +242,14 @@ CREATE TABLE [ACCollector].[dbo].[FishNote] (
 	CONSTRAINT PK_FishNote PRIMARY KEY CLUSTERED (FishId, NoteId),
 	CONSTRAINT FK_FishNote_Fish_FishId FOREIGN KEY (FishId) REFERENCES [ACCollector].[dbo].[Fish](FishId) ON DELETE CASCADE,
 	CONSTRAINT FK_FishNote_Note_NoteId FOREIGN KEY (NoteId) REFERENCES [ACCollector].[dbo].[Note](NoteId) -- TODO: Delete Trigger to clean up Note
+);
+GO
+
+CREATE TABLE [ACCollector].[dbo].[DeepSeaCreatureNote] (
+	[DeepSeaCreatureId] UNIQUEIDENTIFIER NOT NULL,
+	[NoteId] UNIQUEIDENTIFIER NOT NULL
+	CONSTRAINT PK_DeepSeaCreatureNote PRIMARY KEY CLUSTERED (DeepSeaCreatureId, NoteId),
+	CONSTRAINT FK_DeepSeaCreatureNote_DeepSeaCreature_DeepSeaCreatureId FOREIGN KEY (DeepSeaCreatureId) REFERENCES [ACCollector].[dbo].[DeepSeaCreature](DeepSeaCreatureId) ON DELETE CASCADE,
+	CONSTRAINT FK_DeepSeaCreatureNote_Note_NoteId FOREIGN KEY (NoteId) REFERENCES [ACCollector].[dbo].[Note](NoteId) -- TODO: Delete Trigger to clean up Note
 );
 GO
