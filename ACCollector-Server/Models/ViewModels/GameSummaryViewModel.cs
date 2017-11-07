@@ -1,5 +1,5 @@
-﻿using System;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace ACCollector_Server.Models.ViewModels
 {
@@ -14,15 +14,11 @@ namespace ACCollector_Server.Models.ViewModels
 		[JsonProperty]
 		public string Title { get; }
 
-		private GameSummaryViewModel(Guid gameId, Uri href, string title)
+		public GameSummaryViewModel(GameSummary summary, Uri href)
 		{
-			GameId = gameId;
+			GameId = summary.GameId;
 			Href = href;
-			Title = title;
-		}
-
-		public GameSummaryViewModel(GameSummary summary, Uri href) : this(summary.GameId, href, summary.Title)
-		{
+			Title = summary.Title;
 		}
 	}
 }

@@ -30,6 +30,18 @@ namespace ACCollector_Server.Controllers
 			return url.ToAbsoluteUri(location);
 		}
 
+		public static Uri BugUri(this IUrlHelper url, Guid bugId)
+		{
+			string location = url.RouteUrl(new
+			{
+				controller = "Bug",
+				action = "GetBug",
+				bugId
+			});
+
+			return url.ToAbsoluteUri(location);
+		}
+
 		private static Uri ToAbsoluteUri(this IUrlHelper url, string location)
 		{
 			HttpRequest request = url.ActionContext.HttpContext.Request;

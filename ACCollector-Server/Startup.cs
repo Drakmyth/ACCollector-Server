@@ -37,6 +37,8 @@ namespace ACCollector_Server
 			services.AddTransient<ReleaseService>();
 			services.AddTransient<GameRepository>();
 			services.AddTransient<ReleaseRepository>();
+			services.AddTransient<BugService>();
+			services.AddTransient<BugRepository>();
 			services.AddTransient<IDbContextScopeFactory, DbContextScopeFactory>(BuildContextScopeFactory);
 			services.AddTransient<IAmbientDbContextLocator, AmbientDbContextLocator>();
 		}

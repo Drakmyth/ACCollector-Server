@@ -21,17 +21,12 @@ namespace ACCollector_Server.Models.ViewModels
 		[JsonProperty]
 		public IReadOnlyList<ReleaseViewModel> Releases => _releases.AsReadOnly();
 
-		private GameViewModel(Guid gameId, Uri href, string name)
+		public GameViewModel(Game game, Uri href, Func<Guid, Uri> releaseUriGenerator)
 		{
-			GameId = gameId;
+			GameId = game.GameId;
 			Href = href;
-			Name = name;
-			_releases = new List<ReleaseViewModel>();
-		}
-
-		public GameViewModel(Game game, Uri href, Func<Guid, Uri> releaseUriGenerator) : this(game.GameId, href, game.Name)
-		{
-			_releases.AddRange(game.Releases.Select(release => new ReleaseViewModel(release, releaseUriGenerator(release.ReleaseId))));
+			Name = game.Name;
+			_releases = game.Releases.Select(release => new ReleaseViewModel(release, releaseUriGenerator(release.ReleaseId))).ToList();
 		}
 	}
 }

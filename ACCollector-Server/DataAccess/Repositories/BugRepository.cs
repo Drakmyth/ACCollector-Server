@@ -1,12 +1,12 @@
 using ACCollector_Server.Models;
 using ACCollector_Server.Models.Entities;
+using ACCollector_Server.Models.Requests;
 using EntityFramework.DbContextScope.Interfaces;
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ACCollector_Server.Models.Requests;
 
 namespace ACCollector_Server.DataAccess.Repositories
 {
@@ -34,6 +34,17 @@ namespace ACCollector_Server.DataAccess.Repositories
 			return context.Bugs // TODO: Consider making Summaries a DB view
 				.ToList()
 				.Select(be => be.ToSummary())
+				.ToList()
+				.AsReadOnly();
+		}
+
+		public IReadOnlyList<Bug> GetBugsForGame(Guid gameId)
+		{
+			var context = _contextLocator.Get<ACCollectorDbContext>();
+			return context.Bugs
+				.Where(g => g.GameId == gameId)
+				.ToList()
+				.Select(be => be.ToModel())
 				.ToList()
 				.AsReadOnly();
 		}

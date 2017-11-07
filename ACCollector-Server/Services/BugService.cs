@@ -38,6 +38,14 @@ namespace ACCollector_Server.Services
 			}
 		}
 
+		public IReadOnlyList<Bug> GetBugsForGame(Guid gameId)
+		{
+			using (_dbContextScopeFactory.CreateReadOnly())
+			{
+				return _bugRepository.GetBugsForGame(gameId);
+			}
+		}
+
 		public Bug GetBug(Guid bugId)
 		{
 			using (_dbContextScopeFactory.CreateReadOnly())

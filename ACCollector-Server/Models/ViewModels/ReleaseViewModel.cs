@@ -28,19 +28,15 @@ namespace ACCollector_Server.Models.ViewModels
 		[JsonConverter(typeof(DateConverter))]
 		public DateTime ReleaseDate { get; }
 
-		private ReleaseViewModel(Guid releaseId, Uri href, Guid gameId, Region region, string title, Platform platform, DateTime releaseDate)
+		public ReleaseViewModel(Release release, Uri href)
 		{
-			ReleaseId = releaseId;
+			ReleaseId = release.ReleaseId;
 			Href = href;
-			GameId = gameId;
-			Region = region;
-			Title = title;
-			Platform = platform;
-			ReleaseDate = releaseDate;
-		}
-
-		public ReleaseViewModel(Release release, Uri href) : this(release.ReleaseId, href, release.GameId, release.Region, release.Title, release.Platform, release.ReleaseDate)
-		{
+			GameId = release.GameId;
+			Region = release.Region;
+			Title = release.Title;
+			Platform = release.Platform;
+			ReleaseDate = release.ReleaseDate;
 		}
 	}
 }

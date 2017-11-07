@@ -17,16 +17,12 @@ namespace ACCollector_Server.Models.ViewModels
 		[JsonProperty]
 		public string Title { get; }
 
-		private ReleaseSummaryViewModel(Guid releaseId, Uri href, Region region, string title)
+		public ReleaseSummaryViewModel(ReleaseSummary summary, Uri href)
 		{
-			ReleaseId = releaseId;
+			ReleaseId = summary.ReleaseId;
 			Href = href;
-			Region = region;
-			Title = title;
-		}
-
-		public ReleaseSummaryViewModel(ReleaseSummary summary, Uri href) : this(summary.ReleaseId, href, summary.Region, summary.Title)
-		{
+			Region = summary.Region;
+			Title = summary.Title;
 		}
 	}
 }
