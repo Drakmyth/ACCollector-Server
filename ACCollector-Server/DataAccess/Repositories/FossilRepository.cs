@@ -11,49 +11,49 @@ using System.Linq;
 namespace ACCollector_Server.DataAccess.Repositories
 {
 	[UsedImplicitly]
-	public sealed class ArtRepository
+	public sealed class FossilRepository
 	{
 		private readonly IAmbientDbContextLocator _contextLocator;
 
-		public ArtRepository(IAmbientDbContextLocator contextLocator)
+		public FossilRepository(IAmbientDbContextLocator contextLocator)
 		{
 			_contextLocator = contextLocator;
 		}
 
-		public Art CreateArtForGame(Guid gameId, CreateArtRequest request)
+		public Fossil CreateFossilForGame(Guid gameId, CreateFossilRequest request)
 		{
-			var entity = new ArtEntity(gameId, request);
+			var entity = new FossilEntity(gameId, request);
 			var context = _contextLocator.Get<ACCollectorDbContext>();
-			EntityEntry<ArtEntity> entry = context.Art.Add(entity);
+			EntityEntry<FossilEntity> entry = context.Fossils.Add(entity);
 			return entry.Entity.ToModel();
 		}
 
-		public IReadOnlyList<ArtSummary> GetArtSummaries()
+		public IReadOnlyList<FossilSummary> GetFossilSummaries()
 		{
 			var context = _contextLocator.Get<ACCollectorDbContext>();
-			return context.Art // TODO: Consider making Summaries a DB view
+			return context.Fossils // TODO: Consider making Summaries a DB view
 				.ToList()
-				.Select(a => a.ToSummary())
+				.Select(f => f.ToSummary())
 				.ToList()
 				.AsReadOnly();
 		}
 
-		public IReadOnlyList<Art> GetArtForGame(Guid gameId)
+		public IReadOnlyList<Fossil> GetFossilForGame(Guid gameId)
 		{
 			var context = _contextLocator.Get<ACCollectorDbContext>();
-			return context.Art
-				.Where(a => a.GameId == gameId)
+			return context.Fossils
+				.Where(f => f.GameId == gameId)
 				.ToList()
-				.Select(a => a.ToModel())
+				.Select(f => f.ToModel())
 				.ToList()
 				.AsReadOnly();
 		}
 
-		public Art GetArt(Guid bugId)
+		public Fossil GetFossil(Guid fossilId)
 		{
 			var context = _contextLocator.Get<ACCollectorDbContext>();
-			return context.Art
-				.Where(a => a.ArtId == bugId)
+			return context.Fossils
+				.Where(f => f.FossilId == fossilId)
 				.Single()
 				.ToModel();
 		}

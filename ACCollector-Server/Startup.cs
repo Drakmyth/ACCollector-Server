@@ -45,6 +45,8 @@ namespace ACCollector_Server
 			services.AddTransient<DeepSeaCreatureRepository>();
 			services.AddTransient<ArtService>();
 			services.AddTransient<ArtRepository>();
+			services.AddTransient<FossilService>();
+			services.AddTransient<FossilRepository>();
 			services.AddTransient<IDbContextScopeFactory, DbContextScopeFactory>(BuildContextScopeFactory);
 			services.AddTransient<IAmbientDbContextLocator, AmbientDbContextLocator>();
 		}

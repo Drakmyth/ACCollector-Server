@@ -78,6 +78,18 @@ namespace ACCollector_Server.Controllers
 			return url.ToAbsoluteUri(location);
 		}
 
+		public static Uri FossilUri(this IUrlHelper url, Guid fossilId)
+		{
+			string location = url.RouteUrl(new
+			{
+				controller = "Fossil",
+				action = "GetFossil",
+				fossilId
+			});
+
+			return url.ToAbsoluteUri(location);
+		}
+
 		private static Uri ToAbsoluteUri(this IUrlHelper url, string location)
 		{
 			HttpRequest request = url.ActionContext.HttpContext.Request;

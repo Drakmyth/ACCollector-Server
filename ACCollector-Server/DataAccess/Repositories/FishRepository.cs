@@ -34,7 +34,7 @@ namespace ACCollector_Server.DataAccess.Repositories
 			var context = _contextLocator.Get<ACCollectorDbContext>();
 			return context.Fish // TODO: Consider making Summaries a DB view
 				.ToList()
-				.Select(b => b.ToSummary())
+				.Select(f => f.ToSummary())
 				.ToList()
 				.AsReadOnly();
 		}
@@ -43,13 +43,13 @@ namespace ACCollector_Server.DataAccess.Repositories
 		{
 			var context = _contextLocator.Get<ACCollectorDbContext>();
 			return context.Fish
-				.Where(b => b.GameId == gameId)
-				.Include(b => b.AvailabilityMappings)
+				.Where(f => f.GameId == gameId)
+				.Include(f => f.AvailabilityMappings)
 				.ThenInclude(am => am.Availability)
-				.Include(b => b.NoteMappings)
+				.Include(f => f.NoteMappings)
 				.ThenInclude(nm => nm.Note)
 				.ToList()
-				.Select(b => b.ToModel())
+				.Select(f => f.ToModel())
 				.ToList()
 				.AsReadOnly();
 		}
@@ -58,10 +58,10 @@ namespace ACCollector_Server.DataAccess.Repositories
 		{
 			var context = _contextLocator.Get<ACCollectorDbContext>();
 			return context.Fish
-				.Where(b => b.FishId == fishId)
-				.Include(b => b.AvailabilityMappings)
+				.Where(f => f.FishId == fishId)
+				.Include(f => f.AvailabilityMappings)
 				.ThenInclude(am => am.Availability)
-				.Include(b => b.NoteMappings)
+				.Include(f => f.NoteMappings)
 				.ThenInclude(nm => nm.Note)
 				.Single()
 				.ToModel();

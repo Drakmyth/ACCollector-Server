@@ -13,6 +13,7 @@ namespace ACCollector_Server.DataAccess
 		public DbSet<FishEntity> Fish => Set<FishEntity>();
 		public DbSet<DeepSeaCreatureEntity> DeepSeaCreatures => Set<DeepSeaCreatureEntity>();
 		public DbSet<ArtEntity> Art => Set<ArtEntity>();
+		public DbSet<FossilEntity> Fossils => Set<FossilEntity>();
 		public DbSet<AvailabilityEntity> Availabilities => Set<AvailabilityEntity>();
 		public DbSet<NoteEntity> Notes => Set<NoteEntity>();
 
@@ -33,8 +34,8 @@ namespace ACCollector_Server.DataAccess
 			modelBuilder.Entity<BugNoteEntity>().HasKey(bne => new {bne.BugId, bne.NoteId});
 			modelBuilder.Entity<FishAvailabilityEntity>().HasKey(fae => new {fae.FishId, fae.AvailabilityId});
 			modelBuilder.Entity<FishNoteEntity>().HasKey(fne => new {fne.FishId, fne.NoteId});
-			modelBuilder.Entity<DeepSeaCreatureAvailabilityEntity>().HasKey(dscae => new { dscae.DeepSeaCreatureId, dscae.AvailabilityId });
-			modelBuilder.Entity<DeepSeaCreatureNoteEntity>().HasKey(dscne => new { dscne.DeepSeaCreatureId, dscne.NoteId });
+			modelBuilder.Entity<DeepSeaCreatureAvailabilityEntity>().HasKey(dscae => new {dscae.DeepSeaCreatureId, dscae.AvailabilityId});
+			modelBuilder.Entity<DeepSeaCreatureNoteEntity>().HasKey(dscne => new {dscne.DeepSeaCreatureId, dscne.NoteId});
 		}
 	}
 }

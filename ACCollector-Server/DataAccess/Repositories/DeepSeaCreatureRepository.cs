@@ -34,7 +34,7 @@ namespace ACCollector_Server.DataAccess.Repositories
 			var context = _contextLocator.Get<ACCollectorDbContext>();
 			return context.DeepSeaCreatures // TODO: Consider making Summaries a DB view
 				.ToList()
-				.Select(b => b.ToSummary())
+				.Select(dsc => dsc.ToSummary())
 				.ToList()
 				.AsReadOnly();
 		}
@@ -43,13 +43,13 @@ namespace ACCollector_Server.DataAccess.Repositories
 		{
 			var context = _contextLocator.Get<ACCollectorDbContext>();
 			return context.DeepSeaCreatures
-				.Where(b => b.GameId == gameId)
-				.Include(b => b.AvailabilityMappings)
+				.Where(dsc => dsc.GameId == gameId)
+				.Include(dsc => dsc.AvailabilityMappings)
 				.ThenInclude(am => am.Availability)
-				.Include(b => b.NoteMappings)
+				.Include(dsc => dsc.NoteMappings)
 				.ThenInclude(nm => nm.Note)
 				.ToList()
-				.Select(b => b.ToModel())
+				.Select(dsc => dsc.ToModel())
 				.ToList()
 				.AsReadOnly();
 		}
@@ -58,10 +58,10 @@ namespace ACCollector_Server.DataAccess.Repositories
 		{
 			var context = _contextLocator.Get<ACCollectorDbContext>();
 			return context.DeepSeaCreatures
-				.Where(b => b.DeepSeaCreatureId == deepSeaCreatureId)
-				.Include(b => b.AvailabilityMappings)
+				.Where(dsc => dsc.DeepSeaCreatureId == deepSeaCreatureId)
+				.Include(dsc => dsc.AvailabilityMappings)
 				.ThenInclude(am => am.Availability)
-				.Include(b => b.NoteMappings)
+				.Include(dsc => dsc.NoteMappings)
 				.ThenInclude(nm => nm.Note)
 				.Single()
 				.ToModel();
