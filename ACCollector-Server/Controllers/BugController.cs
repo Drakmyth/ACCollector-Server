@@ -56,7 +56,7 @@ namespace ACCollector_Server.Controllers
 		}
 
 		[HttpPost("api/games/{gameId}/bugs")]
-		public IActionResult CreateBug([FromRoute] Guid gameId, [FromBody] CreateBugRequest request)
+		public IActionResult CreateBugForGame([FromRoute] Guid gameId, [FromBody] CreateBugRequest request)
 		{
 			if (!ModelState.IsValid)
 			{

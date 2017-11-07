@@ -1,4 +1,5 @@
 ﻿using ACCollector_Server.Models.Entities.Mapping;
+using ACCollector_Server.Models.Requests;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -66,5 +67,61 @@ namespace ACCollector_Server.Models.Entities
 
 		[NotMapped]
 		public ICollection<NoteEntity> Notes => NoteMappings.Select(nm => nm.Note).ToList();
+
+		private FishEntity()
+		{
+			// EF Constructor
+		}
+
+		public FishEntity(Guid gameId, CreateFishRequest request)
+		{
+			FishId = Guid.Empty;
+			GameId = gameId;
+			Name = request.Name;
+			SalePrice = request.SalePrice;
+			Size = request.Size;
+			Location = request.Location;
+			IslandStatus = request.IslandStatus;
+
+			foreach (CreateAvailabilityRequest availabilityRequest in request.Availabilities)
+			{
+				var availability = new AvailabilityEntity(availabilityRequest);
+				Availabilities.Add(availability);
+				AvailabilityMappings.Add(new FishAvailabilityEntity(this, availability));
+			}
+
+			foreach (string noteRequest in request.Notes)
+			{
+				var note = new NoteEntity(noteRequest);
+				Notes.Add(note);
+				NoteMappings.Add(new FishNoteEntity(this, note));
+			}
+		}
+
+		public Fish ToModel()
+		{
+			var builder = new Fish.Builder(FishId, GameId, Name)
+				.WithSalePrice(SalePrice)
+				.WithSize(Size)
+				.WithLocation(Location)
+				.WithIslandStatus(IslandStatus);
+
+			foreach (AvailabilityEntity availability in Availabilities)
+			{
+				builder.WithAvailability(availability.ToModel());
+			}
+
+			foreach (NoteEntity note in Notes)
+			{
+				builder.WithNote(note.ToModel());
+			}
+
+			return builder.Build();
+		}
+
+		public FishSummary ToSummary()
+		{
+			return new FishSummary(FishId, Name);
+		}
 	}
 }

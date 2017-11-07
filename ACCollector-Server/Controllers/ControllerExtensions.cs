@@ -42,6 +42,18 @@ namespace ACCollector_Server.Controllers
 			return url.ToAbsoluteUri(location);
 		}
 
+		public static Uri FishUri(this IUrlHelper url, Guid fishId)
+		{
+			string location = url.RouteUrl(new
+			{
+				controller = "Fish",
+				action = "GetFish",
+				fishId
+			});
+
+			return url.ToAbsoluteUri(location);
+		}
+
 		private static Uri ToAbsoluteUri(this IUrlHelper url, string location)
 		{
 			HttpRequest request = url.ActionContext.HttpContext.Request;
