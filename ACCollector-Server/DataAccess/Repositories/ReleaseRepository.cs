@@ -33,7 +33,7 @@ namespace ACCollector_Server.DataAccess.Repositories
 			var context = _contextLocator.Get<ACCollectorDbContext>();
 			return context.Releases // TODO: Consider making Summaries a DB view
 				.ToList()
-				.Select(re => re.ToSummary())
+				.Select(r => r.ToSummary())
 				.ToList()
 				.AsReadOnly();
 		}
@@ -51,9 +51,9 @@ namespace ACCollector_Server.DataAccess.Repositories
 		{
 			var context = _contextLocator.Get<ACCollectorDbContext>();
 			return context.Releases
-				.Where(re => re.GameId == gameId)
+				.Where(r => r.GameId == gameId)
 				.ToList()
-				.Select(re => re.ToModel())
+				.Select(r => r.ToModel())
 				.ToList()
 				.AsReadOnly();
 		}

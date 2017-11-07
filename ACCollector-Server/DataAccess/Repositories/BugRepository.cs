@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace ACCollector_Server.DataAccess.Repositories
 {
@@ -33,7 +34,7 @@ namespace ACCollector_Server.DataAccess.Repositories
 			var context = _contextLocator.Get<ACCollectorDbContext>();
 			return context.Bugs // TODO: Consider making Summaries a DB view
 				.ToList()
-				.Select(be => be.ToSummary())
+				.Select(b => b.ToSummary())
 				.ToList()
 				.AsReadOnly();
 		}
@@ -42,9 +43,13 @@ namespace ACCollector_Server.DataAccess.Repositories
 		{
 			var context = _contextLocator.Get<ACCollectorDbContext>();
 			return context.Bugs
-				.Where(g => g.GameId == gameId)
+				.Where(b => b.GameId == gameId)
+				.Include(b => b.AvailabilityMappings)
+				.ThenInclude(am => am.Availability)
+				.Include(b => b.NoteMappings)
+				.ThenInclude(nm => nm.Note)
 				.ToList()
-				.Select(be => be.ToModel())
+				.Select(b => b.ToModel())
 				.ToList()
 				.AsReadOnly();
 		}
@@ -53,7 +58,11 @@ namespace ACCollector_Server.DataAccess.Repositories
 		{
 			var context = _contextLocator.Get<ACCollectorDbContext>();
 			return context.Bugs
-				.Where(g => g.BugId == bugId)
+				.Where(b => b.BugId == bugId)
+				.Include(b => b.AvailabilityMappings)
+				.ThenInclude(am => am.Availability)
+				.Include(b => b.NoteMappings)
+				.ThenInclude(nm => nm.Note)
 				.Single()
 				.ToModel();
 		}

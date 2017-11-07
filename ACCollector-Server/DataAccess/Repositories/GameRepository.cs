@@ -33,9 +33,9 @@ namespace ACCollector_Server.DataAccess.Repositories
 		{
 			var context = _contextLocator.Get<ACCollectorDbContext>();
 			return context.Games // TODO: Consider making Summaries a DB view
-				.Include(ge => ge.Releases)
+				.Include(g => g.Releases)
 				.ToList()
-				.Select(ge => ge.ToSummary(preferredRegion))
+				.Select(g => g.ToSummary(preferredRegion))
 				.ToList()
 				.AsReadOnly();
 		}
@@ -44,8 +44,8 @@ namespace ACCollector_Server.DataAccess.Repositories
 		{
 			var context = _contextLocator.Get<ACCollectorDbContext>();
 			return context.Games
-				.Include(g => g.Releases)
 				.Where(g => g.GameId == gameId)
+				.Include(g => g.Releases)
 				.Single()
 				.ToModel();
 		}
