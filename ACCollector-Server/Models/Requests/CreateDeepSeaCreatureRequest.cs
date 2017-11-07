@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ACCollector_Server.Models.Requests
 {
-	public class CreateFishRequest
+	public class CreateDeepSeaCreatureRequest
 	{
 		[Required]
 		public string Name { get; }
@@ -16,15 +16,12 @@ namespace ACCollector_Server.Models.Requests
 		public FishSize Size { get; }
 
 		[Required]
-		public FishLocation Location { get; }
-
-		[Required]
 		public IslandStatus IslandStatus { get; }
 
 		private readonly List<CreateAvailabilityRequest> _availabilities;
 
 		[Required]
-		[MinLength(1, ErrorMessage = "Fish must have at least one Availability.")]
+		[MinLength(1, ErrorMessage = "Deep Sea Creatures must have at least one Availability.")]
 		public IReadOnlyList<CreateAvailabilityRequest> Availabilities => _availabilities.AsReadOnly();
 
 		private readonly List<string> _notes;
@@ -33,12 +30,11 @@ namespace ACCollector_Server.Models.Requests
 		public IReadOnlyList<string> Notes => _notes.AsReadOnly();
 
 		[JsonConstructor]
-		public CreateFishRequest(string name, int salePrice, FishSize size, FishLocation location, IslandStatus islandStatus, IEnumerable<CreateAvailabilityRequest> availabilities, IEnumerable<string> notes)
+		public CreateDeepSeaCreatureRequest(string name, int salePrice, FishSize size, IslandStatus islandStatus, IEnumerable<CreateAvailabilityRequest> availabilities, IEnumerable<string> notes)
 		{
 			Name = name;
 			SalePrice = salePrice;
 			Size = size;
-			Location = location;
 			IslandStatus = islandStatus;
 			_availabilities = new List<CreateAvailabilityRequest>(availabilities);
 			_notes = new List<string>(notes);

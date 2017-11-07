@@ -54,6 +54,18 @@ namespace ACCollector_Server.Controllers
 			return url.ToAbsoluteUri(location);
 		}
 
+		public static Uri DeepSeaCreatureUri(this IUrlHelper url, Guid deepSeaCreatureId)
+		{
+			string location = url.RouteUrl(new
+			{
+				controller = "DeepSeaCreature",
+				action = "GetDeepSeaCreature",
+				deepSeaCreatureId
+			});
+
+			return url.ToAbsoluteUri(location);
+		}
+
 		private static Uri ToAbsoluteUri(this IUrlHelper url, string location)
 		{
 			HttpRequest request = url.ActionContext.HttpContext.Request;
