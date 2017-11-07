@@ -22,5 +22,13 @@ namespace ACCollector_Server.DataAccess
 		public ACCollectorDbContext(DbContextOptions<ACCollectorDbContext> options) : base(options)
 		{
 		}
+
+		protected override void OnModelCreating(ModelBuilder modelBuilder)
+		{
+			modelBuilder.Entity<BugAvailabilityEntity>().HasKey(bae => new {bae.BugId, bae.AvailabilityId});
+			modelBuilder.Entity<BugNoteEntity>().HasKey(bne => new {bne.BugId, bne.NoteId});
+			modelBuilder.Entity<FishAvailabilityEntity>().HasKey(fae => new {fae.FishId, fae.AvailabilityId});
+			modelBuilder.Entity<FishNoteEntity>().HasKey(fne => new {fne.FishId, fne.NoteId});
+		}
 	}
 }

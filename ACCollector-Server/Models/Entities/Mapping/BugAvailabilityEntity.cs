@@ -7,11 +7,11 @@ namespace ACCollector_Server.Models.Entities.Mapping
 	[Table("BugAvailability", Schema = "dbo")]
 	public class BugAvailabilityEntity
 	{
-		[Key]
+		// [Key] Configured in ACCollectorDbContext.cs. EFCore doesn't support composite primary keys via annotations.
 		[Required]
 		public Guid BugId { get; set; }
 
-		[Key]
+		// [Key] Configured in ACCollectorDbContext.cs. EFCore doesn't support composite primary keys via annotations.
 		[Required]
 		public Guid AvailabilityId { get; set; }
 
