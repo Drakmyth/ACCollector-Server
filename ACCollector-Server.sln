@@ -14,8 +14,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{0E1CFBC0-0898-4CF2-9B4A-616AFE04B721}"
 	ProjectSection(SolutionItems) = preProject
-		sql\seed.sql = sql\seed.sql
 		sql\setup.sql = sql\setup.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "postman", "postman", "{C968C64C-E1D1-4D3C-8815-07E9463CC5C4}"
+	ProjectSection(SolutionItems) = preProject
+		postman\ACCollectorTests.json = postman\ACCollectorTests.json
 	EndProjectSection
 EndProject
 Global
@@ -34,6 +38,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0E1CFBC0-0898-4CF2-9B4A-616AFE04B721} = {58EE77C1-FB94-448C-BF84-E831540BD1FE}
+		{C968C64C-E1D1-4D3C-8815-07E9463CC5C4} = {58EE77C1-FB94-448C-BF84-E831540BD1FE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {328C23A9-5F3F-4F53-8C0E-0F84DC374DC0}

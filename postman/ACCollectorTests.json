@@ -15,34 +15,1439 @@
 					"description": "",
 					"item": [
 						{
-							"name": "Create Game",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Animal Forest\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"JP\",\r\n            \"title\": \"Dōbutsu no Mori\",\r\n            \"platform\": \"N64\",\r\n            \"releaseDate\": \"2001-04-14\"\r\n        }\r\n    ]\r\n}"
-								},
-								"url": {
-									"raw": "http://localhost:60462/api/games",
-									"protocol": "http",
-									"host": [
-										"localhost"
+							"name": "Game",
+							"description": "",
+							"item": [
+								{
+									"name": "Create Game",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.environment.unset(\"gameId\");",
+													"",
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});",
+													"",
+													"pm.environment.set(\"gameId\", pm.response.json().gameId);"
+												]
+											}
+										}
 									],
-									"port": "60462",
-									"path": [
-										"api",
-										"games"
-									]
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Animal Forest\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"JP\",\r\n            \"title\": \"Dōbutsu no Mori\",\r\n            \"platform\": \"N64\",\r\n            \"releaseDate\": \"2001-04-14\"\r\n        }\r\n    ]\r\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Bugs",
+							"description": "",
+							"item": [
+								{
+									"name": "1 - Common Butterfly",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 1,\n\t\"name\": \"Common Butterfly\",\n\t\"salePrice\": 80,\n\t\"location\": \"Air\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 3,\n\t\t\t\"endMonth\": 3,\n\t\t\t\"startHour\": 8,\n\t\t\t\"endHour\": 15,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 4,\n\t\t\t\"endMonth\": 8,\n\t\t\t\"startHour\": 8,\n\t\t\t\"endHour\": 16,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 9,\n\t\t\t\"endMonth\": 10,\n\t\t\t\"startHour\": 8,\n\t\t\t\"endHour\": 15,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
 								},
-								"description": ""
-							},
-							"response": []
+								{
+									"name": "2 - Yellow Butterfly",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 2,\n\t\"name\": \"Yellow Butterfly\",\n\t\"salePrice\": 80,\n\t\"location\": \"Air\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 3,\n\t\t\t\"endMonth\": 3,\n\t\t\t\"startHour\": 8,\n\t\t\t\"endHour\": 15,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 4,\n\t\t\t\"endMonth\": 8,\n\t\t\t\"startHour\": 8,\n\t\t\t\"endHour\": 16,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 9,\n\t\t\t\"endMonth\": 10,\n\t\t\t\"startHour\": 8,\n\t\t\t\"endHour\": 15,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "3 - Tiger Butterfly",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 3,\n\t\"name\": \"Tiger Butterfly\",\n\t\"salePrice\": 200,\n\t\"location\": \"Air\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 4,\n\t\t\t\"endMonth\": 4,\n\t\t\t\"startHour\": 8,\n\t\t\t\"endHour\": 15,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 5,\n\t\t\t\"endMonth\": 8,\n\t\t\t\"startHour\": 8,\n\t\t\t\"endHour\": 16,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 9,\n\t\t\t\"endMonth\": 9,\n\t\t\t\"startHour\": 8,\n\t\t\t\"endHour\": 15,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "4 - Purple Butterfly",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 4,\n\t\"name\": \"Purple Butterfly\",\n\t\"salePrice\": 2000,\n\t\"location\": \"Air\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 6,\n\t\t\t\"endMonth\": 8,\n\t\t\t\"startHour\": 8,\n\t\t\t\"endHour\": 16,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "5 - Brown Cicada",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 5,\n\t\"name\": \"Brown Cicada\",\n\t\"salePrice\": 130,\n\t\"location\": \"Trees\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 7,\n\t\t\t\"endMonth\": 8,\n\t\t\t\"startHour\": 8,\n\t\t\t\"endHour\": 16,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "6 - Robust Cicada",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 6,\n\t\"name\": \"Robust Cicada\",\n\t\"salePrice\": 200,\n\t\"location\": \"Trees\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 7,\n\t\t\t\"endMonth\": 8,\n\t\t\t\"startHour\": 8,\n\t\t\t\"endHour\": 15,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "7 - Walker Cicada",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 7,\n\t\"name\": \"Walker Cicada\",\n\t\"salePrice\": 200,\n\t\"location\": \"Trees\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 7,\n\t\t\t\"endMonth\": 9,\n\t\t\t\"startHour\": 8,\n\t\t\t\"endHour\": 15,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "8 - Evening Cicada",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 8,\n\t\"name\": \"Evening Cicada\",\n\t\"salePrice\": 850,\n\t\"location\": \"Trees\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 7,\n\t\t\t\"endMonth\": 9,\n\t\t\t\"startHour\": 4,\n\t\t\t\"endHour\": 7,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 7,\n\t\t\t\"endMonth\": 9,\n\t\t\t\"startHour\": 16,\n\t\t\t\"endHour\": 18,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "9 - Red Dragonfly",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 9,\n\t\"name\": \"Red Dragonfly\",\n\t\"salePrice\": 80,\n\t\"location\": \"Air\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 9,\n\t\t\t\"endMonth\": 10,\n\t\t\t\"startHour\": 8,\n\t\t\t\"endHour\": 18,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "10 - Darner Dragonfly",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 10,\n\t\"name\": \"Darner Dragonfly\",\n\t\"salePrice\": 200,\n\t\"location\": \"Air\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 6,\n\t\t\t\"endMonth\": 8,\n\t\t\t\"startHour\": 8,\n\t\t\t\"endHour\": 16,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "11 - Common Dragonfly",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 11,\n\t\"name\": \"Common Dragonfly\",\n\t\"salePrice\": 130,\n\t\"location\": \"Air\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 5,\n\t\t\t\"endMonth\": 7,\n\t\t\t\"startHour\": 8,\n\t\t\t\"endHour\": 16,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "12 - Banded Dragonfly",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 12,\n\t\"name\": \"Banded Dragonfly\",\n\t\"salePrice\": 4500,\n\t\"location\": \"Air\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 7,\n\t\t\t\"endMonth\": 8,\n\t\t\t\"startHour\": 8,\n\t\t\t\"endHour\": 16,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "13 - Cricket",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 13,\n  \"name\": \"Cricket\",\n  \"salePrice\": 130,\n  \"location\": \"Ground\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 9,\n      \"endMonth\": 11,\n      \"startHour\": 0,\n      \"endHour\": 7,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    },\n    {\n      \"startMonth\": 9,\n      \"endMonth\": 11,\n      \"startHour\": 17,\n      \"endHour\": 23,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "14 - Grasshopper",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 14,\n  \"name\": \"Grasshopper\",\n  \"salePrice\": 130,\n  \"location\": \"Ground\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 8,\n      \"endMonth\": 9,\n      \"startHour\": 8,\n      \"endHour\": 16,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "15 - Pine Cricket",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 15,\n  \"name\": \"Pine Cricket\",\n  \"salePrice\": 100,\n  \"location\": \"Ground\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 9,\n      \"endMonth\": 10,\n      \"startHour\": 0,\n      \"endHour\": 7,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    },\n    {\n      \"startMonth\": 9,\n      \"endMonth\": 10,\n      \"startHour\": 17,\n      \"endHour\": 23,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "16 - Bell Cricket",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 16,\n  \"name\": \"Bell Cricket\",\n  \"salePrice\": 430,\n  \"location\": \"Ground\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 9,\n      \"endMonth\": 10,\n      \"startHour\": 0,\n      \"endHour\": 7,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    },\n    {\n      \"startMonth\": 9,\n      \"endMonth\": 10,\n      \"startHour\": 17,\n      \"endHour\": 23,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "17 - Ladybug",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 17,\n  \"name\": \"Ladybug\",\n  \"salePrice\": 130,\n  \"location\": \"Flowers\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 3,\n      \"endMonth\": 7,\n      \"startHour\": 8,\n      \"endHour\": 16,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    },\n    {\n      \"startMonth\": 10,\n      \"endMonth\": 10,\n      \"startHour\": 8,\n      \"endHour\": 16,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "18 - Spotted Ladybug",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 18,\n  \"name\": \"Spotted Ladybug\",\n  \"salePrice\": 200,\n  \"location\": \"Flowers\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 3,\n      \"endMonth\": 7,\n      \"startHour\": 8,\n      \"endHour\": 16,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    },\n    {\n      \"startMonth\": 10,\n      \"endMonth\": 10,\n      \"startHour\": 8,\n      \"endHour\": 16,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "19 - Mantis",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 19,\n  \"name\": \"Mantis\",\n  \"salePrice\": 430,\n  \"location\": \"Flowers\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 8,\n      \"endMonth\": 10,\n      \"startHour\": 8,\n      \"endHour\": 16,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "20 - Long Locust",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 20,\n  \"name\": \"Long Locust\",\n  \"salePrice\": 200,\n  \"location\": \"Ground\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 8,\n      \"endMonth\": 10,\n      \"startHour\": 8,\n      \"endHour\": 18,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    },\n    {\n      \"startMonth\": 11,\n      \"endMonth\": 11,\n      \"startHour\": 8,\n      \"endHour\": 16,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "21 - Migratory Locust",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 21,\n  \"name\": \"Migratory Locust\",\n  \"salePrice\": 1350,\n  \"location\": \"Ground\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 9,\n      \"endMonth\": 10,\n      \"startHour\": 8,\n      \"endHour\": 18,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    },\n    {\n      \"startMonth\": 11,\n      \"endMonth\": 11,\n      \"startHour\": 8,\n      \"endHour\": 16,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "22 - Cockroach",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 22,\n  \"name\": \"Cockroach\",\n  \"salePrice\": 1,\n  \"location\": \"Trash\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 3,\n      \"endMonth\": 11,\n      \"startHour\": 0,\n      \"endHour\": 23,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": [\n  \t\"Can be found on trees, flowers, or rotten turnips.\"\n  ]\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "23 - Bee",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 23,\n  \"name\": \"Bee\",\n  \"salePrice\": 4500,\n  \"location\": \"Trees\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 1,\n      \"endMonth\": 12,\n      \"startHour\": 0,\n      \"endHour\": 23,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "24 - Firefly",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 24,\n  \"name\": \"Firefly\",\n  \"salePrice\": 250,\n  \"location\": \"Water\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 6,\n      \"endMonth\": 6,\n      \"startHour\": 0,\n      \"endHour\": 3,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    },\n    {\n      \"startMonth\": 6,\n      \"endMonth\": 6,\n      \"startHour\": 19,\n      \"endHour\": 23,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": [\n  \t\"Can be found near fresh water.\"\n  ]\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "25 - Drone Beetle",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 25,\n  \"name\": \"Drone Beetle\",\n  \"salePrice\": 80,\n  \"location\": \"Trees\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 7,\n      \"endMonth\": 8,\n      \"startHour\": 0,\n      \"endHour\": 23,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "26 - Longhorn Beetle",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 26,\n  \"name\": \"Longhorn Beetle\",\n  \"salePrice\": 200,\n  \"location\": \"Trees\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 6,\n      \"endMonth\": 8,\n      \"startHour\": 8,\n      \"endHour\": 16,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "27 - Jewel Beetle",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 27,\n  \"name\": \"Jewel Beetle\",\n  \"salePrice\": 3000,\n  \"location\": \"Trees\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 7,\n      \"endMonth\": 8,\n      \"startHour\": 8,\n      \"endHour\": 15,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "28 - Dynastid Beetle",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 28,\n  \"name\": \"Dynastid Beetle\",\n  \"salePrice\": 1350,\n  \"location\": \"Trees\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 7,\n      \"endMonth\": 8,\n      \"startHour\": 0,\n      \"endHour\": 7,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    },\n    {\n      \"startMonth\": 7,\n      \"endMonth\": 8,\n      \"startHour\": 19,\n      \"endHour\": 23,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "29 - Flat Stag Beetle",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 29,\n  \"name\": \"Flat Stag Beetle\",\n  \"salePrice\": 2000,\n  \"location\": \"Trees\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 6,\n      \"endMonth\": 8,\n      \"startHour\": 0,\n      \"endHour\": 7,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    },\n    {\n      \"startMonth\": 6,\n      \"endMonth\": 8,\n      \"startHour\": 19,\n      \"endHour\": 23,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "30 - Saw Stag Beetle",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 30,\n  \"name\": \"Saw Stag Beetle\",\n  \"salePrice\": 2000,\n  \"location\": \"Trees\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 7,\n      \"endMonth\": 8,\n      \"startHour\": 0,\n      \"endHour\": 7,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    },\n    {\n      \"startMonth\": 7,\n      \"endMonth\": 8,\n      \"startHour\": 19,\n      \"endHour\": 23,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "31 - Mountain Beetle",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 31,\n  \"name\": \"Mountain Beetle\",\n  \"salePrice\": 2000,\n  \"location\": \"Trees\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 7,\n      \"endMonth\": 8,\n      \"startHour\": 0,\n      \"endHour\": 7,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    },\n    {\n      \"startMonth\": 7,\n      \"endMonth\": 8,\n      \"startHour\": 19,\n      \"endHour\": 23,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "32 - Giant Beetle",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"inGameId\": 32,\n  \"name\": \"Giant Beetle\",\n  \"salePrice\": 10000,\n  \"location\": \"Trees\",\n  \"islandStatus\": \"None\",\n  \"availabilities\": [\n    {\n      \"startMonth\": 7,\n      \"endMonth\": 8,\n      \"startHour\": 0,\n      \"endHour\": 7,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    },\n    {\n      \"startMonth\": 7,\n      \"endMonth\": 8,\n      \"startHour\": 23,\n      \"endHour\": 23,\n      \"startsMidMonth\": false,\n      \"endsMidMonth\": false\n    }\n  ],\n  \"notes\": []  \n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/bugs",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"bugs"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
 						}
 					],
 					"_postman_isSubFolder": true
@@ -52,34 +1457,56 @@
 					"description": "",
 					"item": [
 						{
-							"name": "Create Game",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Animal Forest+\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"JP\",\r\n            \"title\": \"Dōbutsu no Mori+\",\r\n            \"platform\": \"GCN\",\r\n            \"releaseDate\": \"2001-12-14\"\r\n        },\r\n        {\r\n            \"region\": \"CHN\",\r\n            \"title\": \"Dòngwù Sēnlín\",\r\n            \"platform\": \"iQue\",\r\n            \"releaseDate\": \"2006-06-01\"\r\n        }\r\n    ]\r\n}"
-								},
-								"url": {
-									"raw": "http://localhost:60462/api/games",
-									"protocol": "http",
-									"host": [
-										"localhost"
+							"name": "Game",
+							"description": "",
+							"item": [
+								{
+									"name": "Create Game",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.environment.unset(\"gameId\");",
+													"",
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});",
+													"",
+													"pm.environment.set(\"gameId\", pm.response.json().gameId);"
+												]
+											}
+										}
 									],
-									"port": "60462",
-									"path": [
-										"api",
-										"games"
-									]
-								},
-								"description": ""
-							},
-							"response": []
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Animal Forest+\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"JP\",\r\n            \"title\": \"Dōbutsu no Mori+\",\r\n            \"platform\": \"GCN\",\r\n            \"releaseDate\": \"2001-12-14\"\r\n        },\r\n        {\r\n            \"region\": \"CHN\",\r\n            \"title\": \"Dòngwù Sēnlín\",\r\n            \"platform\": \"iQue\",\r\n            \"releaseDate\": \"2006-06-01\"\r\n        }\r\n    ]\r\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
 						}
 					],
 					"_postman_isSubFolder": true
@@ -89,34 +1516,56 @@
 					"description": "",
 					"item": [
 						{
-							"name": "Create Game",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Animal Crossing\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"NA\",\r\n            \"title\": \"Animal Crossing\",\r\n            \"platform\": \"GCN\",\r\n            \"releaseDate\": \"2002-09-15\"\r\n        },\r\n        {\r\n            \"region\": \"AU\",\r\n            \"title\": \"Animal Crossing\",\r\n            \"platform\": \"GCN\",\r\n            \"releaseDate\": \"2003-10-17\"\r\n        },\r\n        {\r\n            \"region\": \"EU\",\r\n            \"title\": \"Animal Crossing\",\r\n            \"platform\": \"GCN\",\r\n            \"releaseDate\": \"2004-09-24\"\r\n        }\r\n    ]\r\n}"
-								},
-								"url": {
-									"raw": "http://localhost:60462/api/games",
-									"protocol": "http",
-									"host": [
-										"localhost"
+							"name": "Game",
+							"description": "",
+							"item": [
+								{
+									"name": "Create Game",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.environment.unset(\"gameId\");",
+													"",
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});",
+													"",
+													"pm.environment.set(\"gameId\", pm.response.json().gameId);"
+												]
+											}
+										}
 									],
-									"port": "60462",
-									"path": [
-										"api",
-										"games"
-									]
-								},
-								"description": ""
-							},
-							"response": []
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Animal Crossing\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"NA\",\r\n            \"title\": \"Animal Crossing\",\r\n            \"platform\": \"GCN\",\r\n            \"releaseDate\": \"2002-09-15\"\r\n        },\r\n        {\r\n            \"region\": \"AU\",\r\n            \"title\": \"Animal Crossing\",\r\n            \"platform\": \"GCN\",\r\n            \"releaseDate\": \"2003-10-17\"\r\n        },\r\n        {\r\n            \"region\": \"EU\",\r\n            \"title\": \"Animal Crossing\",\r\n            \"platform\": \"GCN\",\r\n            \"releaseDate\": \"2004-09-24\"\r\n        }\r\n    ]\r\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
 						}
 					],
 					"_postman_isSubFolder": true
@@ -126,34 +1575,56 @@
 					"description": "",
 					"item": [
 						{
-							"name": "Create Game",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Animal Forest e+\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"JP\",\r\n            \"title\": \"Dōbutsu no Mori e+\",\r\n            \"platform\": \"GCN\",\r\n            \"releaseDate\": \"2003-06-27\"\r\n        }\r\n    ]\r\n}"
-								},
-								"url": {
-									"raw": "http://localhost:60462/api/games",
-									"protocol": "http",
-									"host": [
-										"localhost"
+							"name": "Game",
+							"description": "",
+							"item": [
+								{
+									"name": "Create Game",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.environment.unset(\"gameId\");",
+													"",
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});",
+													"",
+													"pm.environment.set(\"gameId\", pm.response.json().gameId);"
+												]
+											}
+										}
 									],
-									"port": "60462",
-									"path": [
-										"api",
-										"games"
-									]
-								},
-								"description": ""
-							},
-							"response": []
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Animal Forest e+\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"JP\",\r\n            \"title\": \"Dōbutsu no Mori e+\",\r\n            \"platform\": \"GCN\",\r\n            \"releaseDate\": \"2003-06-27\"\r\n        }\r\n    ]\r\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
 						}
 					],
 					"_postman_isSubFolder": true
@@ -163,34 +1634,56 @@
 					"description": "",
 					"item": [
 						{
-							"name": "Create Game",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"Wild World\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"JP\",\r\n            \"title\": \"Oideyo Dōbutsu no Mori\",\r\n            \"platform\": \"NDS\",\r\n            \"releaseDate\": \"2005-11-23\"\r\n        },\r\n        {\r\n            \"region\": \"NA\",\r\n            \"title\": \"Animal Crossing: Wild World\",\r\n            \"platform\": \"NDS\",\r\n            \"releaseDate\": \"2005-12-05\"\r\n        },\r\n        {\r\n            \"region\": \"AU\",\r\n            \"title\": \"Animal Crossing: Wild World\",\r\n            \"platform\": \"NDS\",\r\n            \"releaseDate\": \"2005-12-08\"\r\n        },\r\n        {\r\n            \"region\": \"EU\",\r\n            \"title\": \"Animal Crossing: Wild World\",\r\n            \"platform\": \"NDS\",\r\n            \"releaseDate\": \"2006-03-31\"\r\n        }\r\n    ]\r\n}"
-								},
-								"url": {
-									"raw": "http://localhost:60462/api/games",
-									"protocol": "http",
-									"host": [
-										"localhost"
+							"name": "Game",
+							"description": "",
+							"item": [
+								{
+									"name": "Create Game",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.environment.unset(\"gameId\");",
+													"",
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});",
+													"",
+													"pm.environment.set(\"gameId\", pm.response.json().gameId);"
+												]
+											}
+										}
 									],
-									"port": "60462",
-									"path": [
-										"api",
-										"games"
-									]
-								},
-								"description": ""
-							},
-							"response": []
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Wild World\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"JP\",\r\n            \"title\": \"Oideyo Dōbutsu no Mori\",\r\n            \"platform\": \"NDS\",\r\n            \"releaseDate\": \"2005-11-23\"\r\n        },\r\n        {\r\n            \"region\": \"NA\",\r\n            \"title\": \"Animal Crossing: Wild World\",\r\n            \"platform\": \"NDS\",\r\n            \"releaseDate\": \"2005-12-05\"\r\n        },\r\n        {\r\n            \"region\": \"AU\",\r\n            \"title\": \"Animal Crossing: Wild World\",\r\n            \"platform\": \"NDS\",\r\n            \"releaseDate\": \"2005-12-08\"\r\n        },\r\n        {\r\n            \"region\": \"EU\",\r\n            \"title\": \"Animal Crossing: Wild World\",\r\n            \"platform\": \"NDS\",\r\n            \"releaseDate\": \"2006-03-31\"\r\n        }\r\n    ]\r\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
 						}
 					],
 					"_postman_isSubFolder": true
@@ -200,34 +1693,56 @@
 					"description": "",
 					"item": [
 						{
-							"name": "Create Game",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"City Folk\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"JP\",\r\n            \"title\": \"Machi e ikō yo: Dōbutsu no Mori\",\r\n            \"platform\": \"Wii\",\r\n            \"releaseDate\": \"2008-11-20\"\r\n        },\r\n        {\r\n            \"region\": \"NA\",\r\n            \"title\": \"Animal Crossing: City Folk\",\r\n            \"platform\": \"Wii\",\r\n            \"releaseDate\": \"2008-11-16\"\r\n        },\r\n        {\r\n            \"region\": \"AU\",\r\n            \"title\": \"Animal Crossing: Let's Go to the City\",\r\n            \"platform\": \"Wii\",\r\n            \"releaseDate\": \"2008-11-04\"\r\n        },\r\n        {\r\n            \"region\": \"EU\",\r\n            \"title\": \"Animal Crossing: Let's Go to the City\",\r\n            \"platform\": \"Wii\",\r\n            \"releaseDate\": \"2008-11-05\"\r\n        }\r\n    ]\r\n}"
-								},
-								"url": {
-									"raw": "http://localhost:60462/api/games",
-									"protocol": "http",
-									"host": [
-										"localhost"
+							"name": "Game",
+							"description": "",
+							"item": [
+								{
+									"name": "Create Game",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.environment.unset(\"gameId\");",
+													"",
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});",
+													"",
+													"pm.environment.set(\"gameId\", pm.response.json().gameId);"
+												]
+											}
+										}
 									],
-									"port": "60462",
-									"path": [
-										"api",
-										"games"
-									]
-								},
-								"description": ""
-							},
-							"response": []
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"City Folk\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"JP\",\r\n            \"title\": \"Machi e ikō yo: Dōbutsu no Mori\",\r\n            \"platform\": \"Wii\",\r\n            \"releaseDate\": \"2008-11-20\"\r\n        },\r\n        {\r\n            \"region\": \"NA\",\r\n            \"title\": \"Animal Crossing: City Folk\",\r\n            \"platform\": \"Wii\",\r\n            \"releaseDate\": \"2008-11-16\"\r\n        },\r\n        {\r\n            \"region\": \"AU\",\r\n            \"title\": \"Animal Crossing: Let's Go to the City\",\r\n            \"platform\": \"Wii\",\r\n            \"releaseDate\": \"2008-11-04\"\r\n        },\r\n        {\r\n            \"region\": \"EU\",\r\n            \"title\": \"Animal Crossing: Let's Go to the City\",\r\n            \"platform\": \"Wii\",\r\n            \"releaseDate\": \"2008-11-05\"\r\n        }\r\n    ]\r\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
 						}
 					],
 					"_postman_isSubFolder": true
@@ -237,34 +1752,56 @@
 					"description": "",
 					"item": [
 						{
-							"name": "Create Game",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"New Leaf\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"JP\",\r\n            \"title\": \"Tobidase Dōbutsu no Mori\",\r\n            \"platform\": \"3DS\",\r\n            \"releaseDate\": \"2012-11-08\"\r\n        },\r\n        {\r\n            \"region\": \"KOR\",\r\n            \"title\": \"Animal Crossing: New Leaf\",\r\n            \"platform\": \"3DS\",\r\n            \"releaseDate\": \"2013-02-07\"\r\n        },\r\n        {\r\n            \"region\": \"NA\",\r\n            \"title\": \"Animal Crossing: New Leaf\",\r\n            \"platform\": \"3DS\",\r\n            \"releaseDate\": \"2013-06-09\"\r\n        },\r\n        {\r\n            \"region\": \"AU\",\r\n            \"title\": \"Animal Crossing: New Leaf\",\r\n            \"platform\": \"3DS\",\r\n            \"releaseDate\": \"2013-06-15\"\r\n        },\r\n        {\r\n            \"region\": \"EU\",\r\n            \"title\": \"Animal Crossing: New Leaf\",\r\n            \"platform\": \"3DS\",\r\n            \"releaseDate\": \"2013-06-14\"\r\n        }\r\n    ]\r\n}"
-								},
-								"url": {
-									"raw": "http://localhost:60462/api/games",
-									"protocol": "http",
-									"host": [
-										"localhost"
+							"name": "Game",
+							"description": "",
+							"item": [
+								{
+									"name": "Create Game",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.environment.unset(\"gameId\");",
+													"",
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});",
+													"",
+													"pm.environment.set(\"gameId\", pm.response.json().gameId);"
+												]
+											}
+										}
 									],
-									"port": "60462",
-									"path": [
-										"api",
-										"games"
-									]
-								},
-								"description": ""
-							},
-							"response": []
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"New Leaf\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"JP\",\r\n            \"title\": \"Tobidase Dōbutsu no Mori\",\r\n            \"platform\": \"3DS\",\r\n            \"releaseDate\": \"2012-11-08\"\r\n        },\r\n        {\r\n            \"region\": \"KOR\",\r\n            \"title\": \"Animal Crossing: New Leaf\",\r\n            \"platform\": \"3DS\",\r\n            \"releaseDate\": \"2013-02-07\"\r\n        },\r\n        {\r\n            \"region\": \"NA\",\r\n            \"title\": \"Animal Crossing: New Leaf\",\r\n            \"platform\": \"3DS\",\r\n            \"releaseDate\": \"2013-06-09\"\r\n        },\r\n        {\r\n            \"region\": \"AU\",\r\n            \"title\": \"Animal Crossing: New Leaf\",\r\n            \"platform\": \"3DS\",\r\n            \"releaseDate\": \"2013-06-15\"\r\n        },\r\n        {\r\n            \"region\": \"EU\",\r\n            \"title\": \"Animal Crossing: New Leaf\",\r\n            \"platform\": \"3DS\",\r\n            \"releaseDate\": \"2013-06-14\"\r\n        }\r\n    ]\r\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
 						}
 					],
 					"_postman_isSubFolder": true

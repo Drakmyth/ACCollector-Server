@@ -1,10 +1,10 @@
 ﻿using ACCollector_Server.Exceptions;
+using ACCollector_Server.Models.Requests;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using ACCollector_Server.Models.Requests;
 
 namespace ACCollector_Server.Models.Entities
 {
