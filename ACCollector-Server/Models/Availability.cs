@@ -96,9 +96,9 @@ namespace ACCollector_Server.Models
 					throw new ArgumentException("End hour must be within range 0-23.", nameof(endHour));
 				}
 
-				if (endHour <= startHour)
+				if (endHour < startHour)
 				{
-					throw new ArgumentException("End hour cannot be the same or less than the start hour.");
+					throw new ArgumentException("End hour cannot be less than the start hour.");
 				}
 
 				StartHour = startHour;
