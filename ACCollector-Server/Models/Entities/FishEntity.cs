@@ -20,6 +20,9 @@ namespace ACCollector_Server.Models.Entities
 		public Guid GameId { get; set; }
 
 		[Required]
+		public int InGameId { get; set; }
+
+		[Required]
 		public string Name { get; set; }
 
 		[Required]
@@ -77,6 +80,7 @@ namespace ACCollector_Server.Models.Entities
 		{
 			FishId = Guid.Empty;
 			GameId = gameId;
+			InGameId = request.InGameId;
 			Name = request.Name;
 			SalePrice = request.SalePrice;
 			Size = request.Size;
@@ -100,7 +104,7 @@ namespace ACCollector_Server.Models.Entities
 
 		public Fish ToModel()
 		{
-			var builder = new Fish.Builder(FishId, GameId, Name)
+			var builder = new Fish.Builder(FishId, GameId, InGameId, Name)
 				.WithSalePrice(SalePrice)
 				.WithSize(Size)
 				.WithLocation(Location)
@@ -121,7 +125,7 @@ namespace ACCollector_Server.Models.Entities
 
 		public FishSummary ToSummary()
 		{
-			return new FishSummary(FishId, Name);
+			return new FishSummary(FishId, InGameId, Name);
 		}
 	}
 }

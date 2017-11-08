@@ -12,12 +12,16 @@ namespace ACCollector_Server.Models.ViewModels
 		public Uri Href { get; }
 
 		[JsonProperty]
+		public int InGameId { get; }
+
+		[JsonProperty]
 		public string Name { get; }
 
 		public BugSummaryViewModel(BugSummary summary, Uri href)
 		{
 			BugId = summary.BugId;
 			Href = href;
+			InGameId = summary.InGameId;
 			Name = summary.Name;
 		}
 	}

@@ -7,6 +7,9 @@ namespace ACCollector_Server.Models.Requests
 	public class CreateBugRequest
 	{
 		[Required]
+		public int InGameId { get; }
+
+		[Required]
 		public string Name { get; }
 
 		[Required]
@@ -30,8 +33,9 @@ namespace ACCollector_Server.Models.Requests
 		public IReadOnlyList<string> Notes => _notes.AsReadOnly();
 
 		[JsonConstructor]
-		public CreateBugRequest(string name, int salePrice, BugLocation location, IslandStatus islandStatus, IEnumerable<CreateAvailabilityRequest> availabilities, IEnumerable<string> notes)
+		public CreateBugRequest(int inGameId, string name, int salePrice, BugLocation location, IslandStatus islandStatus, IEnumerable<CreateAvailabilityRequest> availabilities, IEnumerable<string> notes)
 		{
+			InGameId = inGameId;
 			Name = name;
 			SalePrice = salePrice;
 			Location = location;

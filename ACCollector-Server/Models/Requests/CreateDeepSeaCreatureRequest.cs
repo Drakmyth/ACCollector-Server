@@ -7,6 +7,9 @@ namespace ACCollector_Server.Models.Requests
 	public class CreateDeepSeaCreatureRequest
 	{
 		[Required]
+		public int InGameId { get; }
+
+		[Required]
 		public string Name { get; }
 
 		[Required]
@@ -30,8 +33,9 @@ namespace ACCollector_Server.Models.Requests
 		public IReadOnlyList<string> Notes => _notes.AsReadOnly();
 
 		[JsonConstructor]
-		public CreateDeepSeaCreatureRequest(string name, int salePrice, FishSize size, IslandStatus islandStatus, IEnumerable<CreateAvailabilityRequest> availabilities, IEnumerable<string> notes)
+		public CreateDeepSeaCreatureRequest(int inGameId, string name, int salePrice, FishSize size, IslandStatus islandStatus, IEnumerable<CreateAvailabilityRequest> availabilities, IEnumerable<string> notes)
 		{
+			InGameId = inGameId;
 			Name = name;
 			SalePrice = salePrice;
 			Size = size;

@@ -20,6 +20,9 @@ namespace ACCollector_Server.Models.Entities
 		public Guid GameId { get; set; }
 
 		[Required]
+		public int InGameId { get; set; }
+
+		[Required]
 		public string Name { get; set; }
 
 		[Required]
@@ -66,6 +69,7 @@ namespace ACCollector_Server.Models.Entities
 		{
 			DeepSeaCreatureId = Guid.Empty;
 			GameId = gameId;
+			InGameId = request.InGameId;
 			Name = request.Name;
 			SalePrice = request.SalePrice;
 			Size = request.Size;
@@ -88,7 +92,7 @@ namespace ACCollector_Server.Models.Entities
 
 		public DeepSeaCreature ToModel()
 		{
-			var builder = new DeepSeaCreature.Builder(DeepSeaCreatureId, GameId, Name)
+			var builder = new DeepSeaCreature.Builder(DeepSeaCreatureId, GameId, InGameId, Name)
 				.WithSalePrice(SalePrice)
 				.WithSize(Size)
 				.WithIslandStatus(IslandStatus);
@@ -108,7 +112,7 @@ namespace ACCollector_Server.Models.Entities
 
 		public DeepSeaCreatureSummary ToSummary()
 		{
-			return new DeepSeaCreatureSummary(DeepSeaCreatureId, Name);
+			return new DeepSeaCreatureSummary(DeepSeaCreatureId, InGameId, Name);
 		}
 	}
 }

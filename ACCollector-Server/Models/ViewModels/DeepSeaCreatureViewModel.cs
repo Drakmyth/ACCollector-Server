@@ -14,6 +14,9 @@ namespace ACCollector_Server.Models.ViewModels
 		public Guid GameId { get; }
 
 		[JsonProperty]
+		public int InGameId { get; }
+
+		[JsonProperty]
 		public Uri Href { get; }
 
 		[JsonProperty]
@@ -42,6 +45,7 @@ namespace ACCollector_Server.Models.ViewModels
 		{
 			DeepSeaCreatureId = deepSeaCreature.DeepSeaCreatureId;
 			GameId = deepSeaCreature.GameId;
+			InGameId = deepSeaCreature.InGameId;
 			Href = href;
 			Name = deepSeaCreature.Name;
 			SalePrice = deepSeaCreature.SalePrice;

@@ -7,6 +7,9 @@ namespace ACCollector_Server.Models.Requests
 	public class CreateFishRequest
 	{
 		[Required]
+		public int InGameId { get; }
+
+		[Required]
 		public string Name { get; }
 
 		[Required]
@@ -33,8 +36,9 @@ namespace ACCollector_Server.Models.Requests
 		public IReadOnlyList<string> Notes => _notes.AsReadOnly();
 
 		[JsonConstructor]
-		public CreateFishRequest(string name, int salePrice, FishSize size, FishLocation location, IslandStatus islandStatus, IEnumerable<CreateAvailabilityRequest> availabilities, IEnumerable<string> notes)
+		public CreateFishRequest(int inGameId, string name, int salePrice, FishSize size, FishLocation location, IslandStatus islandStatus, IEnumerable<CreateAvailabilityRequest> availabilities, IEnumerable<string> notes)
 		{
+			InGameId = inGameId;
 			Name = name;
 			SalePrice = salePrice;
 			Size = size;

@@ -8,6 +8,7 @@ namespace ACCollector_Server.Models
 	{
 		public Guid DeepSeaCreatureId { get; }
 		public Guid GameId { get; }
+		public int InGameId { get; }
 		public string Name { get; }
 		public int SalePrice { get; private set; }
 		public FishSize Size { get; private set; }
@@ -19,10 +20,11 @@ namespace ACCollector_Server.Models
 		private readonly List<Note> _notes;
 		public IReadOnlyList<Note> Notes => _notes.AsReadOnly();
 
-		private DeepSeaCreature(Guid deepSeaCreatureId, Guid gameId, string name)
+		private DeepSeaCreature(Guid deepSeaCreatureId, Guid gameId, int inGameId, string name)
 		{
 			DeepSeaCreatureId = deepSeaCreatureId;
 			GameId = gameId;
+			InGameId = inGameId;
 			Name = name;
 			SalePrice = 0;
 			Size = FishSize.Medium;
@@ -31,7 +33,7 @@ namespace ACCollector_Server.Models
 			_notes = new List<Note>();
 		}
 
-		private DeepSeaCreature(DeepSeaCreature copy) : this(copy.DeepSeaCreatureId, copy.GameId, copy.Name)
+		private DeepSeaCreature(DeepSeaCreature copy) : this(copy.DeepSeaCreatureId, copy.GameId, copy.InGameId, copy.Name)
 		{
 			SalePrice = copy.SalePrice;
 			Size = copy.Size;
@@ -42,7 +44,7 @@ namespace ACCollector_Server.Models
 
 		public class Builder : DeepSeaCreature
 		{
-			public Builder(Guid deepSeaCreatureId, Guid gameId, string name) : base(deepSeaCreatureId, gameId, name)
+			public Builder(Guid deepSeaCreatureId, Guid gameId, int inGameId, string name) : base(deepSeaCreatureId, gameId, inGameId, name)
 			{
 			}
 

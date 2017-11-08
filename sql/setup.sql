@@ -1,14 +1,6 @@
 ﻿USE [master];
 GO
 
-IF EXISTS (select * from INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'ACCollector')
-BEGIN
-	ALTER DATABASE [ACCollector] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-END
-GO
-DROP DATABASE IF EXISTS [ACCollector];
-GO
-
 CREATE DATABASE [ACCollector]
 GO
 
@@ -186,6 +178,7 @@ GO
 CREATE TABLE [ACCollector].[dbo].[Bug] (
 	[BugId] UNIQUEIDENTIFIER NOT NULL CONSTRAINT DF_Bug_BugId DEFAULT NEWSEQUENTIALID(),
 	[GameId] UNIQUEIDENTIFIER NOT NULL,
+	[InGameId] INT NOT NULL,
 	[Name] VARCHAR(40) NOT NULL,
 	[SalePrice] INT NOT NULL,
 	[Location] VARCHAR(15) NOT NULL,
@@ -194,13 +187,15 @@ CREATE TABLE [ACCollector].[dbo].[Bug] (
 	CONSTRAINT FK_Bug_Game_GameId FOREIGN KEY ([GameId]) REFERENCES [ACCollector].[dbo].[Game]([GameId]) ON DELETE CASCADE,
 	CONSTRAINT FK_Bug_BugLocation_Location FOREIGN KEY ([Location]) REFERENCES [ACCollector].[dbo].[BugLocation]([Location]),
 	CONSTRAINT FK_Bug_IslandStatus_IslandStatus FOREIGN KEY ([IslandStatus]) REFERENCES [ACCollector].[dbo].[IslandStatus]([IslandStatus]),
-	CONSTRAINT CHK_Bug_SalePrice CHECK (SalePrice >= 0)
+	CONSTRAINT UNQ_Bug_GameId_InGameId UNIQUE ([GameId], [InGameId]),
+	CONSTRAINT CHK_Bug_SalePrice CHECK ([SalePrice] >= 0)
 );
 GO
 
 CREATE TABLE [ACCollector].[dbo].[Fish] (
 	[FishId] UNIQUEIDENTIFIER NOT NULL CONSTRAINT DF_Fish_FishId DEFAULT NEWSEQUENTIALID(),
 	[GameId] UNIQUEIDENTIFIER NOT NULL,
+	[InGameId] INT NOT NULL,
 	[Name] VARCHAR(40) NOT NULL,
 	[SalePrice] INT NOT NULL,
 	[Size] VARCHAR(10) NOT NULL,
@@ -211,13 +206,15 @@ CREATE TABLE [ACCollector].[dbo].[Fish] (
 	CONSTRAINT FK_Fish_FishSize_Size FOREIGN KEY ([Size]) REFERENCES [ACCollector].[dbo].[FishSize]([Size]),
 	CONSTRAINT FK_Fish_FishLocation_Location FOREIGN KEY ([Location]) REFERENCES [ACCollector].[dbo].[FishLocation]([Location]),
 	CONSTRAINT FK_Fish_IslandStatus_IslandStatus FOREIGN KEY ([IslandStatus]) REFERENCES [ACCollector].[dbo].[IslandStatus]([IslandStatus]),
-	CONSTRAINT CHK_Fish_SalePrice CHECK (SalePrice >= 0)
+	CONSTRAINT UNQ_Fish_GameId_InGameId UNIQUE ([GameId], [InGameId]),
+	CONSTRAINT CHK_Fish_SalePrice CHECK ([SalePrice] >= 0)
 );
 GO
 
 CREATE TABLE [ACCollector].[dbo].[DeepSeaCreature] (
 	[DeepSeaCreatureId] UNIQUEIDENTIFIER NOT NULL CONSTRAINT DF_DeepSeaCreature_DeepSeaCreatureId DEFAULT NEWSEQUENTIALID(),
 	[GameId] UNIQUEIDENTIFIER NOT NULL,
+	[InGameId] INT NOT NULL,
 	[Name] VARCHAR(40) NOT NULL,
 	[SalePrice] INT NOT NULL,
 	[Size] VARCHAR(10) NOT NULL,
@@ -226,7 +223,8 @@ CREATE TABLE [ACCollector].[dbo].[DeepSeaCreature] (
 	CONSTRAINT FK_DeepSeaCreature_Game_GameId FOREIGN KEY ([GameId]) REFERENCES [ACCollector].[dbo].[Game]([GameId]) ON DELETE CASCADE,
 	CONSTRAINT FK_DeepSeaCreature_FishSize_Size FOREIGN KEY ([Size]) REFERENCES [ACCollector].[dbo].[FishSize]([Size]),
 	CONSTRAINT FK_DeepSeaCreature_IslandStatus_IslandStatus FOREIGN KEY ([IslandStatus]) REFERENCES [ACCollector].[dbo].[IslandStatus]([IslandStatus]),
-	CONSTRAINT CHK_DeepSeaCreature_SalePrice CHECK (SalePrice >= 0)
+	CONSTRAINT UNQ_DeepSeaCreature_GameId_InGameId UNIQUE ([GameId], [InGameId]),
+	CONSTRAINT CHK_DeepSeaCreature_SalePrice CHECK ([SalePrice] >= 0)
 );
 GO
 
@@ -242,8 +240,8 @@ CREATE TABLE [ACCollector].[dbo].[Art] (
 	CONSTRAINT FK_Art_Game_GameId FOREIGN KEY ([GameId]) REFERENCES [ACCollector].[dbo].[Game]([GameId]) ON DELETE CASCADE,
 	CONSTRAINT FK_Art_ArtType_Type FOREIGN KEY ([Type]) REFERENCES [ACCollector].[dbo].[ArtType]([Type]),
 	CONSTRAINT FK_Art_ArtSource_Source FOREIGN KEY ([Source]) REFERENCES [ACCollector].[dbo].[ArtSource]([Source]),
-	CONSTRAINT CHK_Art_PurchasePrice CHECK (PurchasePrice >= 0),
-	CONSTRAINT CHK_Art_SalePrice CHECK (SalePrice >= 0)
+	CONSTRAINT CHK_Art_PurchasePrice CHECK ([PurchasePrice] >= 0),
+	CONSTRAINT CHK_Art_SalePrice CHECK ([SalePrice] >= 0)
 );
 GO
 
@@ -256,7 +254,7 @@ CREATE TABLE [ACCollector].[dbo].[Fossil] (
 	CONSTRAINT PK_Fossil PRIMARY KEY CLUSTERED ([FossilId]),
 	CONSTRAINT FK_Fossil_Game_GameId FOREIGN KEY ([GameId]) REFERENCES [ACCollector].[dbo].[Game]([GameId]) ON DELETE CASCADE,
 	CONSTRAINT FK_Fossil_FossilGroup_Group FOREIGN KEY ([Group]) REFERENCES [ACCollector].[dbo].[FossilGroup]([Group]),
-	CONSTRAINT CHK_Fossil_SalePrice CHECK (SalePrice >= 0)
+	CONSTRAINT CHK_Fossil_SalePrice CHECK ([SalePrice] >= 0)
 );
 GO
 
@@ -269,10 +267,10 @@ CREATE TABLE [ACCollector].[dbo].[Availability] (
 	[StartsMidMonth] BIT NOT NULL CONSTRAINT DF_Availability_StartsMidMonth DEFAULT 0,
 	[EndsMidMonth] BIT NOT NULL CONSTRAINT DF_Availability_EndsMidMonth DEFAULT 0
 	CONSTRAINT PK_Availability PRIMARY KEY CLUSTERED ([AvailabilityId]),
-	CONSTRAINT CHK_Availability_StartMonth CHECK (StartMonth >= 1 AND StartMonth <= 12),
-	CONSTRAINT CHK_Availability_StartHour CHECK (StartHour >= 0 AND StartHour <= 23),
-	CONSTRAINT CHK_Availability_EndMonth CHECK (EndMonth >= 1 AND EndMonth <= 12),
-	CONSTRAINT CHK_Availability_EndHour CHECK (EndHour >= 0 AND EndHour <= 23)
+	CONSTRAINT CHK_Availability_StartMonth CHECK ([StartMonth] >= 1 AND [StartMonth] <= 12),
+	CONSTRAINT CHK_Availability_StartHour CHECK ([StartHour] >= 0 AND [StartHour] <= 23),
+	CONSTRAINT CHK_Availability_EndMonth CHECK ([EndMonth] >= 1 AND [EndMonth] <= 12),
+	CONSTRAINT CHK_Availability_EndHour CHECK ([EndHour] >= 0 AND [EndHour] <= 23)
 );
 GO
 

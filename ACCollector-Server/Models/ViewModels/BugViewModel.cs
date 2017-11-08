@@ -14,6 +14,9 @@ namespace ACCollector_Server.Models.ViewModels
 		public Guid GameId { get; }
 
 		[JsonProperty]
+		public int InGameId { get; }
+
+		[JsonProperty]
 		public Uri Href { get; }
 
 		[JsonProperty]
@@ -42,6 +45,7 @@ namespace ACCollector_Server.Models.ViewModels
 		{
 			BugId = bug.BugId;
 			GameId = bug.GameId;
+			InGameId = bug.InGameId;
 			Href = href;
 			Name = bug.Name;
 			SalePrice = bug.SalePrice;

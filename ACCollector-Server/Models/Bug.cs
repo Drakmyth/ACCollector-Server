@@ -8,6 +8,7 @@ namespace ACCollector_Server.Models
 	{
 		public Guid BugId { get; }
 		public Guid GameId { get; }
+		public int InGameId { get; }
 		public string Name { get; }
 		public int SalePrice { get; private set; }
 		public BugLocation Location { get; private set; }
@@ -19,10 +20,11 @@ namespace ACCollector_Server.Models
 		private readonly List<Note> _notes;
 		public IReadOnlyList<Note> Notes => _notes.AsReadOnly();
 
-		private Bug(Guid bugId, Guid gameId, string name)
+		private Bug(Guid bugId, Guid gameId, int inGameId, string name)
 		{
 			BugId = bugId;
 			GameId = gameId;
+			InGameId = inGameId;
 			Name = name;
 			SalePrice = 0;
 			Location = BugLocation.Air;
@@ -31,7 +33,7 @@ namespace ACCollector_Server.Models
 			_notes = new List<Note>();
 		}
 
-		private Bug(Bug copy) : this(copy.BugId, copy.GameId, copy.Name)
+		private Bug(Bug copy) : this(copy.BugId, copy.GameId, copy.InGameId, copy.Name)
 		{
 			SalePrice = copy.SalePrice;
 			Location = copy.Location;
@@ -42,7 +44,7 @@ namespace ACCollector_Server.Models
 
 		public class Builder : Bug
 		{
-			public Builder(Guid bugId, Guid gameId, string name) : base(bugId, gameId, name)
+			public Builder(Guid bugId, Guid gameId, int inGameId, string name) : base(bugId, gameId, inGameId, name)
 			{
 			}
 

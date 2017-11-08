@@ -8,6 +8,7 @@ namespace ACCollector_Server.Models
 	{
 		public Guid FishId { get; }
 		public Guid GameId { get; }
+		public int InGameId { get; }
 		public string Name { get; }
 		public int SalePrice { get; private set; }
 		public FishSize Size { get; private set; }
@@ -20,10 +21,11 @@ namespace ACCollector_Server.Models
 		private readonly List<Note> _notes;
 		public IReadOnlyList<Note> Notes => _notes.AsReadOnly();
 
-		private Fish(Guid fishId, Guid gameId, string name)
+		private Fish(Guid fishId, Guid gameId, int inGameId, string name)
 		{
 			FishId = fishId;
 			GameId = gameId;
+			InGameId = inGameId;
 			Name = name;
 			SalePrice = 0;
 			Size = FishSize.Medium;
@@ -33,7 +35,7 @@ namespace ACCollector_Server.Models
 			_notes = new List<Note>();
 		}
 
-		private Fish(Fish copy) : this(copy.FishId, copy.GameId, copy.Name)
+		private Fish(Fish copy) : this(copy.FishId, copy.GameId, copy.InGameId, copy.Name)
 		{
 			SalePrice = copy.SalePrice;
 			Size = copy.Size;
@@ -45,7 +47,7 @@ namespace ACCollector_Server.Models
 
 		public class Builder : Fish
 		{
-			public Builder(Guid fishId, Guid gameId, string name) : base(fishId, gameId, name)
+			public Builder(Guid fishId, Guid gameId, int inGameId, string name) : base(fishId, gameId, inGameId, name)
 			{
 			}
 

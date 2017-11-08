@@ -20,6 +20,9 @@ namespace ACCollector_Server.Models.Entities
 		public Guid GameId { get; set; }
 
 		[Required]
+		public int InGameId { get; set; }
+
+		[Required]
 		public string Name { get; set; }
 
 		[Required]
@@ -66,6 +69,7 @@ namespace ACCollector_Server.Models.Entities
 		{
 			BugId = Guid.Empty;
 			GameId = gameId;
+			InGameId = request.InGameId;
 			Name = request.Name;
 			SalePrice = request.SalePrice;
 			Location = request.Location;
@@ -88,7 +92,7 @@ namespace ACCollector_Server.Models.Entities
 
 		public Bug ToModel()
 		{
-			var builder = new Bug.Builder(BugId, GameId, Name)
+			var builder = new Bug.Builder(BugId, GameId, InGameId, Name)
 				.WithSalePrice(SalePrice)
 				.WithLocation(Location)
 				.WithIslandStatus(IslandStatus);
@@ -108,7 +112,7 @@ namespace ACCollector_Server.Models.Entities
 
 		public BugSummary ToSummary()
 		{
-			return new BugSummary(BugId, Name);
+			return new BugSummary(BugId, InGameId, Name);
 		}
 	}
 }
