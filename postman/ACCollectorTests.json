@@ -1,0 +1,275 @@
+{
+	"info": {
+		"name": "ACCollector Tests",
+		"_postman_id": "9384fe7c-e3b3-f9a2-26d4-9dc46b5fd5d6",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Seed",
+			"description": "",
+			"item": [
+				{
+					"name": "Animal Forest",
+					"description": "",
+					"item": [
+						{
+							"name": "Create Game",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Animal Forest\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"JP\",\r\n            \"title\": \"Dōbutsu no Mori\",\r\n            \"platform\": \"N64\",\r\n            \"releaseDate\": \"2001-04-14\"\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:60462/api/games",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "60462",
+									"path": [
+										"api",
+										"games"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Animal Forest+",
+					"description": "",
+					"item": [
+						{
+							"name": "Create Game",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Animal Forest+\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"JP\",\r\n            \"title\": \"Dōbutsu no Mori+\",\r\n            \"platform\": \"GCN\",\r\n            \"releaseDate\": \"2001-12-14\"\r\n        },\r\n        {\r\n            \"region\": \"CHN\",\r\n            \"title\": \"Dòngwù Sēnlín\",\r\n            \"platform\": \"iQue\",\r\n            \"releaseDate\": \"2006-06-01\"\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:60462/api/games",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "60462",
+									"path": [
+										"api",
+										"games"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Animal Crossing",
+					"description": "",
+					"item": [
+						{
+							"name": "Create Game",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Animal Crossing\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"NA\",\r\n            \"title\": \"Animal Crossing\",\r\n            \"platform\": \"GCN\",\r\n            \"releaseDate\": \"2002-09-15\"\r\n        },\r\n        {\r\n            \"region\": \"AU\",\r\n            \"title\": \"Animal Crossing\",\r\n            \"platform\": \"GCN\",\r\n            \"releaseDate\": \"2003-10-17\"\r\n        },\r\n        {\r\n            \"region\": \"EU\",\r\n            \"title\": \"Animal Crossing\",\r\n            \"platform\": \"GCN\",\r\n            \"releaseDate\": \"2004-09-24\"\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:60462/api/games",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "60462",
+									"path": [
+										"api",
+										"games"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Animal Forest e+",
+					"description": "",
+					"item": [
+						{
+							"name": "Create Game",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Animal Forest e+\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"JP\",\r\n            \"title\": \"Dōbutsu no Mori e+\",\r\n            \"platform\": \"GCN\",\r\n            \"releaseDate\": \"2003-06-27\"\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:60462/api/games",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "60462",
+									"path": [
+										"api",
+										"games"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Wild World",
+					"description": "",
+					"item": [
+						{
+							"name": "Create Game",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Wild World\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"JP\",\r\n            \"title\": \"Oideyo Dōbutsu no Mori\",\r\n            \"platform\": \"NDS\",\r\n            \"releaseDate\": \"2005-11-23\"\r\n        },\r\n        {\r\n            \"region\": \"NA\",\r\n            \"title\": \"Animal Crossing: Wild World\",\r\n            \"platform\": \"NDS\",\r\n            \"releaseDate\": \"2005-12-05\"\r\n        },\r\n        {\r\n            \"region\": \"AU\",\r\n            \"title\": \"Animal Crossing: Wild World\",\r\n            \"platform\": \"NDS\",\r\n            \"releaseDate\": \"2005-12-08\"\r\n        },\r\n        {\r\n            \"region\": \"EU\",\r\n            \"title\": \"Animal Crossing: Wild World\",\r\n            \"platform\": \"NDS\",\r\n            \"releaseDate\": \"2006-03-31\"\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:60462/api/games",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "60462",
+									"path": [
+										"api",
+										"games"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "City Folk",
+					"description": "",
+					"item": [
+						{
+							"name": "Create Game",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"City Folk\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"JP\",\r\n            \"title\": \"Machi e ikō yo: Dōbutsu no Mori\",\r\n            \"platform\": \"Wii\",\r\n            \"releaseDate\": \"2008-11-20\"\r\n        },\r\n        {\r\n            \"region\": \"NA\",\r\n            \"title\": \"Animal Crossing: City Folk\",\r\n            \"platform\": \"Wii\",\r\n            \"releaseDate\": \"2008-11-16\"\r\n        },\r\n        {\r\n            \"region\": \"AU\",\r\n            \"title\": \"Animal Crossing: Let's Go to the City\",\r\n            \"platform\": \"Wii\",\r\n            \"releaseDate\": \"2008-11-04\"\r\n        },\r\n        {\r\n            \"region\": \"EU\",\r\n            \"title\": \"Animal Crossing: Let's Go to the City\",\r\n            \"platform\": \"Wii\",\r\n            \"releaseDate\": \"2008-11-05\"\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:60462/api/games",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "60462",
+									"path": [
+										"api",
+										"games"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "New Leaf",
+					"description": "",
+					"item": [
+						{
+							"name": "Create Game",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"New Leaf\",\r\n    \"releases\": [\r\n        {\r\n            \"region\": \"JP\",\r\n            \"title\": \"Tobidase Dōbutsu no Mori\",\r\n            \"platform\": \"3DS\",\r\n            \"releaseDate\": \"2012-11-08\"\r\n        },\r\n        {\r\n            \"region\": \"KOR\",\r\n            \"title\": \"Animal Crossing: New Leaf\",\r\n            \"platform\": \"3DS\",\r\n            \"releaseDate\": \"2013-02-07\"\r\n        },\r\n        {\r\n            \"region\": \"NA\",\r\n            \"title\": \"Animal Crossing: New Leaf\",\r\n            \"platform\": \"3DS\",\r\n            \"releaseDate\": \"2013-06-09\"\r\n        },\r\n        {\r\n            \"region\": \"AU\",\r\n            \"title\": \"Animal Crossing: New Leaf\",\r\n            \"platform\": \"3DS\",\r\n            \"releaseDate\": \"2013-06-15\"\r\n        },\r\n        {\r\n            \"region\": \"EU\",\r\n            \"title\": \"Animal Crossing: New Leaf\",\r\n            \"platform\": \"3DS\",\r\n            \"releaseDate\": \"2013-06-14\"\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:60462/api/games",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "60462",
+									"path": [
+										"api",
+										"games"
+									]
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}
