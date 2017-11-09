@@ -1448,6 +1448,1389 @@
 								}
 							],
 							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Fish",
+							"description": "",
+							"item": [
+								{
+									"name": "1 - Crucian Carp",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 1,\n\t\"name\": \"Crucian Carp\",\n\t\"salePrice\": 120,\n\t\"size\": \"Small\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "2 - Herabuna",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 2,\n\t\"name\": \"Herabuna\",\n\t\"salePrice\": 300,\n\t\"size\": \"Small\",\n\t\"location\": \"River Pool\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "3 - Carp",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 3,\n\t\"name\": \"Carp\",\n\t\"salePrice\": 300,\n\t\"size\": \"Medium\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "4 - Koi",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 4,\n\t\"name\": \"Koi\",\n\t\"salePrice\": 2000,\n\t\"size\": \"Medium\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 16,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 8,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "5 - Barbel Steed",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 5,\n\t\"name\": \"Barbel Steed\",\n\t\"salePrice\": 200,\n\t\"size\": \"Medium\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "6 - Dace",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 6,\n\t\"name\": \"Dace\",\n\t\"salePrice\": 200,\n\t\"size\": \"Medium\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 16,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 8,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "7 - Catfish",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 7,\n\t\"name\": \"Catfish\",\n\t\"salePrice\": 200,\n\t\"size\": \"Medium\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 5,\n\t\t\t\"endMonth\": 10,\n\t\t\t\"startHour\": 16,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 5,\n\t\t\t\"endMonth\": 10,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 8,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "8 - Giant Catfish",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 8,\n\t\"name\": \"Giant Catfish\",\n\t\"salePrice\": 3000,\n\t\"size\": \"Large\",\n\t\"location\": \"River Pool\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 6,\n\t\t\t\"endMonth\": 8,\n\t\t\t\"startHour\": 16,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 6,\n\t\t\t\"endMonth\": 8,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 8,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "9 - Pale Chub",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 9,\n\t\"name\": \"Pale Chub\",\n\t\"salePrice\": 200,\n\t\"size\": \"Tiny\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 9,\n\t\t\t\"endHour\": 15,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "10 - Bitterling",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 10,\n\t\"name\": \"Bitterling\",\n\t\"salePrice\": 1300,\n\t\"size\": \"Tiny\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 2,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 12,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "11 - Loach",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 11,\n\t\"name\": \"Loach\",\n\t\"salePrice\": 300,\n\t\"size\": \"Small\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 3,\n\t\t\t\"endMonth\": 5,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "12 - Bluegill",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 12,\n\t\"name\": \"Bluegill\",\n\t\"salePrice\": 120,\n\t\"size\": \"Small\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 9,\n\t\t\t\"endHour\": 15,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "13 - Small Bass",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 13,\n\t\"name\": \"Small Bass\",\n\t\"salePrice\": 200,\n\t\"size\": \"Small\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "14 - Bass",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 14,\n\t\"name\": \"Bass\",\n\t\"salePrice\": 300,\n\t\"size\": \"Medium\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "15 - Large Bass",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 15,\n\t\"name\": \"Large Bass\",\n\t\"salePrice\": 3000,\n\t\"size\": \"Large\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "16 - Giant Snakehead",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 16,\n\t\"name\": \"Giant Snakehead\",\n\t\"salePrice\": 6500,\n\t\"size\": \"Very Large\",\n\t\"location\": \"River Pool\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 6,\n\t\t\t\"endMonth\": 8,\n\t\t\t\"startHour\": 9,\n\t\t\t\"endHour\": 15,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "17 - Eel",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 17,\n\t\"name\": \"Eel\",\n\t\"salePrice\": 2000,\n\t\"size\": \"Long\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 6,\n\t\t\t\"endMonth\": 9,\n\t\t\t\"startHour\": 16,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 6,\n\t\t\t\"endMonth\": 9,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 8,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "18 - Freshwater Goby",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 18,\n\t\"name\": \"Freshwater Goby\",\n\t\"salePrice\": 300,\n\t\"size\": \"Small\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 16,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 8,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "19 - Pond Smelt",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 19,\n\t\"name\": \"Pond Smelt\",\n\t\"salePrice\": 300,\n\t\"size\": \"Small\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 2,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 12,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "20 - Sweetfish",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 20,\n\t\"name\": \"Sweetfish\",\n\t\"salePrice\": 1300,\n\t\"size\": \"Small\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 7,\n\t\t\t\"endMonth\": 9,\n\t\t\t\"startHour\": 9,\n\t\t\t\"endHour\": 15,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": true\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "21 - Cherry Salmon",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 21,\n\t\"name\": \"Cherry Salmon\",\n\t\"salePrice\": 1300,\n\t\"size\": \"Small\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 3,\n\t\t\t\"endMonth\": 6,\n\t\t\t\"startHour\": 4,\n\t\t\t\"endHour\": 8,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 3,\n\t\t\t\"endMonth\": 6,\n\t\t\t\"startHour\": 16,\n\t\t\t\"endHour\": 20,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 9,\n\t\t\t\"endMonth\": 11,\n\t\t\t\"startHour\": 9,\n\t\t\t\"endHour\": 15,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "22 - Rainbow Trout",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 22,\n\t\"name\": \"Rainbow Trout\",\n\t\"salePrice\": 650,\n\t\"size\": \"Medium\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 3,\n\t\t\t\"endMonth\": 6,\n\t\t\t\"startHour\": 4,\n\t\t\t\"endHour\": 8,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 3,\n\t\t\t\"endMonth\": 6,\n\t\t\t\"startHour\": 16,\n\t\t\t\"endHour\": 20,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 9,\n\t\t\t\"endMonth\": 11,\n\t\t\t\"startHour\": 9,\n\t\t\t\"endHour\": 15,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "23 - Large Char",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 23,\n\t\"name\": \"Large Char\",\n\t\"salePrice\": 10000,\n\t\"size\": \"Large\",\n\t\"location\": \"Waterfall\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 3,\n\t\t\t\"endMonth\": 6,\n\t\t\t\"startHour\": 4,\n\t\t\t\"endHour\": 8,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 3,\n\t\t\t\"endMonth\": 6,\n\t\t\t\"startHour\": 16,\n\t\t\t\"endHour\": 20,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 9,\n\t\t\t\"endMonth\": 11,\n\t\t\t\"startHour\": 4,\n\t\t\t\"endHour\": 8,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 9,\n\t\t\t\"endMonth\": 11,\n\t\t\t\"startHour\": 16,\n\t\t\t\"endHour\": 20,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "24 - Stringfish",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 24,\n\t\"name\": \"Stringfish\",\n\t\"salePrice\": 15000,\n\t\"size\": \"Large\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 2,\n\t\t\t\"startHour\": 16,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 2,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 8,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 12,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 16,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 12,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 8,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "25 - Salmon",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 25,\n\t\"name\": \"Salmon\",\n\t\"salePrice\": 650,\n\t\"size\": \"Large\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 9,\n\t\t\t\"endMonth\": 9,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": [\n\t\t\"Can be found in the river and the ocean.\"\n\t]\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "26 - Goldfish",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 26,\n\t\"name\": \"Goldfish\",\n\t\"salePrice\": 1300,\n\t\"size\": \"Tiny\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "27 - Popeyed Goldfish",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 27,\n\t\"name\": \"Popeyed Goldfish\",\n\t\"salePrice\": 1300,\n\t\"size\": \"Tiny\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 9,\n\t\t\t\"endHour\": 15,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "28 - Guppy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 28,\n\t\"name\": \"Guppy\",\n\t\"salePrice\": 1300,\n\t\"size\": \"Tiny\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 4,\n\t\t\t\"endMonth\": 11,\n\t\t\t\"startHour\": 9,\n\t\t\t\"endHour\": 15,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "29 - Angelfish",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 29,\n\t\"name\": \"Angelfish\",\n\t\"salePrice\": 3000,\n\t\"size\": \"Small\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 5,\n\t\t\t\"endMonth\": 10,\n\t\t\t\"startHour\": 16,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 5,\n\t\t\t\"endMonth\": 10,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 8,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "30 - Piranha",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 30,\n\t\"name\": \"Piranha\",\n\t\"salePrice\": 6500,\n\t\"size\": \"Small\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 6,\n\t\t\t\"endMonth\": 9,\n\t\t\t\"startHour\": 9,\n\t\t\t\"endHour\": 15,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": true\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 6,\n\t\t\t\"endMonth\": 9,\n\t\t\t\"startHour\": 21,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": true\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 6,\n\t\t\t\"endMonth\": 9,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 3,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": true\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "31 - Arowana",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 31,\n\t\"name\": \"Arowana\",\n\t\"salePrice\": 10000,\n\t\"size\": \"Medium\",\n\t\"location\": \"River\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 6,\n\t\t\t\"endMonth\": 9,\n\t\t\t\"startHour\": 16,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": true\n\t\t},\n\t\t{\n\t\t\t\"startMonth\": 6,\n\t\t\t\"endMonth\": 9,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 8,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": true\n\t\t}\n\t],\n\t\"notes\": []\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								},
+								{
+									"name": "32 - Coelacanth",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"inGameId\": 32,\n\t\"name\": \"Coelacanth\",\n\t\"salePrice\": 15000,\n\t\"size\": \"Huge\",\n\t\"location\": \"Ocean\",\n\t\"islandStatus\": \"None\",\n\t\"availabilities\": [\n\t\t{\n\t\t\t\"startMonth\": 1,\n\t\t\t\"endMonth\": 12,\n\t\t\t\"startHour\": 0,\n\t\t\t\"endHour\": 23,\n\t\t\t\"startsMidMonth\": false,\n\t\t\t\"endsMidMonth\": false\n\t\t}\n\t],\n\t\"notes\": [\n\t\t\"Only appears when it's raining or snowing.\"\n\t]\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fish",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fish"
+											]
+										},
+										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
 						}
 					],
 					"_postman_isSubFolder": true
