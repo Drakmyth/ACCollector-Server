@@ -2949,6 +2949,852 @@
 								}
 							],
 							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Fossils",
+							"item": [
+								{
+									"name": "Apato Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Apato Skull\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Apatosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Apato Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Apato Tail\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Apatosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Apato Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Apato Torso\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Apatosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Mammoth Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Mammoth Skull\",\n\t\"salePrice\": 3000,\n\t\"group\": \"Mammoth\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Mammoth Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Mammoth Torso\",\n\t\"salePrice\": 2500,\n\t\"group\": \"Mammoth\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Plesio Neck",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Plesio Neck\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Plesiosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Plesio Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Plesio Skull\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Plesiosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Plesio Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Plesio Torso\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Plesiosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ptera Left Wing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ptera Left Wing\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Pteranodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ptera Right Wing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ptera Right Wing\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Pteranodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ptera Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ptera Skull\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Pteranodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Stego Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Stego Skull\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Stegosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Stego Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Stego Tail\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Stegosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Stego Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Stego Torso\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Stegosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Tricera Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Tricera Skull\",\n\t\"salePrice\": 5500,\n\t\"group\": \"Triceratops\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Tricera Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Tricera Tail\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Triceratops\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Tricera Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Tricera Torso\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Triceratops\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "T-Rex Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"T-Rex Skull\",\n\t\"salePrice\": 6000,\n\t\"group\": \"Tyrannosaurus Rex\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "T-Rex Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"T-Rex Tail\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Tyrannosaurus Rex\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "T-Rex Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"T-Rex Torso\",\n\t\"salePrice\": 5500,\n\t\"group\": \"Tyrannosaurus Rex\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
 						}
 					],
 					"_postman_isSubFolder": true
@@ -3067,6 +3913,1902 @@
 								}
 							],
 							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Fossils",
+							"item": [
+								{
+									"name": "Ankylo Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ankylo Skull\",\n\t\"salePrice\": 3500,\n\t\"group\": \"Ankylosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ankylo Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ankylo Tail\",\n\t\"salePrice\": 2500,\n\t\"group\": \"Ankylosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ankylo Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ankylo Torso\",\n\t\"salePrice\": 3000,\n\t\"group\": \"Ankylosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Apato Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Apato Skull\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Apatosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Apato Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Apato Tail\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Apatosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Apato Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Apato Torso\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Apatosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Dimetrodon Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Dimetrodon Skull\",\n\t\"salePrice\": 5500,\n\t\"group\": \"Dimetrodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Dimetrodon Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Dimetrodon Tail\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Dimetrodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Dimetrodon Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Dimetrodon Torso\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Dimetrodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Iguanodon Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Iguanodon Skull\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Iguanodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Iguanodon Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Iguanodon Tail\",\n\t\"salePrice\": 3000,\n\t\"group\": \"Iguanodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Iguanodon Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Iguanodon Torso\",\n\t\"salePrice\": 3500,\n\t\"group\": \"Iguanodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Mammoth Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Mammoth Skull\",\n\t\"salePrice\": 3000,\n\t\"group\": \"Mammoth\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Mammoth Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Mammoth Torso\",\n\t\"salePrice\": 2500,\n\t\"group\": \"Mammoth\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Pachy Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Pachy Skull\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Pachycephalosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Pachy Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Pachy Tail\",\n\t\"salePrice\": 3000,\n\t\"group\": \"Pachycephalosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Pachy Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Pachy Torso\",\n\t\"salePrice\": 3500,\n\t\"group\": \"Pachycephalosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Parasaur Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Parasaur Skull\",\n\t\"salePrice\": 3500,\n\t\"group\": \"Parasaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Parasaur Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Parasaur Tail\",\n\t\"salePrice\": 2500,\n\t\"group\": \"Parasaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Parasaur Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Parasaur Torso\",\n\t\"salePrice\": 3500,\n\t\"group\": \"Parasaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Plesio Neck",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Plesio Neck\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Plesiosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Plesio Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Plesio Skull\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Plesiosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Plesio Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Plesio Torso\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Plesiosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ptera Body",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ptera Body\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Pteranodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ptera Left Wing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ptera Left Wing\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Pteranodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ptera Right Wing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ptera Right Wing\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Pteranodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ptera Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ptera Skull\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Pteranodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Sabretooth Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Sabretooth Skull\",\n\t\"salePrice\": 2500,\n\t\"group\": \"Sabretooth Tiger\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Sabretooth Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Sabretooth Torso\",\n\t\"salePrice\": 2000,\n\t\"group\": \"Sabretooth Tiger\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Seismo Chest",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Seismo Chest\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Seismosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Seismo Hip",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Seismo Hip\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Seismosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Seismo Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Seismo Skull\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Seismosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Seismo Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Seismo Tail\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Seismosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Stego Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Stego Skull\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Stegosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Stego Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Stego Tail\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Stegosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Stego Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Stego Torso\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Stegosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Spino Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Spino Skull\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Spinosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Spino Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Spino Tail\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Spinosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Spino Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Spino Torso\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Spinosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Tricera Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Tricera Skull\",\n\t\"salePrice\": 5500,\n\t\"group\": \"Triceratops\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Tricera Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Tricera Tail\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Triceratops\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Tricera Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Tricera Torso\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Triceratops\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "T-Rex Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"T-Rex Skull\",\n\t\"salePrice\": 6000,\n\t\"group\": \"Tyrannosaurus Rex\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "T-Rex Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"T-Rex Tail\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Tyrannosaurus Rex\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "T-Rex Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"T-Rex Torso\",\n\t\"salePrice\": 5500,\n\t\"group\": \"Tyrannosaurus Rex\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
 						}
 					],
 					"_postman_isSubFolder": true
@@ -3126,6 +5868,2154 @@
 								}
 							],
 							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Fossils",
+							"item": [
+								{
+									"name": "Ankylo Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ankylo Skull\",\n\t\"salePrice\": 3500,\n\t\"group\": \"Ankylosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ankylo Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ankylo Tail\",\n\t\"salePrice\": 2500,\n\t\"group\": \"Ankylosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ankylo Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ankylo Torso\",\n\t\"salePrice\": 3000,\n\t\"group\": \"Ankylosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Apato Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Apato Skull\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Apatosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Apato Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Apato Tail\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Apatosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Apato Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Apato Torso\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Apatosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Dimetrodon Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Dimetrodon Skull\",\n\t\"salePrice\": 5500,\n\t\"group\": \"Dimetrodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Dimetrodon Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Dimetrodon Tail\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Dimetrodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Dimetrodon Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Dimetrodon Torso\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Dimetrodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Icthyo Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Icthyo Skull\",\n\t\"salePrice\": 2500,\n\t\"group\": \"Ichthyosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Icthyo Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Icthyo Torso\",\n\t\"salePrice\": 2000,\n\t\"group\": \"Ichthyosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Iguanodon Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Iguanodon Skull\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Iguanodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Iguanodon Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Iguanodon Tail\",\n\t\"salePrice\": 3000,\n\t\"group\": \"Iguanodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Iguanodon Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Iguanodon Torso\",\n\t\"salePrice\": 3500,\n\t\"group\": \"Iguanodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Mammoth Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Mammoth Skull\",\n\t\"salePrice\": 3000,\n\t\"group\": \"Mammoth\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Mammoth Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Mammoth Torso\",\n\t\"salePrice\": 2500,\n\t\"group\": \"Mammoth\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Pachy Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Pachy Skull\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Pachycephalosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Pachy Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Pachy Tail\",\n\t\"salePrice\": 3000,\n\t\"group\": \"Pachycephalosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Pachy Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Pachy Torso\",\n\t\"salePrice\": 3500,\n\t\"group\": \"Pachycephalosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Parasaur Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Parasaur Skull\",\n\t\"salePrice\": 3500,\n\t\"group\": \"Parasaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Parasaur Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Parasaur Tail\",\n\t\"salePrice\": 2500,\n\t\"group\": \"Parasaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Parasaur Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Parasaur Torso\",\n\t\"salePrice\": 3500,\n\t\"group\": \"Parasaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Plesio Neck",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Plesio Neck\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Plesiosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Plesio Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Plesio Skull\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Plesiosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Plesio Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Plesio Torso\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Plesiosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ptera Left Wing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ptera Left Wing\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Pteranodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ptera Right Wing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ptera Right Wing\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Pteranodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ptera Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ptera Skull\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Pteranodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Sabretooth Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Sabretooth Skull\",\n\t\"salePrice\": 2500,\n\t\"group\": \"Sabretooth Tiger\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Sabretooth Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Sabretooth Torso\",\n\t\"salePrice\": 2000,\n\t\"group\": \"Sabretooth Tiger\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Seismo Chest",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Seismo Chest\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Seismosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Seismo Hip",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Seismo Hip\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Seismosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Seismo Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Seismo Skull\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Seismosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Seismo Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Seismo Tail\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Seismosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Stego Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Stego Skull\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Stegosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Stego Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Stego Tail\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Stegosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Stego Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Stego Torso\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Stegosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Spino Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Spino Skull\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Spinosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Spino Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Spino Tail\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Spinosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Spino Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Spino Torso\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Spinosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Styraco Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Styraco Skull\",\n\t\"salePrice\": 3500,\n\t\"group\": \"Styracosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Styraco Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Styraco Tail\",\n\t\"salePrice\": 2500,\n\t\"group\": \"Styracosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Styraco Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Styraco Torso\",\n\t\"salePrice\": 3000,\n\t\"group\": \"Styracosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Tricera Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Tricera Skull\",\n\t\"salePrice\": 5500,\n\t\"group\": \"Triceratops\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Tricera Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Tricera Tail\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Triceratops\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Tricera Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Tricera Torso\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Triceratops\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "T-Rex Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"T-Rex Skull\",\n\t\"salePrice\": 6000,\n\t\"group\": \"Tyrannosaurus Rex\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "T-Rex Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"T-Rex Tail\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Tyrannosaurus Rex\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "T-Rex Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"T-Rex Torso\",\n\t\"salePrice\": 5500,\n\t\"group\": \"Tyrannosaurus Rex\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Raptor Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Raptor Skull\",\n\t\"salePrice\": 3000,\n\t\"group\": \"Velociraptor\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Raptor Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Raptor Torso\",\n\t\"salePrice\": 2500,\n\t\"group\": \"Velociraptor\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
 						}
 					],
 					"_postman_isSubFolder": true
@@ -3180,6 +8070,2406 @@
 											]
 										},
 										"description": ""
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Fossils",
+							"item": [
+								{
+									"name": "Ankylo Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ankylo Skull\",\n\t\"salePrice\": 3500,\n\t\"group\": \"Ankylosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ankylo Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ankylo Tail\",\n\t\"salePrice\": 2500,\n\t\"group\": \"Ankylosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ankylo Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ankylo Torso\",\n\t\"salePrice\": 3000,\n\t\"group\": \"Ankylosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Apato Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Apato Skull\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Apatosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Apato Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Apato Tail\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Apatosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Apato Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Apato Torso\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Apatosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Archelon Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Archelon Skull\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Archelon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Archelon Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Archelon Torso\",\n\t\"salePrice\": 3500,\n\t\"group\": \"Archelon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Dimetrodon Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Dimetrodon Skull\",\n\t\"salePrice\": 5500,\n\t\"group\": \"Dimetrodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Dimetrodon Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Dimetrodon Tail\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Dimetrodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Dimetrodon Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Dimetrodon Torso\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Dimetrodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Diplo Chest",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Diplo Chest\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Diplodocus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Diplo Hip",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Diplo Hip\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Diplodocus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Diplo Neck",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Diplo Neck\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Diplodocus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Diplo Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Diplo Skull\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Diplodocus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Diplo Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Diplo Tail\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Diplodocus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Icthyo Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Icthyo Skull\",\n\t\"salePrice\": 2500,\n\t\"group\": \"Ichthyosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Icthyo Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Icthyo Torso\",\n\t\"salePrice\": 2000,\n\t\"group\": \"Ichthyosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Iguanodon Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Iguanodon Skull\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Iguanodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Iguanodon Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Iguanodon Tail\",\n\t\"salePrice\": 3000,\n\t\"group\": \"Iguanodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Iguanodon Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Iguanodon Torso\",\n\t\"salePrice\": 3500,\n\t\"group\": \"Iguanodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Mammoth Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Mammoth Skull\",\n\t\"salePrice\": 3000,\n\t\"group\": \"Mammoth\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Mammoth Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Mammoth Torso\",\n\t\"salePrice\": 2500,\n\t\"group\": \"Mammoth\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Megacero Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Megacero Skull\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Megacerops\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Megacero Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Megacero Tail\",\n\t\"salePrice\": 3000,\n\t\"group\": \"Megacerops\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Megacero Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Megacero Torso\",\n\t\"salePrice\": 3500,\n\t\"group\": \"Megacerops\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Pachy Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Pachy Skull\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Pachycephalosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Pachy Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Pachy Tail\",\n\t\"salePrice\": 3000,\n\t\"group\": \"Pachycephalosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Pachy Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Pachy Torso\",\n\t\"salePrice\": 3500,\n\t\"group\": \"Pachycephalosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Parasaur Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Parasaur Skull\",\n\t\"salePrice\": 3500,\n\t\"group\": \"Parasaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Parasaur Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Parasaur Tail\",\n\t\"salePrice\": 2500,\n\t\"group\": \"Parasaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Parasaur Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Parasaur Torso\",\n\t\"salePrice\": 3500,\n\t\"group\": \"Parasaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Plesio Neck",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Plesio Neck\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Plesiosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Plesio Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Plesio Skull\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Plesiosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Plesio Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Plesio Torso\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Plesiosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ptera Left Wing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ptera Left Wing\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Pteranodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ptera Right Wing",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ptera Right Wing\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Pteranodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Ptera Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Ptera Skull\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Pteranodon\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Sabretooth Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Sabretooth Skull\",\n\t\"salePrice\": 2500,\n\t\"group\": \"Sabretooth Tiger\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Sabretooth Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Sabretooth Torso\",\n\t\"salePrice\": 2000,\n\t\"group\": \"Sabretooth Tiger\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Stego Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Stego Skull\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Stegosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Stego Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Stego Tail\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Stegosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Stego Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Stego Torso\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Stegosaur\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Spino Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Spino Skull\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Spinosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Spino Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Spino Tail\",\n\t\"salePrice\": 4000,\n\t\"group\": \"Spinosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Spino Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Spino Torso\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Spinosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Styraco Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Styraco Skull\",\n\t\"salePrice\": 3500,\n\t\"group\": \"Styracosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Styraco Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Styraco Tail\",\n\t\"salePrice\": 2500,\n\t\"group\": \"Styracosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Styraco Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Styraco Torso\",\n\t\"salePrice\": 3000,\n\t\"group\": \"Styracosaurus\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Tricera Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Tricera Skull\",\n\t\"salePrice\": 5500,\n\t\"group\": \"Triceratops\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Tricera Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Tricera Tail\",\n\t\"salePrice\": 4500,\n\t\"group\": \"Triceratops\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Tricera Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Tricera Torso\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Triceratops\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "T-Rex Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"T-Rex Skull\",\n\t\"salePrice\": 6000,\n\t\"group\": \"Tyrannosaurus Rex\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "T-Rex Tail",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"T-Rex Tail\",\n\t\"salePrice\": 5000,\n\t\"group\": \"Tyrannosaurus Rex\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "T-Rex Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"T-Rex Torso\",\n\t\"salePrice\": 5500,\n\t\"group\": \"Tyrannosaurus Rex\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Raptor Skull",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Raptor Skull\",\n\t\"salePrice\": 3000,\n\t\"group\": \"Velociraptor\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Raptor Torso",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"type": "text/javascript",
+												"exec": [
+													"pm.test(\"Status code is 201\", function () {",
+													"    pm.response.to.have.status(201);",
+													"});"
+												]
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"name\": \"Raptor Torso\",\n\t\"salePrice\": 2500,\n\t\"group\": \"Velociraptor\"\n}"
+										},
+										"url": {
+											"raw": "{{host}}/api/games/{{gameId}}/fossils",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"api",
+												"games",
+												"{{gameId}}",
+												"fossils"
+											]
+										}
 									},
 									"response": []
 								}
