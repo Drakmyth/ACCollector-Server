@@ -113,6 +113,7 @@ INSERT INTO [ACCollector].[dbo].[FossilGroup]([Group]) VALUES
 ('Mammoth'),
 ('Megacerops'),
 ('Pachycephalosaurus'),
+('Parasaur'),
 ('Plesiosaur'),
 ('Pteranodon'),
 ('Sabretooth Tiger'),
