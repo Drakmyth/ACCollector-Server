@@ -1,51 +1,73 @@
 ﻿$page = Invoke-WebRequest -Uri https://nookipedia.com/wiki/Fossil -Method Get
 
-$tableIndex = 3 # 2 = non-standalone, 3 = standalone
-$group = "Standalone"
+function Parse-Table() {
+    param
+    (
+        [Parameter(Mandatory=$true)]$tableIndex
+    )
 
-$table = $page.ParsedHtml.getElementsByTagName("table")[$tableIndex]
+    $group = "Standalone"
+    $table = $page.ParsedHtml.getElementsByTagName("table")[$tableIndex]
 
-$ACFossils = @()
-$WWFossils = @()
-$CFFossils = @()
-$NLFossils = @()
+    $Fossils = @()
 
-$first = $true
-foreach ($row in $table.rows) {
+    $first = $true
+    foreach ($row in $table.rows) {
 
-    if ($first) {
-        $first = $false
-        continue
-    }
+        if ($first) {
+            $first = $false
+            continue
+        }
 
-    if ($row.cells.length -eq 1) {
-        $group = $row.cells[0].innerText.Trim()
-        continue
-    }
+        if ($row.cells.length -eq 1) {
+            $group = $row.cells[0].innerText.Trim()
+            continue
+        }
 
-    $fossil = @{}
-    $fossil.Name = $row.cells[0].innerText.Trim()
-    $fossil.SalePrice =  [int]$row.cells[1].innerText
-    $fossil.Group = $group
-    $fossil = New-Object -TypeName PSObject -Prop $fossil
+        $fossil = @{}
+
+        $fossilName = $row.cells[0].innerText.Trim()
+
+        if ($fossilName.Contains("Coprolite")) {
+            $fossilName = "Coprolite"
+        } 
+        $fossil.Name = $fossilName
+        $fossil.SalePrice =  [int]$row.cells[1].innerText
+        $fossil.Group = $group
     
-    $games = $row.cells[5].innerText
+        $games = $row.cells[5].innerText
 
-    if ($games.Contains("AC")) {
-        $ACFossils += $fossil
+        if ($games.Contains("AC")) {
+            $fossil.Game = "AC"
+            $fossilObj = New-Object -TypeName PSObject -Prop $fossil
+            $Fossils += $fossilObj
+        }
+
+        if ($games.Contains("CF")) {
+            $fossil.Game = "CF"
+            $fossilObj = New-Object -TypeName PSObject -Prop $fossil
+            $Fossils += $fossilObj
+        }
+
+        if ($games.Contains("NL")) {
+            $fossil.Game = "NL"
+            $fossilObj = New-Object -TypeName PSObject -Prop $fossil
+            $Fossils += $fossilObj
+        }
+
+        if ($games.Contains("WW")) {
+            $fossil.Game = "WW"
+
+            if ($fossil.Name -eq "Coprolite") {
+                $fossil.Name = "Dino Droppings"
+            }
+
+            $fossilObj = New-Object -TypeName PSObject -Prop $fossil
+            $Fossils += $fossilObj
+        }
     }
 
-    if ($games.Contains("WW")) {
-        $WWFossils += $fossil
-    }
-
-    if ($games.Contains("CF")) {
-        $CFFossils += $fossil
-    }
-
-    if ($games.Contains("NL")) {
-        $NLFossils += $fossil
-    }
+    return $Fossils
 }
 
 function Build-Fossil-Folder {
@@ -131,11 +153,26 @@ function Build-Fossil {
     }
 }
 
-$folders = @()
-$folders += Build-Fossil-Folder "ACFossils" $ACFossils
-$folders += Build-Fossil-Folder "CFFossils" $CFFossils
-$folders += Build-Fossil-Folder "NLFossils" $NLFossils
-$folders += Build-Fossil-Folder "WWFossils" $WWFossils
+$nonStandaloneFossils = Parse-Table 2
+$standaloneFossils = Parse-Table 3
+$allFossils = $nonStandaloneFossils + $standaloneFossils
 
-$json = ConvertTo-Json -InputObject $folders -Depth 10
+$folders = @()
+$folders += Build-Fossil-Folder "ACFossils" ($allFossils | Where-Object { $_.Game -eq "AC" })
+$folders += Build-Fossil-Folder "CFFossils" ($allFossils | Where-Object { $_.Game -eq "CF" })
+$folders += Build-Fossil-Folder "NLFossils" ($allFossils | Where-Object { $_.Game -eq "NL" })
+$folders += Build-Fossil-Folder "WWFossils" ($allFossils | Where-Object { $_.Game -eq "WW" })
+
+$info = @{}
+$info.name = "ACCollector Fossil Seeds"
+$info.description = ""
+$info.schema = "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+$info = New-Object -TypeName PSObject -Prop $info
+
+$collection = @{}
+$collection.info = $info
+$collection.item = $folders
+$collection = New-Object -TypeName PSObject -Prop $collection
+
+$json = ConvertTo-Json -InputObject $collection -Depth 10
 $json | Out-File C:\Users\shaunh\Documents\Code\ACCollector-Server\postman\fossils.json
