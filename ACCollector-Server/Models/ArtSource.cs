@@ -9,7 +9,6 @@ namespace ACCollector_Server.Models
 	public enum ArtSource
 	{
 		CrazyRedd,
-		TomNook,
 		Spotlight
 	}
 
@@ -39,7 +38,6 @@ namespace ACCollector_Server.Models
 		private static readonly Dictionary<ArtSource, string> _artSources = new Dictionary<ArtSource, string>
 		{
 			{ArtSource.CrazyRedd, "Crazy Redd"},
-			{ArtSource.TomNook, "Tom Nook"},
 			{ArtSource.Spotlight, "Spotlight"}
 		};
 

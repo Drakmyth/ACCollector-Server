@@ -92,7 +92,6 @@ GO
 
 INSERT INTO [ACCollector].[dbo].[ArtSource]([Source]) VALUES
 ('Crazy Redd'),
-('Tom Nook'),
 ('Spotlight');
 GO
 
