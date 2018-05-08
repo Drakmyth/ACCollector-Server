@@ -8,7 +8,6 @@ using System.Collections.Generic;
 
 namespace ACCollector_Server.Services
 {
-	[UsedImplicitly]
 	public class GameService
 	{
 		private readonly IDbContextScopeFactory _dbContextScopeFactory;

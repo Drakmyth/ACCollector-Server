@@ -10,7 +10,6 @@ using System.Linq;
 
 namespace ACCollector_Server.DataAccess.Repositories
 {
-	[UsedImplicitly]
 	public sealed class ReleaseRepository
 	{
 		private readonly IAmbientDbContextLocator _contextLocator;

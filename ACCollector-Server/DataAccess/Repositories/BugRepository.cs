@@ -11,7 +11,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ACCollector_Server.DataAccess.Repositories
 {
-	[UsedImplicitly]
 	public sealed class BugRepository
 	{
 		private readonly IAmbientDbContextLocator _contextLocator;

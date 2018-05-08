@@ -4,8 +4,7 @@ using System.IO;
 
 namespace ACCollector_Server
 {
-	[UsedImplicitly]
-	public class Program
+	public static class Program
 	{
 		public static void Main()
 		{
