@@ -52,7 +52,7 @@ namespace ACCollector_Server
 
 		private DbContextScopeFactory BuildContextScopeFactory(IServiceProvider services)
 		{
-			const string CONNECTION = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=ACCollector;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+			const string CONNECTION = @"Server=sql-server;Initial Catalog=ACCollector;User ID=sa;Password=P@ssword1";
 			var optionsBuilder = new DbContextOptionsBuilder<ACCollectorDbContext>();
 			optionsBuilder.UseSqlServer(CONNECTION);
 
