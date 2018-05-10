@@ -5,23 +5,6 @@ VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACCollector-Server", "ACCollector-Server\ACCollector-Server.csproj", "{2EDD3A63-8D6F-43E6-A915-641BC9BCCA84}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{58EE77C1-FB94-448C-BF84-E831540BD1FE}"
-	ProjectSection(SolutionItems) = preProject
-		.gitignore = .gitignore
-		LICENSE.md = LICENSE.md
-		README.md = README.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{0E1CFBC0-0898-4CF2-9B4A-616AFE04B721}"
-	ProjectSection(SolutionItems) = preProject
-		sql\setup.sql = sql\setup.sql
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "postman", "postman", "{C968C64C-E1D1-4D3C-8815-07E9463CC5C4}"
-	ProjectSection(SolutionItems) = preProject
-		postman\ACCollectorTests.json = postman\ACCollectorTests.json
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +18,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{0E1CFBC0-0898-4CF2-9B4A-616AFE04B721} = {58EE77C1-FB94-448C-BF84-E831540BD1FE}
-		{C968C64C-E1D1-4D3C-8815-07E9463CC5C4} = {58EE77C1-FB94-448C-BF84-E831540BD1FE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {328C23A9-5F3F-4F53-8C0E-0F84DC374DC0}
